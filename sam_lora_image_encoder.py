@@ -80,9 +80,9 @@ class LoRA_Sam(nn.Module):
         self.w_As = []  # These are linear layers
         self.w_Bs = []
 
-        # lets freeze first
+        #lets freeze first
         for param in sam_model.image_encoder.parameters():
-            param.requires_grad = False
+           param.requires_grad = False
 
         # Here, we do the surgery
         for t_layer_i, blk in enumerate(sam_model.image_encoder.blocks):
@@ -190,25 +190,26 @@ class LoRA_Sam(nn.Module):
     # def forward(self, x: Tensor) -> Tensor:
     #     return self.lora_vit(x)
 
-def get_attention_blocks(model):
-    attention_block_params = []
-    for blk_idx, blk in enumerate(model.sam.image_encoder.blocks):
-        if isinstance(blk.attn.qkv, _LoRA_qkv):
-            params_to_include = [
-                ("{}.attn.qkv.qkv.weight".format(blk_idx), blk.attn.qkv.qkv.weight),
-                ("{}.attn.qkv.linear_a_q.weight".format(blk_idx), blk.attn.qkv.linear_a_q.weight),
-                ("{}.attn.qkv.linear_b_q.weight".format(blk_idx), blk.attn.qkv.linear_b_q.weight),
-                ("{}.attn.qkv.linear_a_v.weight".format(blk_idx), blk.attn.qkv.linear_a_v.weight),
-                ("{}.attn.qkv.linear_b_v.weight".format(blk_idx), blk.attn.qkv.linear_b_v.weight)
-            ]
-            attention_block_params.extend([(name, param) for name, param in params_to_include if param.requires_grad])
-    #print(attention_block_params)
-    # for name, param in attention_block_params:
-    #     if param.requires_grad == True:
-    #         print("YAY")
-    #     else:
-    #         print("NOOOOOO")
-    return attention_block_params
+# def get_attention_blocks(model):
+#     attention_block_params = []
+#     for blk_idx, blk in enumerate(model.sam.image_encoder.blocks):
+#         print(blk)
+#         if isinstance(blk.attn.qkv, _LoRA_qkv):
+#             params_to_include = [
+#                 ("{}.attn.qkv.qkv.weight".format(blk_idx), blk.attn.qkv.qkv.weight),
+#                 ("{}.attn.qkv.linear_a_q.weight".format(blk_idx), blk.attn.qkv.linear_a_q.weight),
+#                 ("{}.attn.qkv.linear_b_q.weight".format(blk_idx), blk.attn.qkv.linear_b_q.weight),
+#                 ("{}.attn.qkv.linear_a_v.weight".format(blk_idx), blk.attn.qkv.linear_a_v.weight),
+#                 ("{}.attn.qkv.linear_b_v.weight".format(blk_idx), blk.attn.qkv.linear_b_v.weight)
+#             ]
+#             attention_block_params.extend([(name, param) for name, param in params_to_include if param.requires_grad])
+#     #print(attention_block_params)
+#     # for name, param in attention_block_params:
+#     #     if param.requires_grad == True:
+#     #         print("YAY")
+#     #     else:
+#     #         print("NOOOOOO")
+#     return attention_block_params
 
 if __name__ == "__main__":
     sam = sam_model_registry["vit_b"](checkpoint="sam_vit_b_01ec64.pth")

@@ -9,7 +9,7 @@ import torch.backends.cudnn as cudnn
 from importlib import import_module
 from galore import GaLore
 from sam_lora_image_encoder import LoRA_Sam
-from sam_lora_image_encoder import get_attention_blocks
+from segment_anything.modeling.image_encoder import get_encoder_attention_parameters
 from segment_anything import sam_model_registry
 
 from trainer import trainer_synapse
@@ -98,13 +98,13 @@ if __name__ == "__main__":
                                                                 checkpoint=args.ckpt, pixel_mean=[0, 0, 0],
                                                                 pixel_std=[1, 1, 1])
 
-    pkg = import_module(args.module)
+    #pkg = import_module(args.module)
 
     #sam = sam_model_registry["vit_b"](checkpoint="sam_vit_b_01ec64.pth")
     #net = pkg.LoRA_Sam(sam, args.rank).cuda()
-    sam = pkg.LoRA_Sam(sam, args.rank).cuda()
+    #sam = pkg.LoRA_Sam(sam, args.rank).cuda()
     
-    galore_params = get_attention_blocks(sam)
+    galore_params = get_encoder_attention_parameters(sam)
     net = GaLore(model=sam, rank=4, update_freq=200, galore_params= galore_params)
 
     # net = LoRA_Sam(sam, args.rank).cuda()
