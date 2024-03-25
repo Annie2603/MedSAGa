@@ -56,15 +56,7 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     trainloader = DataLoader(db_train, batch_size=batch_size, shuffle=True, num_workers=8, pin_memory=True,
                              worker_init_fn=worker_init_fn)
     
-    # print("List of parameters:")
-    # for name, param in model.params_list:
-    #     print(name, param.shape, param.requires_grad)
 
-    # Debug prints to check if model has trainable parameters
-    
-
-    #print(model)
-    # Create an empty list to store parameters with requires_grad set to True
     import pickle
 
     # Load galore_params list from the pickle file
@@ -79,30 +71,23 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
         if param.requires_grad:
             params_list.append(param)
 
-    galore_params = get_encoder_attention_parameters(model)
-
-    galore_params_names = [name for name, _ in galore_params]
-    for name, param in model.named_parameters():
-        if name not in galore_params_names:
-            param.requires_grad = False
-
-
-    device = torch.device("cuda")
-
-    
-    model.to(device) #model now on gpu
+    device = next(model.parameters()).device  
 
     galore_params = [(name, param.to(device)) for name, param in galore_params] # moving to the device as same as model.params
-    galore = GaLore(model, 4, 200, galore_params)
 
 
-    """
+    galore = GaLore(model, 4, 200)
+
+    
+
+
+
     for name, param in model.named_parameters():
         if param.requires_grad==False:
             print(f"{name} NOOO")
         else:
             print(f"{name} YESS")
-    """
+
     model.train()
     ce_loss = CrossEntropyLoss()
     dice_loss = DiceLoss(num_classes + 1)
@@ -111,13 +96,13 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     else:
         b_lr = base_lr
     if args.AdamW:
-        optimizer = optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
-        #optimizer = optim.AdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+        #optimizer = optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+        optimizer = optim.AdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
 
 
     else:
-        optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, momentum=0.9, weight_decay=0.0001)  # Even pass the model.parameters(), the `requires_grad=False` layers will not update
-        #optimizer = optim.SGD(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+        #optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, momentum=0.9, weight_decay=0.0001)  # Even pass the model.parameters(), the `requires_grad=False` layers will not update
+        optimizer = optim.AdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
 
 
 
@@ -130,12 +115,7 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     best_performance = 0.0
     iterator = tqdm(range(max_epoch), ncols=70)
 
-    # for i_batch, sampled_batch in enumerate(trainloader):
-    #     image_batch, label_batch = sampled_batch['image'], sampled_batch['label']  # [b, c, h, w], [b, h, w]
-    #     low_res_label_batch = sampled_batch['low_res_label']
 
-    #     print(f"Batch {i_batch + 1}:")
-    #     print(f"Unique values in low_res_label_batch: {get_tensor_unique_values(low_res_label_batch)}")
 
     for epoch_num in iterator:
         for i_batch, sampled_batch in enumerate(trainloader):
@@ -144,37 +124,15 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
             print(f"Unique values: {get_tensor_unique_values(sampled_batch['low_res_label'])}")
             low_res_label_batch = sampled_batch['low_res_label']
             print(device)
-            # print("Printing image.......")
-            # #print(sampled_batch['label'][15])
-            # print(f"For labels:::::::----")
-            # print(get_tensor_unique_values(sampled_batch['label'][15]))
-            # keys_list = list(sampled_batch.keys())
-            # print("Keys using keys() method:", keys_list)
-            # print((sampled_batch['case_name'][0]))
-            # print(sampled_batch['image'][0].shape)
-            # #print(sampled_batch['low_res_label'].shape)
+
             image_batch, label_batch = image_batch.cuda(), label_batch.cuda()
             low_res_label_batch = low_res_label_batch.cuda()
             assert image_batch.max() <= 3, f'image_batch max: {image_batch.max()}'
             outputs = model(image_batch, multimask_output, args.img_size)
-            # print(f"Multimask : {multimask_output}")
-            # print(f"Low res label batch: {(low_res_label_batch.shape)}, output: {(outputs['low_res_logits'][0]).shape}")
             loss, loss_ce, loss_dice = calc_loss(outputs, low_res_label_batch, ce_loss, dice_loss, args.dice_param)
             optimizer.zero_grad()
             loss.backward()
 
-            # for name, param in model.named_parameters():
-            #     if param.grad is not None:
-            #         print(f"Parameter name: {name}, Gradient shape: {param.grad.shape}")
-            #     else:
-            #         print(f"Parameter {name} has no gradients computed.")
-            
-            #optimizer.step()
-                        
-            # update func for galore
-
-            # def update_func():
-            #     optimizer.step()
             def update_func(lor_grad):
                 def closure():
                     optimizer.step()
@@ -220,18 +178,32 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
         save_interval = 20 # int(max_epoch/6)
         if (epoch_num + 1) % save_interval == 0:
             save_mode_path = os.path.join(snapshot_path, 'epoch_' + str(epoch_num) + '.pth')
-            try:
-                model.save_lora_parameters(save_mode_path)
-            except:
-                model.module.save_lora_parameters(save_mode_path)
-            logging.info("save model to {}".format(save_mode_path))
+            # try:
+            #     model.save_lora_parameters(save_mode_path)
+            # except:
+            #     model.module.save_lora_parameters(save_mode_path)
+            # logging.info("save model to {}".format(save_mode_path))
+            torch.save(
+                    {
+                        "model_state_dict": model.state_dict(),
+                        "optimiser_state_dict": optimizer.state_dict(),
+                        "epoch": epoch_num,
+                    },
+                    save_mode_path,)
 
         if epoch_num >= max_epoch - 1 or epoch_num >= stop_epoch - 1:
             save_mode_path = os.path.join(snapshot_path, 'epoch_' + str(epoch_num) + '.pth')
-            try:
-                model.save_lora_parameters(save_mode_path)
-            except:
-                model.module.save_lora_parameters(save_mode_path)
+            # try:
+            #     model.save_lora_parameters(save_mode_path)
+            # except:
+            #     model.module.save_lora_parameters(save_mode_path)
+            torch.save(
+                    {
+                        "model_state_dict": model.state_dict(),
+                        "optimiser_state_dict": optimizer.state_dict(),
+                        "epoch": epoch_num,
+                    },
+                    save_mode_path,)
             logging.info("save model to {}".format(save_mode_path))
             iterator.close()
             break
