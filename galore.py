@@ -144,15 +144,15 @@ print(torch.cuda.is_available())
 class GaLore(nn.Module):
     def __init__(self, model, rank=4, update_freq=200, galore_params=None):
         super(GaLore, self).__init__()
-        self.model = model.to(torch.device("cuda"))  # Move model to GPU
-        print(f"Model device: {next(self.model.parameters()).device}")  # Check model's device
+        self.model = model#.to(torch.device("cuda"))  # Move model to GPU
+        #print(f"Model device: {next(self.model.parameters()).device}")  # Check model's device
         self.rank = rank
         self.update_freq = update_freq
         self.n_step = 0
         if galore_params is not None:
             self.params_list = galore_params
         else:
-            self.params_list = list(self.model.parameters())  # Convert to list
+            self.params_list = list(self.model.named_parameters())  # Convert to list
         # print("Accessing model parameters...")
         # for name, param in self.model.named_parameters():
         #     print(f"Parameter: {name}, Device: {param.device}")
@@ -174,7 +174,7 @@ class GaLore(nn.Module):
                 nn.init.orthogonal_(self.Q[name])
 
     def project(self, grad, name):
-        print(f"Shape of grad tensor: {grad.shape}")
+        #print(f"Shape of grad tensor: {grad.shape}")
         return torch.matmul(self.P[name].t(), torch.matmul(grad, self.Q[name]))
 
     def project_back(self, lor_grad, name):

@@ -79,22 +79,30 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
         if param.requires_grad:
             params_list.append(param)
 
-    #galore_params = get_encoder_attention_parameters(sam)
-    galore = GaLore(model, 4, 200, galore_params)
+    galore_params = get_encoder_attention_parameters(model)
 
-    device = next(model.parameters()).device  
-    galore_params = [(name, param.to(device)) for name, param in galore_params] # moving to the device as same as model.params
+    galore_params_names = [name for name, _ in galore_params]
+    for name, param in model.named_parameters():
+        if name not in galore_params_names:
+            param.requires_grad = False
+
+
+    device = torch.device("cuda")
 
     
+    model.to(device) #model now on gpu
+
+    galore_params = [(name, param.to(device)) for name, param in galore_params] # moving to the device as same as model.params
+    galore = GaLore(model, 4, 200, galore_params)
 
 
-
+    """
     for name, param in model.named_parameters():
         if param.requires_grad==False:
             print(f"{name} NOOO")
         else:
             print(f"{name} YESS")
-
+    """
     model.train()
     ce_loss = CrossEntropyLoss()
     dice_loss = DiceLoss(num_classes + 1)
@@ -103,13 +111,13 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     else:
         b_lr = base_lr
     if args.AdamW:
-        #optimizer = optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
-        optimizer = optim.AdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+        optimizer = optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+        #optimizer = optim.AdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
 
 
     else:
-        #optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, momentum=0.9, weight_decay=0.0001)  # Even pass the model.parameters(), the `requires_grad=False` layers will not update
-        optimizer = optim.AdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+        optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, momentum=0.9, weight_decay=0.0001)  # Even pass the model.parameters(), the `requires_grad=False` layers will not update
+        #optimizer = optim.SGD(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
 
 
 
@@ -155,6 +163,12 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
             optimizer.zero_grad()
             loss.backward()
 
+            # for name, param in model.named_parameters():
+            #     if param.grad is not None:
+            #         print(f"Parameter name: {name}, Gradient shape: {param.grad.shape}")
+            #     else:
+            #         print(f"Parameter {name} has no gradients computed.")
+            
             #optimizer.step()
                         
             # update func for galore
