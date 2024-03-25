@@ -19,6 +19,8 @@ from torchvision import transforms
 from icecream import ic
 from torchsummary import summary
 from segment_anything.modeling.image_encoder import get_encoder_attention_parameters
+from galore import GaLore
+
 
 def get_tensor_unique_values(input_tensor):
     input_tensor_cpu = input_tensor.cpu() if input_tensor.is_cuda else input_tensor
@@ -59,11 +61,9 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     #     print(name, param.shape, param.requires_grad)
 
     # Debug prints to check if model has trainable parameters
-    total_params = sum(p.numel() for p in model.model.parameters())
-    trainable_params = sum(p.numel() for p in model.model.parameters() if p.requires_grad)
-    print(f"Total parameters: {total_params}, Trainable parameters: {trainable_params}")
+    
 
-    print(model)
+    #print(model)
     # Create an empty list to store parameters with requires_grad set to True
     import pickle
 
@@ -71,22 +71,30 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     with open('galore_params.pkl', 'rb') as f:
         galore_params = pickle.load(f)  
 
-    # Initialize an empty list to store the parameters
-    params_list = []
+    params_list = [] #list storing params
 
-    # Iterate over the galore_params list of tuples
     for item in galore_params:
-        # Extract parameter value from the tuple
         param = item[1]
-        # Check if the parameter requires gradients
+        #print(item[0])
         if param.requires_grad:
-            # Append the parameter to the params_list
             params_list.append(param)
 
+    #galore_params = get_encoder_attention_parameters(sam)
+    galore = GaLore(model, 4, 200, galore_params)
 
-    print(params_list)
-    if args.n_gpu > 1:
-        model = nn.DataParallel(model)
+    device = next(model.parameters()).device  
+    galore_params = [(name, param.to(device)) for name, param in galore_params] # moving to the device as same as model.params
+
+    
+
+
+
+    for name, param in model.named_parameters():
+        if param.requires_grad==False:
+            print(f"{name} NOOO")
+        else:
+            print(f"{name} YESS")
+
     model.train()
     ce_loss = CrossEntropyLoss()
     dice_loss = DiceLoss(num_classes + 1)
@@ -127,6 +135,7 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
             print(f"label batch: {len(label_batch)} and image batch: {len(image_batch)}")
             print(f"Unique values: {get_tensor_unique_values(sampled_batch['low_res_label'])}")
             low_res_label_batch = sampled_batch['low_res_label']
+            print(device)
             # print("Printing image.......")
             # #print(sampled_batch['label'][15])
             # print(f"For labels:::::::----")
@@ -145,7 +154,23 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
             loss, loss_ce, loss_dice = calc_loss(outputs, low_res_label_batch, ce_loss, dice_loss, args.dice_param)
             optimizer.zero_grad()
             loss.backward()
-            optimizer.step()
+
+            #optimizer.step()
+                        
+            # update func for galore
+
+            # def update_func():
+            #     optimizer.step()
+            def update_func(lor_grad):
+                def closure():
+                    optimizer.step()
+                    return lor_grad
+
+                return closure()
+        
+            # galore step updte
+            galore.step(update_func)
+
             if args.warmup and iter_num < args.warmup_period:
                 lr_ = base_lr * ((iter_num + 1) / args.warmup_period)
                 for param_group in optimizer.param_groups:

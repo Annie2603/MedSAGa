@@ -111,8 +111,8 @@ if __name__ == "__main__":
     # Save galore_params list to a pickle file
     with open('galore_params.pkl', 'wb') as f:
         pickle.dump(galore_params, f)
-    net = GaLore(model=sam, rank=4, update_freq=200, galore_params= galore_params)
-
+    galore = GaLore(model=sam, rank=4, update_freq=200, galore_params= galore_params)
+    net = sam
     # net = LoRA_Sam(sam, args.rank).cuda()
     if args.lora_ckpt is not None:
         net.load_lora_parameters(args.lora_ckpt)

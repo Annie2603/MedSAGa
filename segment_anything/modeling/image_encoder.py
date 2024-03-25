@@ -396,34 +396,14 @@ class PatchEmbed(nn.Module):
         return x
 
 def get_encoder_attention_parameters(model):
-    """
-    Get parameters of all attention blocks in the encoder part of SAM.
-
-    Args:
-        model (Sam): SAM model instance.
-
-    Returns:
-        list: List of tuples containing (parameter_name, parameter_value) of attention blocks.
-    """
+    # returns list of tuples
     encoder = model.image_encoder
     attention_parameters = []
 
-    for block in encoder.blocks:
-        attention_dict = {}
-        attention_dict['qkv_weight'] = block.attn.qkv.weight
-        attention_dict['qkv_bias'] = block.attn.qkv.bias
-        attention_dict['proj_weight'] = block.attn.proj.weight
-        attention_dict['proj_bias'] = block.attn.proj.bias
-
-        if block.attn.use_rel_pos:
-            attention_dict['rel_pos_h'] = block.attn.rel_pos_h
-            attention_dict['rel_pos_w'] = block.attn.rel_pos_w
-
-        attention_parameters.append(attention_dict)
-
-    # Convert dictionaries to list of tuples
-    attention_parameters = [(key, value) for param_dict in attention_parameters for key, value in param_dict.items()]
-    #print(len(attention_parameters))
-    # for name, param in model.named_parameters():
-    #     print(f"Parameter {name} requires gradients: {param.requires_grad}")
+    for name, param in model.named_parameters():
+        if 'blocks' in name and 'attn' in name:
+            attention_parameters.append((name, param))
+    
+    # for name, param in attention_parameters:
+    #     print(name)
     return attention_parameters
