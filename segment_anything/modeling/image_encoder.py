@@ -424,4 +424,6 @@ def get_encoder_attention_parameters(model):
     # Convert dictionaries to list of tuples
     attention_parameters = [(key, value) for param_dict in attention_parameters for key, value in param_dict.items()]
     #print(len(attention_parameters))
+    # for name, param in model.named_parameters():
+    #     print(f"Parameter {name} requires gradients: {param.requires_grad}")
     return attention_parameters

@@ -1,5 +1,6 @@
 from segment_anything import build_sam, SamPredictor
 from segment_anything import sam_model_registry
+from segment_anything.modeling.image_encoder import get_encoder_attention_parameters
 
 import math
 import torch
@@ -79,10 +80,13 @@ class LoRA_Sam(nn.Module):
         # create for storage, then we can init them or load weights
         self.w_As = []  # These are linear layers
         self.w_Bs = []
-
+        galore_params = get_encoder_attention_parameters(sam_model)
         #lets freeze first
         for param in sam_model.image_encoder.parameters():
-           param.requires_grad = False
+            if param in galore_params:
+                param.requires_grad=True
+            else:
+                param.requires_grad=False
 
         # Here, we do the surgery
         for t_layer_i, blk in enumerate(sam_model.image_encoder.blocks):

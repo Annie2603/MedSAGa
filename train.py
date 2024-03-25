@@ -105,8 +105,8 @@ if __name__ == "__main__":
     #sam = pkg.LoRA_Sam(sam, args.rank).cuda()
     
     galore_params = get_encoder_attention_parameters(sam)
-    net = GaLore(model=sam, rank=4, update_freq=200, galore_params= galore_params)
-
+    net = GaLore(model=sam, rank=4, update_freq=200, galore_params= galore_params)\
+    
     # net = LoRA_Sam(sam, args.rank).cuda()
     if args.lora_ckpt is not None:
         net.load_lora_parameters(args.lora_ckpt)

@@ -135,6 +135,8 @@ def _build_sam(
         except:
             new_state_dict = load_from(sam, state_dict, image_size, vit_patch_size)
             sam.load_state_dict(new_state_dict)
+    # for name, param in sam.named_parameters():
+    #     print(f"Parameter {name} requires gradients: {param.requires_grad}")
     return sam, image_embedding_size
 
 

@@ -17,7 +17,7 @@ from tqdm import tqdm
 from utils import DiceLoss, Focal_loss
 from torchvision import transforms
 from icecream import ic
-
+from torchsummary import summary
 
 def get_tensor_unique_values(input_tensor):
     input_tensor_cpu = input_tensor.cpu() if input_tensor.is_cuda else input_tensor
@@ -54,9 +54,24 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
                              worker_init_fn=worker_init_fn)
     
     # print("List of parameters:")
-    # for name, param in model.params_list():
+    # for name, param in model.params_list:
     #     print(name, param.shape, param.requires_grad)
 
+    # Debug prints to check if model has trainable parameters
+    total_params = sum(p.numel() for p in model.model.parameters())
+    trainable_params = sum(p.numel() for p in model.model.parameters() if p.requires_grad)
+    print(f"Total parameters: {total_params}, Trainable parameters: {trainable_params}")
+
+    print(model)
+    # Create an empty list to store parameters with requires_grad set to True
+    params_list = []
+
+    # Iterate through the parameters of the model and save the ones with requires_grad set to True
+    for name, param in model.params_list:
+        if param.requires_grad:
+            params_list.append(param)
+
+    print(params_list)
     if args.n_gpu > 1:
         model = nn.DataParallel(model)
     model.train()
@@ -67,9 +82,16 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     else:
         b_lr = base_lr
     if args.AdamW:
-        optimizer = optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+        #optimizer = optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+        optimizer = optim.AdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+
+
     else:
-        optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, momentum=0.9, weight_decay=0.0001)  # Even pass the model.parameters(), the `requires_grad=False` layers will not update
+        #optimizer = optim.SGD(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, momentum=0.9, weight_decay=0.0001)  # Even pass the model.parameters(), the `requires_grad=False` layers will not update
+        optimizer = optim.AdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+
+
+
     writer = SummaryWriter(snapshot_path + '/log')
     iter_num = 0
     max_epoch = args.max_epochs
