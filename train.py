@@ -136,3 +136,4 @@ if __name__ == "__main__":
 
     trainer  = {args.dataset : trainer_synapse}   
     trainer[dataset_name](args, net, snapshot_path, multimask_output, low_res)
+
