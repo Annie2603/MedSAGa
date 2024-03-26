@@ -65,18 +65,26 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
 
     params_list = [] #list storing params
 
+    galore_params = get_encoder_attention_parameters(model)
+
     for item in galore_params:
         param = item[1]
         #print(item[0])
         if param.requires_grad:
             params_list.append(param)
 
+
+    galore_params_names = [name for name, _ in galore_params]
+    for name, param in model.named_parameters():
+        if name not in galore_params_names:
+            param.requires_grad = False
+
     device = next(model.parameters()).device  
 
     galore_params = [(name, param.to(device)) for name, param in galore_params] # moving to the device as same as model.params
 
 
-    galore = GaLore(model, 4, 200)
+    galore = GaLore(model, 4, 200, galore_params)
 
     
 

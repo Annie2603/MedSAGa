@@ -13,6 +13,7 @@ class GaLore(nn.Module):
         self.n_step = 0
         if galore_params is not None:
             self.params_list = galore_params
+            print(f"Initial length of params_list: {len(list(self.params_list))}")
         else:
             self.params_list = self.model.named_parameters()
         # self.params_list = [(name, param) for name, param in params_list_temp if param.requires_grad and len(param.shape) > 1]
