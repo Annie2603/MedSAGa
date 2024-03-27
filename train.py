@@ -54,6 +54,7 @@ parser.add_argument('--warmup_period', type=int, default=250,
 parser.add_argument('--AdamW', action='store_true', help='If activated, use AdamW to finetune SAM model')
 parser.add_argument('--module', type=str, default='sam_lora_image_encoder')
 parser.add_argument('--dice_param', type=float, default=0.8)
+parser.add_argument('--module_update', type=str, choices=['image_encoder', 'image_encoder_attn','all'], default='image_encoder')  # new argument
 args = parser.parse_args()
 
 if __name__ == "__main__":
@@ -106,11 +107,11 @@ if __name__ == "__main__":
     
     galore_params = get_encoder_attention_parameters(sam)
     
-    import pickle
+    # import pickle
 
-    # Save galore_params list to a pickle file
-    with open('galore_params.pkl', 'wb') as f:
-        pickle.dump(galore_params, f)
+    # # Save galore_params list to a pickle file
+    # with open('galore_params.pkl', 'wb') as f:
+    #     pickle.dump(galore_params, f)
     galore = GaLore(model=sam, rank=4, update_freq=200, galore_params= galore_params)
     net = sam
     # net = LoRA_Sam(sam, args.rank).cuda()

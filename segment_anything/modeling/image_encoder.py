@@ -407,3 +407,18 @@ def get_encoder_attention_parameters(model):
     # for name, param in attention_parameters:
     #     print(name)
     return attention_parameters
+
+
+def get_all_encoder_params(model):
+    encoder = model.image_encoder
+    params=[]
+    for name,param in model.named_parameters():
+        params.append((name,param))
+    return params
+
+
+def get_all_model_params(model):
+    params = []
+    for name,param in model.named_parameters():
+        params.append((name,param))
+    return params

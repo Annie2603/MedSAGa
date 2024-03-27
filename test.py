@@ -17,8 +17,9 @@ from datasets.dataset_synapse import Synapse_dataset
 from icecream import ic
 
 # Modify the class_to_name according to your dataset
-#class_to_name = {1: 'spleen', 2: 'right kidney', 3: 'left kidney', 4: 'gallbladder', 5: 'liver', 6: 'stomach', 7: 'aorta', 8: 'pancreas'}
-class_to_name  = {1: 'NCR/NET', 2: 'ED', 3: 'N/A*', 4: 'ET'} # This is according to BraTS 2020
+class_to_name = {1: 'spleen', 2: 'right kidney', 3: 'left kidney', 4: 'gallbladder', 5: 'liver', 6: 'stomach', 7: 'aorta', 8: 'pancreas'}
+# class_to_name  = {1: 'NCR/NET', 2: 'ED', 3: 'N/A*', 4: 'ET'} # This is according to BraTS 2020
+#class_to_name = {1: 'left lung', 2: 'right lung', 3: 'heart'}
 
 def inference(args, multimask_output, db_config, model, test_save_path=None):
     db_test = db_config['Dataset'](base_dir=args.volume_path, list_dir=args.list_dir, split='test_vol')
@@ -27,7 +28,8 @@ def inference(args, multimask_output, db_config, model, test_save_path=None):
     model.eval()
     metric_list = 0.0
     for i_batch, sampled_batch in tqdm(enumerate(testloader)):
-        h, w = sampled_batch['image'].shape[2:]
+        print(f"sampled batch {sampled_batch['image'].shape}")
+        # h, w = sampled_batch['image']#.shape[2:]
         image, label, case_name = sampled_batch['image'], sampled_batch['label'], sampled_batch['case_name'][0]
         # print(f"image 1 : {sampled_batch['image'][0]}")
         # print(f"label 1 : {sampled_batch['label'][0]}")
@@ -77,7 +79,7 @@ if __name__ == '__main__':
     parser.add_argument('--deterministic', type=int, default=1, help='whether use deterministic training')
     parser.add_argument('--ckpt', type=str, default='checkpoints/sam_vit_b_01ec64.pth',
                         help='Pretrained checkpoint')
-    parser.add_argument('--lora_ckpt', type=str, default='checkpoints/epoch_159.pth', help='The checkpoint from LoRA')
+    #parser.add_argument('--lora_ckpt', type=str, default='checkpoints/epoch_159.pth', help='The checkpoint from LoRA')
     parser.add_argument('--vit_name', type=str, default='vit_b', help='Select one vit model')
     parser.add_argument('--rank', type=int, default=4, help='Rank for LoRA adaptation')
     parser.add_argument('--module', type=str, default='sam_lora_image_encoder')
@@ -118,12 +120,13 @@ if __name__ == '__main__':
                                                                     num_classes=args.num_classes,
                                                                     checkpoint=args.ckpt, pixel_mean=[0, 0, 0],
                                                                     pixel_std=[1, 1, 1])
-    
-    pkg = import_module(args.module)
-    net = pkg.LoRA_Sam(sam, args.rank).cuda()
+    # Load the saved state dictionary into the model
+    sam_trained_ckpt = torch.load(args.ckpt)
+    #sam.load_state_dict(sam_state_dict['model_state_dict'])
+    sam_model = sam_trained_ckpt["model"]
 
-    assert args.lora_ckpt is not None
-    net.load_lora_parameters(args.lora_ckpt)
+    # Now you can use the loaded model for inference
+    net = sam_model.cuda()
 
     if args.num_classes > 1:
         multimask_output = True

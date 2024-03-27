@@ -16,6 +16,8 @@ class GaLore(nn.Module):
             print(f"Initial length of params_list: {len(list(self.params_list))}")
         else:
             self.params_list = self.model.named_parameters()
+            
+        print(len(list(self.model.named_parameters())))
         # self.params_list = [(name, param) for name, param in params_list_temp if param.requires_grad and len(param.shape) > 1]
         self.P = {}
         self.Q = {}
@@ -36,6 +38,7 @@ class GaLore(nn.Module):
                 nn.init.orthogonal_(self.P[name])
                 nn.init.orthogonal_(self.Q[name])
         print(f"initially the count is {count}")
+
     def project(self, grad, name):
         # print(f"the grad is {grad}")
         # print(f"Shape of grad tensor: {grad.shape}")

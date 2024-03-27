@@ -22,3 +22,5 @@ test_output_synapse/
 train_synapse/
 BraTS20/
 output_plots/
+testset_synapse/
+trainset_synapse/

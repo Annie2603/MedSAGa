@@ -1,0 +1,760 @@
+nohup: ignoring input
+True
+<class 'int'>
+Model device: cuda:0
+Initial length of params_list: 72
+343
+initially the count is 48
+Namespace(AdamW=True, base_lr=0.005, batch_size=12, ckpt='checkpoints/sam_vit_b_01ec64.pth', dataset='synapse', deterministic=1, dice_param=0.8, exp='synapse_240', img_size=240, is_pretrain=True, list_dir='./lists/lists_Synapse', lora_ckpt=None, max_epochs=2, max_iterations=30000, module='sam_lora_image_encoder', n_gpu=3, num_classes=8, output='./synapse_output', rank=4, root_path='./trainset_synapse', seed=1234, stop_epoch=160, vit_name='vit_b', warmup=True, warmup_period=250)
+The length of train set is: 2211
+Model device: cuda:0
+Initial length of params_list: 72
+343
+initially the count is 48
+62 iterations per epoch. 124 max iterations 
+  0%|                                           | 0/2 [00:00<?, ?it/s]label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 1 : loss : 2.125778, loss_ce: 6.861397, loss_dice: 0.941873
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 2 : loss : 1.283874, loss_ce: 2.625208, loss_dice: 0.948540
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 3 : loss : 0.904316, loss_ce: 0.965258, loss_dice: 0.889080
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 4 : loss : 1.119181, loss_ce: 1.939400, loss_dice: 0.914126
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 5 : loss : 1.094581, loss_ce: 1.782387, loss_dice: 0.922629
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 6 : loss : 7.418314, loss_ce: 33.241405, loss_dice: 0.962542
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 7 : loss : 3.011290, loss_ce: 11.136555, loss_dice: 0.979974
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 8 : loss : 1.317194, loss_ce: 2.800579, loss_dice: 0.946348
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 9 : loss : 2.603746, loss_ce: 9.026605, loss_dice: 0.998032
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 10 : loss : 0.963808, loss_ce: 1.192030, loss_dice: 0.906753
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 11 : loss : 0.834043, loss_ce: 0.720621, loss_dice: 0.862398
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 12 : loss : 0.748853, loss_ce: 0.220575, loss_dice: 0.880923
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 13 : loss : 0.766107, loss_ce: 0.301680, loss_dice: 0.882214
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 14 : loss : 0.787228, loss_ce: 0.418468, loss_dice: 0.879418
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 15 : loss : 0.758031, loss_ce: 0.337141, loss_dice: 0.863253
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 16 : loss : 0.750816, loss_ce: 0.275262, loss_dice: 0.869705
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 17 : loss : 0.759682, loss_ce: 0.320282, loss_dice: 0.869532
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 18 : loss : 0.767443, loss_ce: 0.399120, loss_dice: 0.859523
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 19 : loss : 0.737204, loss_ce: 0.178242, loss_dice: 0.876944
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 20 : loss : 0.751819, loss_ce: 0.272257, loss_dice: 0.871710
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 21 : loss : 0.761671, loss_ce: 0.380330, loss_dice: 0.857006
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 22 : loss : 0.788356, loss_ce: 0.396604, loss_dice: 0.886294
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 23 : loss : 0.756851, loss_ce: 0.318881, loss_dice: 0.866344
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 24 : loss : 0.765276, loss_ce: 0.404316, loss_dice: 0.855516
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 25 : loss : 0.774073, loss_ce: 0.322032, loss_dice: 0.887083
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 26 : loss : 0.753806, loss_ce: 0.351097, loss_dice: 0.854484
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 27 : loss : 0.775531, loss_ce: 0.327723, loss_dice: 0.887482
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 28 : loss : 0.771234, loss_ce: 0.343188, loss_dice: 0.878245
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 29 : loss : 0.756527, loss_ce: 0.331042, loss_dice: 0.862899
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 30 : loss : 0.775336, loss_ce: 0.336373, loss_dice: 0.885077
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 31 : loss : 0.771575, loss_ce: 0.403084, loss_dice: 0.863698
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 32 : loss : 0.912602, loss_ce: 1.011467, loss_dice: 0.887886
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 33 : loss : 1.504165, loss_ce: 3.653605, loss_dice: 0.966806
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 34 : loss : 1.201519, loss_ce: 2.280787, loss_dice: 0.931702
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 35 : loss : 0.877127, loss_ce: 0.821781, loss_dice: 0.890963
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 36 : loss : 0.860692, loss_ce: 0.737771, loss_dice: 0.891423
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 37 : loss : 0.791134, loss_ce: 0.426570, loss_dice: 0.882276
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 38 : loss : 0.844988, loss_ce: 0.722080, loss_dice: 0.875715
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 39 : loss : 1.339449, loss_ce: 2.801472, loss_dice: 0.973943
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 40 : loss : 0.769181, loss_ce: 0.337048, loss_dice: 0.877215
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 41 : loss : 0.779477, loss_ce: 0.410094, loss_dice: 0.871822
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 42 : loss : 0.789450, loss_ce: 0.401158, loss_dice: 0.886522
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 43 : loss : 0.766535, loss_ce: 0.322573, loss_dice: 0.877525
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 44 : loss : 0.762277, loss_ce: 0.338186, loss_dice: 0.868299
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 45 : loss : 0.760207, loss_ce: 0.264187, loss_dice: 0.884212
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 46 : loss : 0.767818, loss_ce: 0.340763, loss_dice: 0.874581
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 47 : loss : 0.757903, loss_ce: 0.334999, loss_dice: 0.863629
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 48 : loss : 0.820081, loss_ce: 0.537991, loss_dice: 0.890603
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 49 : loss : 0.774774, loss_ce: 0.343959, loss_dice: 0.882477
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 50 : loss : 0.756891, loss_ce: 0.357495, loss_dice: 0.856740
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 51 : loss : 0.773441, loss_ce: 0.333759, loss_dice: 0.883361
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 52 : loss : 0.755063, loss_ce: 0.321886, loss_dice: 0.863357
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 53 : loss : 0.762341, loss_ce: 0.380990, loss_dice: 0.857678
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 54 : loss : 0.764423, loss_ce: 0.295476, loss_dice: 0.881659
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 55 : loss : 0.752172, loss_ce: 0.297547, loss_dice: 0.865828
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 56 : loss : 0.750803, loss_ce: 0.284875, loss_dice: 0.867285
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 57 : loss : 0.756877, loss_ce: 0.352598, loss_dice: 0.857947
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 58 : loss : 0.761987, loss_ce: 0.285576, loss_dice: 0.881090
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 59 : loss : 0.745945, loss_ce: 0.290657, loss_dice: 0.859766
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 60 : loss : 0.766397, loss_ce: 0.296136, loss_dice: 0.883963
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 61 : loss : 0.739940, loss_ce: 0.257029, loss_dice: 0.860667
+label batch: 15 and image batch: 15
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 62 : loss : 0.770863, loss_ce: 0.372930, loss_dice: 0.870346
+ 50%|█████████████████▌                 | 1/2 [00:48<00:48, 48.80s/it]label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 63 : loss : 0.784848, loss_ce: 0.523341, loss_dice: 0.850224
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 64 : loss : 0.767533, loss_ce: 0.287098, loss_dice: 0.887642
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 65 : loss : 0.750827, loss_ce: 0.291595, loss_dice: 0.865635
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 66 : loss : 0.780724, loss_ce: 0.342265, loss_dice: 0.890339
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 67 : loss : 0.750753, loss_ce: 0.214322, loss_dice: 0.884860
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 68 : loss : 0.760665, loss_ce: 0.328478, loss_dice: 0.868712
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 69 : loss : 0.758375, loss_ce: 0.309534, loss_dice: 0.870585
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 70 : loss : 0.748644, loss_ce: 0.249311, loss_dice: 0.873477
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 71 : loss : 0.738101, loss_ce: 0.227750, loss_dice: 0.865689
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 72 : loss : 0.752448, loss_ce: 0.251772, loss_dice: 0.877618
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 73 : loss : 0.761865, loss_ce: 0.387053, loss_dice: 0.855568
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 74 : loss : 0.801327, loss_ce: 0.445867, loss_dice: 0.890192
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 75 : loss : 0.763156, loss_ce: 0.393753, loss_dice: 0.855506
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 76 : loss : 0.743576, loss_ce: 0.230334, loss_dice: 0.871886
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 77 : loss : 0.740787, loss_ce: 0.264909, loss_dice: 0.859757
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 78 : loss : 0.750825, loss_ce: 0.294139, loss_dice: 0.864996
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 79 : loss : 0.751596, loss_ce: 0.332136, loss_dice: 0.856461
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 80 : loss : 0.756271, loss_ce: 0.261761, loss_dice: 0.879899
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 81 : loss : 0.819108, loss_ce: 0.687419, loss_dice: 0.852030
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 82 : loss : 1.895080, loss_ce: 5.629163, loss_dice: 0.961559
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 83 : loss : 1.313325, loss_ce: 2.849884, loss_dice: 0.929186
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 84 : loss : 17.356264, loss_ce: 82.904854, loss_dice: 0.969117
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 85 : loss : 2.429981, loss_ce: 8.292012, loss_dice: 0.964474
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 86 : loss : 1.304539, loss_ce: 2.769273, loss_dice: 0.938356
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 87 : loss : 1.243163, loss_ce: 2.437504, loss_dice: 0.944578
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 88 : loss : 1.129143, loss_ce: 1.949518, loss_dice: 0.924049
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 89 : loss : 1.069372, loss_ce: 1.718410, loss_dice: 0.907113
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 90 : loss : 1.018335, loss_ce: 1.479995, loss_dice: 0.902921
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 91 : loss : 0.982522, loss_ce: 1.298284, loss_dice: 0.903581
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 92 : loss : 0.961631, loss_ce: 1.212676, loss_dice: 0.898869
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 93 : loss : 0.947770, loss_ce: 1.176521, loss_dice: 0.890583
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 94 : loss : 0.971794, loss_ce: 1.257436, loss_dice: 0.900384
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 95 : loss : 0.940537, loss_ce: 1.120155, loss_dice: 0.895633
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 96 : loss : 0.898437, loss_ce: 0.958641, loss_dice: 0.883386
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 97 : loss : 0.874953, loss_ce: 0.864682, loss_dice: 0.877521
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 98 : loss : 0.855002, loss_ce: 0.760387, loss_dice: 0.878656
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 99 : loss : 0.837593, loss_ce: 0.688987, loss_dice: 0.874745
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 100 : loss : 0.825069, loss_ce: 0.611582, loss_dice: 0.878440
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 101 : loss : 0.841440, loss_ce: 0.683858, loss_dice: 0.880836
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 102 : loss : 0.873666, loss_ce: 0.858208, loss_dice: 0.877530
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 103 : loss : 0.801927, loss_ce: 0.491105, loss_dice: 0.879633
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 104 : loss : 0.777361, loss_ce: 0.383957, loss_dice: 0.875712
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 105 : loss : 0.770904, loss_ce: 0.347839, loss_dice: 0.876670
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 106 : loss : 0.783225, loss_ce: 0.409388, loss_dice: 0.876684
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 107 : loss : 0.758681, loss_ce: 0.308941, loss_dice: 0.871116
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 108 : loss : 0.758141, loss_ce: 0.296863, loss_dice: 0.873461
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 109 : loss : 0.769069, loss_ce: 0.353366, loss_dice: 0.872994
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 110 : loss : 0.776442, loss_ce: 0.399302, loss_dice: 0.870727
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 111 : loss : 0.753266, loss_ce: 0.289537, loss_dice: 0.869198
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 112 : loss : 0.764204, loss_ce: 0.332337, loss_dice: 0.872171
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 113 : loss : 0.749958, loss_ce: 0.277434, loss_dice: 0.868089
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 114 : loss : 0.767220, loss_ce: 0.354041, loss_dice: 0.870515
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 115 : loss : 0.753081, loss_ce: 0.294255, loss_dice: 0.867788
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 116 : loss : 0.754202, loss_ce: 0.275031, loss_dice: 0.873995
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 117 : loss : 0.773917, loss_ce: 0.435958, loss_dice: 0.858407
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 118 : loss : 0.767931, loss_ce: 0.324048, loss_dice: 0.878902
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 119 : loss : 0.758288, loss_ce: 0.309115, loss_dice: 0.870581
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 120 : loss : 0.751754, loss_ce: 0.303745, loss_dice: 0.863756
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 121 : loss : 0.742301, loss_ce: 0.233391, loss_dice: 0.869528
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 122 : loss : 0.772969, loss_ce: 0.398600, loss_dice: 0.866561
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 123 : loss : 0.755988, loss_ce: 0.362192, loss_dice: 0.854437
+label batch: 15 and image batch: 15
+Unique values: [0 1 2 3 4 5 6 7 8]
+cuda:0
+the length of the params list is 72
+later the count is 48
+iteration 124 : loss : 0.801389, loss_ce: 0.536334, loss_dice: 0.867653
+save model to ./synapse_output/synapse_240_pretrain_vit_b_epo2_bs12_lr0.005/epoch_1.pth
+ 50%|█████████████████▌                 | 1/2 [01:32<01:32, 92.94s/it]

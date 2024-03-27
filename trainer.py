@@ -18,7 +18,7 @@ from utils import DiceLoss, Focal_loss
 from torchvision import transforms
 from icecream import ic
 from torchsummary import summary
-from segment_anything.modeling.image_encoder import get_encoder_attention_parameters
+from segment_anything.modeling.image_encoder import get_encoder_attention_parameters, get_all_model_params, get_all_encoder_params
 from galore import GaLore
 
 
@@ -60,12 +60,17 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     import pickle
 
     # Load galore_params list from the pickle file
-    with open('galore_params.pkl', 'rb') as f:
-        galore_params = pickle.load(f)  
+    # with open('galore_params.pkl', 'rb') as f:
+    #     galore_params = pickle.load(f)  
 
     params_list = [] #list storing params
 
-    galore_params = get_encoder_attention_parameters(model)
+    if args.module_update=="image_encoder_attn":
+        galore_params = get_encoder_attention_parameters(model)
+    elif args.module_update=="all":
+        galore_params=get_all_model_params(model)
+    elif args.module_update=="image_encoder":
+        galore_params=get_all_encoder_params(model)
 
     for item in galore_params:
         param = item[1]
@@ -85,16 +90,17 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
 
 
     galore = GaLore(model, 4, 200, galore_params)
+    #galore = GaLore(model, 4, 200)
 
     
 
 
 
-    for name, param in model.named_parameters():
-        if param.requires_grad==False:
-            print(f"{name} NOOO")
-        else:
-            print(f"{name} YESS")
+    # for name, param in model.named_parameters():
+    #     if param.requires_grad==False:
+    #         print(f"{name} NOOO")
+    #     else:
+    #         print(f"{name} YESS")
 
     model.train()
     ce_loss = CrossEntropyLoss()
@@ -192,26 +198,30 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
             #     model.module.save_lora_parameters(save_mode_path)
             # logging.info("save model to {}".format(save_mode_path))
             torch.save(
-                    {
-                        "model_state_dict": model.state_dict(),
-                        "optimiser_state_dict": optimizer.state_dict(),
-                        "epoch": epoch_num,
-                    },
-                    save_mode_path,)
+                {
+                    "model": model,
+                    "optimizer_state_dict": optimizer.state_dict(),
+                    "epoch": epoch_num,
+                },
+                save_mode_path,
+            )
+
+
 
         if epoch_num >= max_epoch - 1 or epoch_num >= stop_epoch - 1:
             save_mode_path = os.path.join(snapshot_path, 'epoch_' + str(epoch_num) + '.pth')
-            # try:
+            # try:trainer.py
             #     model.save_lora_parameters(save_mode_path)
             # except:
             #     model.module.save_lora_parameters(save_mode_path)
             torch.save(
-                    {
-                        "model_state_dict": model.state_dict(),
-                        "optimiser_state_dict": optimizer.state_dict(),
-                        "epoch": epoch_num,
-                    },
-                    save_mode_path,)
+                {
+                    "model": model,
+                    "optimizer_state_dict": optimizer.state_dict(),
+                    "epoch": epoch_num,
+                },
+                save_mode_path,
+            )
             logging.info("save model to {}".format(save_mode_path))
             iterator.close()
             break
