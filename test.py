@@ -120,13 +120,9 @@ if __name__ == '__main__':
                                                                     num_classes=args.num_classes,
                                                                     checkpoint=args.ckpt, pixel_mean=[0, 0, 0],
                                                                     pixel_std=[1, 1, 1])
-    # Load the saved state dictionary into the model
-    sam_trained_ckpt = torch.load(args.ckpt)
-    #sam.load_state_dict(sam_state_dict['model_state_dict'])
-    sam_model = sam_trained_ckpt["model"]
+    
+    net = sam.cuda()
 
-    # Now you can use the loaded model for inference
-    net = sam_model.cuda()
 
     if args.num_classes > 1:
         multimask_output = True

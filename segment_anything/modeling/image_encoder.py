@@ -411,10 +411,11 @@ def get_encoder_attention_parameters(model):
 
 def get_all_encoder_params(model):
     encoder = model.image_encoder
-    params=[]
+    params_list=[]
     for name,param in model.named_parameters():
-        params.append((name,param))
-    return params
+        if 'blocks' in name and 'image_encoder' in name:
+            params_list.append((name,param))
+    return params_list
 
 
 def get_all_model_params(model):

@@ -63,7 +63,8 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     # with open('galore_params.pkl', 'rb') as f:
     #     galore_params = pickle.load(f)  
 
-    params_list = [] #list storing params
+    params_list=[]
+    names_list=[] # list to store the names of thje corresponding params
 
     if args.module_update=="image_encoder_attn":
         galore_params = get_encoder_attention_parameters(model)
@@ -72,13 +73,13 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     elif args.module_update=="image_encoder":
         galore_params=get_all_encoder_params(model)
 
-    for item in galore_params:
-        param = item[1]
-        #print(item[0])
-        if param.requires_grad:
-            params_list.append(param)
+    for name, param in galore_params:
+        names_list.append(name)
 
-
+    print(f"The params to be optimised are : {names_list}")
+    for name,param in galore_params:
+        params_list.append(param)
+        
     galore_params_names = [name for name, _ in galore_params]
     for name, param in model.named_parameters():
         if name not in galore_params_names:
@@ -198,13 +199,12 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
             #     model.module.save_lora_parameters(save_mode_path)
             # logging.info("save model to {}".format(save_mode_path))
             torch.save(
-                {
-                    "model": model,
-                    "optimizer_state_dict": optimizer.state_dict(),
-                    "epoch": epoch_num,
-                },
-                save_mode_path,
-            )
+                    {
+                        "model_state_dict": model.state_dict(),
+                        "optimiser_state_dict": optimizer.state_dict(),
+                        "epoch": epoch_num,
+                    },
+                    save_mode_path,)
 
 
 
@@ -215,13 +215,12 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
             # except:
             #     model.module.save_lora_parameters(save_mode_path)
             torch.save(
-                {
-                    "model": model,
-                    "optimizer_state_dict": optimizer.state_dict(),
-                    "epoch": epoch_num,
-                },
-                save_mode_path,
-            )
+                    {
+                        "model_state_dict": model.state_dict(),
+                        "optimiser_state_dict": optimizer.state_dict(),
+                        "epoch": epoch_num,
+                    },
+                    save_mode_path,)
             logging.info("save model to {}".format(save_mode_path))
             iterator.close()
             break
