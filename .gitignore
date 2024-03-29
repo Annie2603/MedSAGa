@@ -1,0 +1,31 @@
+# Exclude specific files
+run.md
+train_npz_new_224.zip
+brats20-dataset-training-validation.zip
+image.nii
+label.nii
+lol.py
+galore_params.pkl
+test_vol_h5.zip
+
+# Exclude directories
+BraTS_output/
+output/
+testset/
+trainset/
+__pycache__/
+checkpoints/
+BraTS20_output/
+synapse_output/
+test_output_BraTS20/
+train_npz_new_224/
+test_output_synapse/
+train_synapse/
+BraTS20/
+output_plots/
+testset_synapse/
+trainset_synapse/
+synapse_test/
+test_folder/
+test_output/
+testset_brats/

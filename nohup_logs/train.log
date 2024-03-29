@@ -1,0 +1,61 @@
+nohup: ignoring input
+<class 'int'>
+Namespace(AdamW=True, base_lr=0.005, batch_size=12, ckpt='checkpoints/sam_vit_b_01ec64.pth', dataset='BraTS', deterministic=1, dice_param=0.8, exp='BraTS_240', img_size=240, is_pretrain=True, list_dir='./lists/lists_BraTS20', lora_ckpt=None, max_epochs=2, max_iterations=30000, module='sam_lora_image_encoder', n_gpu=2, num_classes=4, output='./BraTS_output', rank=4, root_path='./trainset', seed=1234, stop_epoch=160, vit_name='vit_b', warmup=True, warmup_period=250)
+The length of train set is: 2790
+117 iterations per epoch. 234 max iterations 
+  0%|                                           | 0/2 [00:00<?, ?it/s]  0%|                                           | 0/2 [00:10<?, ?it/s]
+label batch: 24 and image batch: 24
+Unique values: [0 1 2 4]
+Traceback (most recent call last):
+  File "train.py", line 125, in <module>
+    trainer[dataset_name](args, net, snapshot_path, multimask_output, low_res)
+  File "/home/navyansh/Imp/SAMed/trainer.py", line 102, in trainer_synapse
+    outputs = model(image_batch, multimask_output, args.img_size)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 168, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 178, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 86, in parallel_apply
+    output.reraise()
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/_utils.py", line 425, in reraise
+    raise self.exc_type(msg)
+RuntimeError: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 61, in _worker
+    output = module(*input, **kwargs)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/navyansh/Imp/SAMed/sam_lora_image_encoder.py", line 187, in forward
+    return self.sam(batched_input, multimask_output, image_size)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/navyansh/Imp/SAMed/segment_anything/modeling/sam.py", line 58, in forward
+    outputs = self.forward_train(batched_input, multimask_output, image_size)
+  File "/home/navyansh/Imp/SAMed/segment_anything/modeling/sam.py", line 63, in forward_train
+    image_embeddings = self.image_encoder(input_images)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/navyansh/Imp/SAMed/segment_anything/modeling/image_encoder.py", line 113, in forward
+    x = blk(x)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/navyansh/Imp/SAMed/segment_anything/modeling/image_encoder.py", line 175, in forward
+    x = self.attn(x)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/navyansh/Imp/SAMed/segment_anything/modeling/image_encoder.py", line 228, in forward
+    qkv = self.qkv(x).reshape(B, H * W, 3, self.num_heads, -1).permute(2, 0, 3, 1, 4)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/navyansh/Imp/SAMed/sam_lora_image_encoder.py", line 45, in forward
+    new_v = self.linear_b_v(self.linear_a_v(x))
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/home/navyansh/Imp/SAMed/sam/lib/python3.8/site-packages/torch/nn/functional.py", line 1847, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: CUDA out of memory. Tried to allocate 14.00 MiB (GPU 0; 47.53 GiB total capacity; 452.65 MiB already allocated; 7.12 MiB free; 496.00 MiB reserved in total by PyTorch)
+

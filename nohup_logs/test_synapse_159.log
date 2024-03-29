@@ -1,0 +1,41 @@
+nohup: ignoring input
+<class 'int'>
+<class 'int'>
+the checkpoint is ./synapse_output/synapse_240_pretrain_vit_b_epo250_bs12_lr0.005/epoch_159.pth
+Namespace(ckpt='./synapse_output/synapse_240_pretrain_vit_b_epo250_bs12_lr0.005/epoch_159.pth', config=None, dataset='synapse', deterministic=1, img_size=240, input_size=224, is_savenii=True, list_dir='./lists/lists_Synapse', module='sam_lora_image_encoder', num_classes=8, output_dir='./synapse_test/test_output_synapse_159e', rank=4, seed=1234, vit_name='vit_b', volume_path='./testset_synapse')
+12 test iterations per epoch
+0it [00:00, ?it/s]sampled batch torch.Size([1, 148, 512, 512])
+idx 0 case case0008 mean_dice 0.328097 mean_hd95 47.520348
+1it [02:21, 141.94s/it]sampled batch torch.Size([1, 89, 512, 512])
+idx 1 case case0022 mean_dice 0.647843 mean_hd95 46.527429
+2it [03:42, 105.68s/it]sampled batch torch.Size([1, 100, 512, 512])
+idx 2 case case0038 mean_dice 0.616251 mean_hd95 45.251735
+3it [05:12, 98.74s/it] sampled batch torch.Size([1, 184, 512, 512])
+idx 3 case case0036 mean_dice 0.694847 mean_hd95 25.589478
+4it [08:13, 131.08s/it]sampled batch torch.Size([1, 144, 512, 512])
+idx 4 case case0032 mean_dice 0.713473 mean_hd95 40.763158
+5it [10:30, 133.11s/it]sampled batch torch.Size([1, 139, 512, 512])
+idx 5 case case0002 mean_dice 0.672395 mean_hd95 34.913722
+6it [12:41, 132.55s/it]sampled batch torch.Size([1, 100, 512, 512])
+idx 6 case case0029 mean_dice 0.508490 mean_hd95 40.803455
+7it [14:10, 118.20s/it]sampled batch torch.Size([1, 198, 512, 512])
+idx 7 case case0003 mean_dice 0.572280 mean_hd95 70.660819
+8it [17:24, 142.27s/it]sampled batch torch.Size([1, 147, 512, 512])
+idx 8 case case0001 mean_dice 0.583559 mean_hd95 52.772792
+9it [19:51, 143.92s/it]sampled batch torch.Size([1, 140, 512, 512])
+idx 9 case case0004 mean_dice 0.586565 mean_hd95 40.707090
+10it [22:07, 141.32s/it]sampled batch torch.Size([1, 85, 512, 512])
+idx 10 case case0025 mean_dice 0.556919 mean_hd95 50.819026
+11it [23:25, 122.17s/it]sampled batch torch.Size([1, 94, 512, 512])
+idx 11 case case0035 mean_dice 0.684994 mean_hd95 37.644253
+12it [24:43, 108.61s/it]12it [24:43, 123.63s/it]Mean class 1 name spleen mean_dice 0.700345 mean_hd95 65.016742
+Mean class 2 name right kidney mean_dice 0.631059 mean_hd95 70.558363
+Mean class 3 name left kidney mean_dice 0.662456 mean_hd95 83.954018
+Mean class 4 name gallbladder mean_dice 0.316445 mean_hd95 39.799958
+Mean class 5 name liver mean_dice 0.861962 mean_hd95 24.768387
+Mean class 6 name stomach mean_dice 0.590298 mean_hd95 28.929054
+Mean class 7 name aorta mean_dice 0.666236 mean_hd95 17.190729
+Mean class 8 name pancreas mean_dice 0.348342 mean_hd95 25.764953
+Testing performance in best val model: mean_dice : 0.597143 mean_hd95 : 44.497776
+Testing Finished!
+
