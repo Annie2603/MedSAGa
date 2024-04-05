@@ -1,0 +1,279 @@
+/home/navyansh/Imp/galore-sam/GaLore/galore_torch/adamw.py:48: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+  0%|                                         | 0/250 [00:00<?, ?it/s]
+Namespace(AdamW=False, GaLoreAdamW=True, base_lr=0.005, batch_size=12, ckpt='checkpoints/sam_vit_b_01ec64.pth', dataset='BraTS', deterministic=1, dice_param=0.8, exp='BraTS_240', img_size=240, is_pretrain=True, list_dir='./lists/lists_brats', lora_ckpt=None, max_epochs=250, max_iterations=30000, module='sam_lora_image_encoder', module_update='image_encoder_attn', n_gpu=3, num_classes=1, output='./results/BraTS_output', rank=4, root_path='../datasets/brats20/morepp-train', seed=1234, stop_epoch=250, train_others=True, vit_name='vit_b', warmup=True, warmup_period=250)
+The length of train set is: 723
+The params to be optimised using GaLore are : ['image_encoder.blocks.0.attn.rel_pos_h', 'image_encoder.blocks.0.attn.rel_pos_w', 'image_encoder.blocks.0.attn.qkv.weight', 'image_encoder.blocks.0.attn.qkv.bias', 'image_encoder.blocks.0.attn.proj.weight', 'image_encoder.blocks.0.attn.proj.bias', 'image_encoder.blocks.1.attn.rel_pos_h', 'image_encoder.blocks.1.attn.rel_pos_w', 'image_encoder.blocks.1.attn.qkv.weight', 'image_encoder.blocks.1.attn.qkv.bias', 'image_encoder.blocks.1.attn.proj.weight', 'image_encoder.blocks.1.attn.proj.bias', 'image_encoder.blocks.2.attn.rel_pos_h', 'image_encoder.blocks.2.attn.rel_pos_w', 'image_encoder.blocks.2.attn.qkv.weight', 'image_encoder.blocks.2.attn.qkv.bias', 'image_encoder.blocks.2.attn.proj.weight', 'image_encoder.blocks.2.attn.proj.bias', 'image_encoder.blocks.3.attn.rel_pos_h', 'image_encoder.blocks.3.attn.rel_pos_w', 'image_encoder.blocks.3.attn.qkv.weight', 'image_encoder.blocks.3.attn.qkv.bias', 'image_encoder.blocks.3.attn.proj.weight', 'image_encoder.blocks.3.attn.proj.bias', 'image_encoder.blocks.4.attn.rel_pos_h', 'image_encoder.blocks.4.attn.rel_pos_w', 'image_encoder.blocks.4.attn.qkv.weight', 'image_encoder.blocks.4.attn.qkv.bias', 'image_encoder.blocks.4.attn.proj.weight', 'image_encoder.blocks.4.attn.proj.bias', 'image_encoder.blocks.5.attn.rel_pos_h', 'image_encoder.blocks.5.attn.rel_pos_w', 'image_encoder.blocks.5.attn.qkv.weight', 'image_encoder.blocks.5.attn.qkv.bias', 'image_encoder.blocks.5.attn.proj.weight', 'image_encoder.blocks.5.attn.proj.bias', 'image_encoder.blocks.6.attn.rel_pos_h', 'image_encoder.blocks.6.attn.rel_pos_w', 'image_encoder.blocks.6.attn.qkv.weight', 'image_encoder.blocks.6.attn.qkv.bias', 'image_encoder.blocks.6.attn.proj.weight', 'image_encoder.blocks.6.attn.proj.bias', 'image_encoder.blocks.7.attn.rel_pos_h', 'image_encoder.blocks.7.attn.rel_pos_w', 'image_encoder.blocks.7.attn.qkv.weight', 'image_encoder.blocks.7.attn.qkv.bias', 'image_encoder.blocks.7.attn.proj.weight', 'image_encoder.blocks.7.attn.proj.bias', 'image_encoder.blocks.8.attn.rel_pos_h', 'image_encoder.blocks.8.attn.rel_pos_w', 'image_encoder.blocks.8.attn.qkv.weight', 'image_encoder.blocks.8.attn.qkv.bias', 'image_encoder.blocks.8.attn.proj.weight', 'image_encoder.blocks.8.attn.proj.bias', 'image_encoder.blocks.9.attn.rel_pos_h', 'image_encoder.blocks.9.attn.rel_pos_w', 'image_encoder.blocks.9.attn.qkv.weight', 'image_encoder.blocks.9.attn.qkv.bias', 'image_encoder.blocks.9.attn.proj.weight', 'image_encoder.blocks.9.attn.proj.bias', 'image_encoder.blocks.10.attn.rel_pos_h', 'image_encoder.blocks.10.attn.rel_pos_w', 'image_encoder.blocks.10.attn.qkv.weight', 'image_encoder.blocks.10.attn.qkv.bias', 'image_encoder.blocks.10.attn.proj.weight', 'image_encoder.blocks.10.attn.proj.bias', 'image_encoder.blocks.11.attn.rel_pos_h', 'image_encoder.blocks.11.attn.rel_pos_w', 'image_encoder.blocks.11.attn.qkv.weight', 'image_encoder.blocks.11.attn.qkv.bias', 'image_encoder.blocks.11.attn.proj.weight', 'image_encoder.blocks.11.attn.proj.bias']
+21 iterations per epoch. 5250 max iterations
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 1 : loss : 0.555530, loss_ce: 0.656499, loss_dice: 0.530288
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 2 : loss : 0.520810, loss_ce: 0.590355, loss_dice: 0.503424
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 3 : loss : 0.498913, loss_ce: 0.543893, loss_dice: 0.487668
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 4 : loss : 0.463592, loss_ce: 0.451036, loss_dice: 0.466732
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 5 : loss : 0.430202, loss_ce: 0.374723, loss_dice: 0.444072
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 6 : loss : 0.395475, loss_ce: 0.289866, loss_dice: 0.421878
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 7 : loss : 0.379475, loss_ce: 0.217623, loss_dice: 0.419938
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 8 : loss : 0.370836, loss_ce: 0.189877, loss_dice: 0.416075
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 9 : loss : 0.350506, loss_ce: 0.185322, loss_dice: 0.391802
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 10 : loss : 0.340225, loss_ce: 0.238927, loss_dice: 0.365550
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 11 : loss : 0.334488, loss_ce: 0.235958, loss_dice: 0.359120
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 12 : loss : 0.317226, loss_ce: 0.190242, loss_dice: 0.348972
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 13 : loss : 0.312932, loss_ce: 0.155023, loss_dice: 0.352409
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 14 : loss : 0.290968, loss_ce: 0.169915, loss_dice: 0.321231
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 15 : loss : 0.299022, loss_ce: 0.228064, loss_dice: 0.316762
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 16 : loss : 0.283526, loss_ce: 0.148789, loss_dice: 0.317210
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 17 : loss : 0.289563, loss_ce: 0.126042, loss_dice: 0.330444
+label batch: 36 and image batch: 36
+
+  0%|                               | 1/250 [00:19<1:21:06, 19.54s/it]
+iteration 18 : loss : 0.281315, loss_ce: 0.189001, loss_dice: 0.304393
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 19 : loss : 0.281160, loss_ce: 0.173388, loss_dice: 0.308103
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 20 : loss : 0.286688, loss_ce: 0.126147, loss_dice: 0.326823
+label batch: 3 and image batch: 3
+Unique values: [0 1]
+iteration 21 : loss : 0.254408, loss_ce: 0.130369, loss_dice: 0.285418
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 22 : loss : 0.269614, loss_ce: 0.157544, loss_dice: 0.297631
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 23 : loss : 0.259802, loss_ce: 0.127347, loss_dice: 0.292915
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 24 : loss : 0.261291, loss_ce: 0.138840, loss_dice: 0.291903
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 25 : loss : 0.254805, loss_ce: 0.138154, loss_dice: 0.283968
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 26 : loss : 0.243239, loss_ce: 0.134678, loss_dice: 0.270379
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 27 : loss : 0.258804, loss_ce: 0.132422, loss_dice: 0.290399
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 28 : loss : 0.240995, loss_ce: 0.116564, loss_dice: 0.272102
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 29 : loss : 0.261115, loss_ce: 0.183868, loss_dice: 0.280427
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 30 : loss : 0.231877, loss_ce: 0.122941, loss_dice: 0.259111
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 31 : loss : 0.273510, loss_ce: 0.107100, loss_dice: 0.315113
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 32 : loss : 0.271993, loss_ce: 0.192745, loss_dice: 0.291805
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 33 : loss : 0.261477, loss_ce: 0.174009, loss_dice: 0.283344
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 34 : loss : 0.274229, loss_ce: 0.123259, loss_dice: 0.311971
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 35 : loss : 0.230261, loss_ce: 0.116699, loss_dice: 0.258651
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 36 : loss : 0.252541, loss_ce: 0.172038, loss_dice: 0.272666
+label batch: 36 and image batch: 36
+
+  1%|▎                                | 2/250 [00:30<58:56, 14.26s/it]
+iteration 37 : loss : 0.254844, loss_ce: 0.161622, loss_dice: 0.278149
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 38 : loss : 0.236915, loss_ce: 0.117444, loss_dice: 0.266783
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 39 : loss : 0.250359, loss_ce: 0.108550, loss_dice: 0.285811
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 40 : loss : 0.227762, loss_ce: 0.124826, loss_dice: 0.253496
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 41 : loss : 0.250841, loss_ce: 0.157345, loss_dice: 0.274214
+label batch: 3 and image batch: 3
+Unique values: [0 1]
+iteration 42 : loss : 0.246386, loss_ce: 0.151930, loss_dice: 0.270000
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 43 : loss : 0.239875, loss_ce: 0.141725, loss_dice: 0.264413
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 44 : loss : 0.226835, loss_ce: 0.104176, loss_dice: 0.257499
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 45 : loss : 0.251826, loss_ce: 0.108077, loss_dice: 0.287763
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 46 : loss : 0.224228, loss_ce: 0.123253, loss_dice: 0.249472
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 47 : loss : 0.232540, loss_ce: 0.145154, loss_dice: 0.254386
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 48 : loss : 0.216294, loss_ce: 0.115716, loss_dice: 0.241438
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 49 : loss : 0.217544, loss_ce: 0.111963, loss_dice: 0.243939
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 50 : loss : 0.232839, loss_ce: 0.142770, loss_dice: 0.255357
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 51 : loss : 0.199306, loss_ce: 0.116548, loss_dice: 0.219995
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 52 : loss : 0.238838, loss_ce: 0.110812, loss_dice: 0.270845
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 53 : loss : 0.235804, loss_ce: 0.147211, loss_dice: 0.257952
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 54 : loss : 0.195729, loss_ce: 0.121325, loss_dice: 0.214330
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 55 : loss : 0.215596, loss_ce: 0.095832, loss_dice: 0.245536
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 56 : loss : 0.197894, loss_ce: 0.102127, loss_dice: 0.221836
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 57 : loss : 0.238445, loss_ce: 0.166622, loss_dice: 0.256400
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 58 : loss : 0.193272, loss_ce: 0.103050, loss_dice: 0.215827
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 59 : loss : 0.220003, loss_ce: 0.096345, loss_dice: 0.250917
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 60 : loss : 0.220133, loss_ce: 0.121010, loss_dice: 0.244914
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 61 : loss : 0.240516, loss_ce: 0.166015, loss_dice: 0.259142
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 62 : loss : 0.190608, loss_ce: 0.109289, loss_dice: 0.210938
+label batch: 3 and image batch: 3
+
+  1%|▍                                | 3/250 [00:40<51:23, 12.48s/it]
+iteration 63 : loss : 0.254529, loss_ce: 0.105919, loss_dice: 0.291682
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 64 : loss : 0.202890, loss_ce: 0.110751, loss_dice: 0.225925
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 65 : loss : 0.237538, loss_ce: 0.165510, loss_dice: 0.255545
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 66 : loss : 0.223223, loss_ce: 0.126220, loss_dice: 0.247474
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 67 : loss : 0.253845, loss_ce: 0.096984, loss_dice: 0.293060
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 68 : loss : 0.191886, loss_ce: 0.100428, loss_dice: 0.214750
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 69 : loss : 0.242244, loss_ce: 0.157734, loss_dice: 0.263372
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 70 : loss : 0.214758, loss_ce: 0.129883, loss_dice: 0.235976
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 71 : loss : 0.231920, loss_ce: 0.102738, loss_dice: 0.264215
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 72 : loss : 0.202323, loss_ce: 0.105638, loss_dice: 0.226495
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 73 : loss : 0.208570, loss_ce: 0.138685, loss_dice: 0.226041
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 74 : loss : 0.197872, loss_ce: 0.126818, loss_dice: 0.215636
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 75 : loss : 0.183449, loss_ce: 0.081967, loss_dice: 0.208819
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 76 : loss : 0.191110, loss_ce: 0.088319, loss_dice: 0.216807
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 77 : loss : 0.202995, loss_ce: 0.129851, loss_dice: 0.221280
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 78 : loss : 0.215697, loss_ce: 0.136612, loss_dice: 0.235469
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 79 : loss : 0.182397, loss_ce: 0.099695, loss_dice: 0.203072
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 80 : loss : 0.204097, loss_ce: 0.094941, loss_dice: 0.231386
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 81 : loss : 0.194120, loss_ce: 0.122583, loss_dice: 0.212005
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 82 : loss : 0.179612, loss_ce: 0.104590, loss_dice: 0.198367
+label batch: 36 and image batch: 36
+
+  2%|▌                                | 4/250 [00:50<47:12, 11.51s/it]
+iteration 83 : loss : 0.183737, loss_ce: 0.084383, loss_dice: 0.208576
+label batch: 3 and image batch: 3
+Unique values: [0 1]
+iteration 84 : loss : 0.170487, loss_ce: 0.109325, loss_dice: 0.185777
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 85 : loss : 0.230362, loss_ce: 0.147005, loss_dice: 0.251201
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 86 : loss : 0.189663, loss_ce: 0.104627, loss_dice: 0.210922
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 87 : loss : 0.233476, loss_ce: 0.116839, loss_dice: 0.262635
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 88 : loss : 0.196967, loss_ce: 0.140477, loss_dice: 0.211089
+label batch: 36 and image batch: 36
+Unique values: [0 1]
+iteration 89 : loss : 0.209175, loss_ce: 0.122323, loss_dice: 0.230888
+label batch: 36 and image batch: 36

@@ -55,6 +55,7 @@ parser.add_argument('--GaLoreAdamW', action='store_true', help='If activated, us
 parser.add_argument('--module', type=str, default='sam_lora_image_encoder')
 parser.add_argument('--module_update', type=str, choices=['image_encoder', 'image_encoder_attn','all', 'all-attn'], default='image_encoder')  # new argument
 parser.add_argument('--dice_param', type=float, default=0.8)
+parser.add_argument('--train_others', type=bool, default= True) # do you want to train mask decoder and prompt encoder ? 
 args = parser.parse_args()
 
 if __name__ == "__main__":

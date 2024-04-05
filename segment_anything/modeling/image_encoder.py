@@ -430,3 +430,11 @@ def get_all_attention_parameters(model):
         if ('image_encoder' in name or 'prompt_encoder' in name or 'mask_decoder' in name) and 'blocks' in name and 'attn' in name:
             attention_parameters.append((name, param))
     return attention_parameters
+
+def get_all_mask_prompt_params(model):
+    mask_prompt_params = []
+    for name,param in model.mask_decoder.named_parameters():
+        mask_prompt_params.append(param)
+    for name,param in model.prompt_encoder.named_parameters():
+        mask_prompt_params.append(param)
+    return mask_prompt_params

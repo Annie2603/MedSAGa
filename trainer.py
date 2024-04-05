@@ -17,7 +17,7 @@ from tqdm import tqdm
 from utils import DiceLoss, Focal_loss
 from torchvision import transforms
 from icecream import ic
-from segment_anything.modeling.image_encoder import get_encoder_attention_parameters, get_all_model_params, get_all_encoder_params, get_all_attention_parameters
+from segment_anything.modeling.image_encoder import get_encoder_attention_parameters, get_all_model_params, get_all_encoder_params, get_all_attention_parameters, get_all_mask_prompt_params
 from GaLore.galore_torch import GaLoreAdamW
 import wandb
 
@@ -66,17 +66,18 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     for name, param in galore_params:
         names_list.append(name)
 
-    print(f"The params to be optimised are : {names_list}")
+    print(f"The params to be optimised using GaLore are : {names_list}")
     for name,param in galore_params:
         params_list.append(param)
         
     galore_params_names = [name for name, _ in galore_params]
-    for name, param in model.named_parameters():
+    for name, param in model.image_encoder.named_parameters():
         if name not in galore_params_names:
             param.requires_grad = False
 
     device = next(model.parameters()).device  
-
+    mask_prompt_parameters = get_all_mask_prompt_params(model)
+    #print(f"Params to be optimised using optim.AdamW: {mask_prompt_parameters}")
     galore_params = [(name, param.to(device)) for name, param in galore_params] # moving to the device as same as model.params
 
 
@@ -97,6 +98,9 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     if args.GaLoreAdamW:
         #optimizer = optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
         optimizer = GaLoreAdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
+        if args.train_others==True:
+            optimizer2 = optim.AdamW(mask_prompt_parameters, lr = b_lr, betas=(0.9,0.999), weight_decay=0.1)
+
     elif args.AdamW:
         optimizer = optim.AdamW(params_list, lr=b_lr, betas=(0.9, 0.999), weight_decay=0.1)
     else:
@@ -132,14 +136,20 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
             outputs = model(image_batch, multimask_output, args.img_size)
             
             loss, loss_ce, loss_dice = calc_loss(outputs, low_res_label_batch, ce_loss, dice_loss, args.dice_param)
-            
+
+            # optimizer step for updating the galore weights
             optimizer.zero_grad()
+            optimizer2.zero_grad()
             loss.backward()
             optimizer.step()
+            optimizer2.step()
+
             if args.warmup and iter_num < args.warmup_period:
                 lr_ = base_lr * ((iter_num + 1) / args.warmup_period)
                 for param_group in optimizer.param_groups:
                     param_group['lr'] = lr_
+                for param_group in optimizer2.param_groups:
+                    param_group['lr']= lr_
             else:
                 if args.warmup:
                     shift_iter = iter_num - args.warmup_period
@@ -148,6 +158,10 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
                     shift_iter = iter_num
                 lr_ = base_lr * (1.0 - shift_iter / max_iterations) ** 0.9  # learning rate adjustment depends on the max iterations
                 for param_group in optimizer.param_groups:
+                    param_group['lr'] = lr_
+                
+                # update lr for optimizer2
+                for param_group in optimizer2.param_groups:
                     param_group['lr'] = lr_
 
             iter_num = iter_num + 1
