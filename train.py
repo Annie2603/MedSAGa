@@ -53,7 +53,7 @@ parser.add_argument('--warmup_period', type=int, default=250,
 parser.add_argument('--AdamW', action='store_true', help='If activated, use AdamW to finetune SAM model')
 parser.add_argument('--GaLoreAdamW', action='store_true', help='If activated, use GaLore AdamW to finetune SAM model')
 parser.add_argument('--module', type=str, default='sam_lora_image_encoder')
-parser.add_argument('--module_update', type=str, choices=['image_encoder', 'image_encoder_attn','all'], default='image_encoder')  # new argument
+parser.add_argument('--module_update', type=str, choices=['image_encoder', 'image_encoder_attn','all', 'all-attn'], default='image_encoder')  # new argument
 parser.add_argument('--dice_param', type=float, default=0.8)
 args = parser.parse_args()
 
@@ -94,6 +94,7 @@ if __name__ == "__main__":
         os.makedirs(snapshot_path)
 
     # register model
+    print("registering model")
     sam, img_embedding_size = sam_model_registry[args.vit_name](image_size=args.img_size,
                                                                 num_classes=args.num_classes,
                                                                 checkpoint=args.ckpt, pixel_mean=[0, 0, 0],

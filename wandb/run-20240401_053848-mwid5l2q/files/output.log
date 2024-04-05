@@ -1,0 +1,119 @@
+/home/navyansh/Imp/galore-sam/GaLore/galore_torch/adamw.py:48: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+  0%|                                         | 0/300 [00:00<?, ?it/s]
+Namespace(AdamW=False, GaLoreAdamW=True, base_lr=0.005, batch_size=12, ckpt='checkpoints/sam_vit_b_01ec64.pth', dataset='synapse', deterministic=1, dice_param=0.8, exp='synapse_240', img_size=240, is_pretrain=True, list_dir='./lists/lists_Synapse', lora_ckpt=None, max_epochs=300, max_iterations=30000, module='sam_lora_image_encoder', module_update='image_encoder', n_gpu=3, num_classes=8, output='./synapse_output_2', rank=4, root_path='./trainset_synapse', seed=1234, stop_epoch=250, vit_name='vit_b', warmup=True, warmup_period=250)
+The length of train set is: 2211
+The params to be optimised are : ['image_encoder.blocks.0.norm1.weight', 'image_encoder.blocks.0.norm1.bias', 'image_encoder.blocks.0.attn.rel_pos_h', 'image_encoder.blocks.0.attn.rel_pos_w', 'image_encoder.blocks.0.attn.qkv.weight', 'image_encoder.blocks.0.attn.qkv.bias', 'image_encoder.blocks.0.attn.proj.weight', 'image_encoder.blocks.0.attn.proj.bias', 'image_encoder.blocks.0.norm2.weight', 'image_encoder.blocks.0.norm2.bias', 'image_encoder.blocks.0.mlp.lin1.weight', 'image_encoder.blocks.0.mlp.lin1.bias', 'image_encoder.blocks.0.mlp.lin2.weight', 'image_encoder.blocks.0.mlp.lin2.bias', 'image_encoder.blocks.1.norm1.weight', 'image_encoder.blocks.1.norm1.bias', 'image_encoder.blocks.1.attn.rel_pos_h', 'image_encoder.blocks.1.attn.rel_pos_w', 'image_encoder.blocks.1.attn.qkv.weight', 'image_encoder.blocks.1.attn.qkv.bias', 'image_encoder.blocks.1.attn.proj.weight', 'image_encoder.blocks.1.attn.proj.bias', 'image_encoder.blocks.1.norm2.weight', 'image_encoder.blocks.1.norm2.bias', 'image_encoder.blocks.1.mlp.lin1.weight', 'image_encoder.blocks.1.mlp.lin1.bias', 'image_encoder.blocks.1.mlp.lin2.weight', 'image_encoder.blocks.1.mlp.lin2.bias', 'image_encoder.blocks.2.norm1.weight', 'image_encoder.blocks.2.norm1.bias', 'image_encoder.blocks.2.attn.rel_pos_h', 'image_encoder.blocks.2.attn.rel_pos_w', 'image_encoder.blocks.2.attn.qkv.weight', 'image_encoder.blocks.2.attn.qkv.bias', 'image_encoder.blocks.2.attn.proj.weight', 'image_encoder.blocks.2.attn.proj.bias', 'image_encoder.blocks.2.norm2.weight', 'image_encoder.blocks.2.norm2.bias', 'image_encoder.blocks.2.mlp.lin1.weight', 'image_encoder.blocks.2.mlp.lin1.bias', 'image_encoder.blocks.2.mlp.lin2.weight', 'image_encoder.blocks.2.mlp.lin2.bias', 'image_encoder.blocks.3.norm1.weight', 'image_encoder.blocks.3.norm1.bias', 'image_encoder.blocks.3.attn.rel_pos_h', 'image_encoder.blocks.3.attn.rel_pos_w', 'image_encoder.blocks.3.attn.qkv.weight', 'image_encoder.blocks.3.attn.qkv.bias', 'image_encoder.blocks.3.attn.proj.weight', 'image_encoder.blocks.3.attn.proj.bias', 'image_encoder.blocks.3.norm2.weight', 'image_encoder.blocks.3.norm2.bias', 'image_encoder.blocks.3.mlp.lin1.weight', 'image_encoder.blocks.3.mlp.lin1.bias', 'image_encoder.blocks.3.mlp.lin2.weight', 'image_encoder.blocks.3.mlp.lin2.bias', 'image_encoder.blocks.4.norm1.weight', 'image_encoder.blocks.4.norm1.bias', 'image_encoder.blocks.4.attn.rel_pos_h', 'image_encoder.blocks.4.attn.rel_pos_w', 'image_encoder.blocks.4.attn.qkv.weight', 'image_encoder.blocks.4.attn.qkv.bias', 'image_encoder.blocks.4.attn.proj.weight', 'image_encoder.blocks.4.attn.proj.bias', 'image_encoder.blocks.4.norm2.weight', 'image_encoder.blocks.4.norm2.bias', 'image_encoder.blocks.4.mlp.lin1.weight', 'image_encoder.blocks.4.mlp.lin1.bias', 'image_encoder.blocks.4.mlp.lin2.weight', 'image_encoder.blocks.4.mlp.lin2.bias', 'image_encoder.blocks.5.norm1.weight', 'image_encoder.blocks.5.norm1.bias', 'image_encoder.blocks.5.attn.rel_pos_h', 'image_encoder.blocks.5.attn.rel_pos_w', 'image_encoder.blocks.5.attn.qkv.weight', 'image_encoder.blocks.5.attn.qkv.bias', 'image_encoder.blocks.5.attn.proj.weight', 'image_encoder.blocks.5.attn.proj.bias', 'image_encoder.blocks.5.norm2.weight', 'image_encoder.blocks.5.norm2.bias', 'image_encoder.blocks.5.mlp.lin1.weight', 'image_encoder.blocks.5.mlp.lin1.bias', 'image_encoder.blocks.5.mlp.lin2.weight', 'image_encoder.blocks.5.mlp.lin2.bias', 'image_encoder.blocks.6.norm1.weight', 'image_encoder.blocks.6.norm1.bias', 'image_encoder.blocks.6.attn.rel_pos_h', 'image_encoder.blocks.6.attn.rel_pos_w', 'image_encoder.blocks.6.attn.qkv.weight', 'image_encoder.blocks.6.attn.qkv.bias', 'image_encoder.blocks.6.attn.proj.weight', 'image_encoder.blocks.6.attn.proj.bias', 'image_encoder.blocks.6.norm2.weight', 'image_encoder.blocks.6.norm2.bias', 'image_encoder.blocks.6.mlp.lin1.weight', 'image_encoder.blocks.6.mlp.lin1.bias', 'image_encoder.blocks.6.mlp.lin2.weight', 'image_encoder.blocks.6.mlp.lin2.bias', 'image_encoder.blocks.7.norm1.weight', 'image_encoder.blocks.7.norm1.bias', 'image_encoder.blocks.7.attn.rel_pos_h', 'image_encoder.blocks.7.attn.rel_pos_w', 'image_encoder.blocks.7.attn.qkv.weight', 'image_encoder.blocks.7.attn.qkv.bias', 'image_encoder.blocks.7.attn.proj.weight', 'image_encoder.blocks.7.attn.proj.bias', 'image_encoder.blocks.7.norm2.weight', 'image_encoder.blocks.7.norm2.bias', 'image_encoder.blocks.7.mlp.lin1.weight', 'image_encoder.blocks.7.mlp.lin1.bias', 'image_encoder.blocks.7.mlp.lin2.weight', 'image_encoder.blocks.7.mlp.lin2.bias', 'image_encoder.blocks.8.norm1.weight', 'image_encoder.blocks.8.norm1.bias', 'image_encoder.blocks.8.attn.rel_pos_h', 'image_encoder.blocks.8.attn.rel_pos_w', 'image_encoder.blocks.8.attn.qkv.weight', 'image_encoder.blocks.8.attn.qkv.bias', 'image_encoder.blocks.8.attn.proj.weight', 'image_encoder.blocks.8.attn.proj.bias', 'image_encoder.blocks.8.norm2.weight', 'image_encoder.blocks.8.norm2.bias', 'image_encoder.blocks.8.mlp.lin1.weight', 'image_encoder.blocks.8.mlp.lin1.bias', 'image_encoder.blocks.8.mlp.lin2.weight', 'image_encoder.blocks.8.mlp.lin2.bias', 'image_encoder.blocks.9.norm1.weight', 'image_encoder.blocks.9.norm1.bias', 'image_encoder.blocks.9.attn.rel_pos_h', 'image_encoder.blocks.9.attn.rel_pos_w', 'image_encoder.blocks.9.attn.qkv.weight', 'image_encoder.blocks.9.attn.qkv.bias', 'image_encoder.blocks.9.attn.proj.weight', 'image_encoder.blocks.9.attn.proj.bias', 'image_encoder.blocks.9.norm2.weight', 'image_encoder.blocks.9.norm2.bias', 'image_encoder.blocks.9.mlp.lin1.weight', 'image_encoder.blocks.9.mlp.lin1.bias', 'image_encoder.blocks.9.mlp.lin2.weight', 'image_encoder.blocks.9.mlp.lin2.bias', 'image_encoder.blocks.10.norm1.weight', 'image_encoder.blocks.10.norm1.bias', 'image_encoder.blocks.10.attn.rel_pos_h', 'image_encoder.blocks.10.attn.rel_pos_w', 'image_encoder.blocks.10.attn.qkv.weight', 'image_encoder.blocks.10.attn.qkv.bias', 'image_encoder.blocks.10.attn.proj.weight', 'image_encoder.blocks.10.attn.proj.bias', 'image_encoder.blocks.10.norm2.weight', 'image_encoder.blocks.10.norm2.bias', 'image_encoder.blocks.10.mlp.lin1.weight', 'image_encoder.blocks.10.mlp.lin1.bias', 'image_encoder.blocks.10.mlp.lin2.weight', 'image_encoder.blocks.10.mlp.lin2.bias', 'image_encoder.blocks.11.norm1.weight', 'image_encoder.blocks.11.norm1.bias', 'image_encoder.blocks.11.attn.rel_pos_h', 'image_encoder.blocks.11.attn.rel_pos_w', 'image_encoder.blocks.11.attn.qkv.weight', 'image_encoder.blocks.11.attn.qkv.bias', 'image_encoder.blocks.11.attn.proj.weight', 'image_encoder.blocks.11.attn.proj.bias', 'image_encoder.blocks.11.norm2.weight', 'image_encoder.blocks.11.norm2.bias', 'image_encoder.blocks.11.mlp.lin1.weight', 'image_encoder.blocks.11.mlp.lin1.bias', 'image_encoder.blocks.11.mlp.lin2.weight', 'image_encoder.blocks.11.mlp.lin2.bias']
+62 iterations per epoch. 18600 max iterations
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 1 : loss : 1.173597, loss_ce: 2.171294, loss_dice: 0.924173
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 2 : loss : 1.165559, loss_ce: 2.137240, loss_dice: 0.922638
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 3 : loss : 1.161945, loss_ce: 2.114414, loss_dice: 0.923828
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 4 : loss : 1.146735, loss_ce: 2.055336, loss_dice: 0.919585
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 5 : loss : 1.142256, loss_ce: 2.000532, loss_dice: 0.927687
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 6 : loss : 1.129480, loss_ce: 1.948576, loss_dice: 0.924706
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 7 : loss : 1.117936, loss_ce: 1.873671, loss_dice: 0.929002
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 8 : loss : 1.094136, loss_ce: 1.779734, loss_dice: 0.922737
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 9 : loss : 1.069292, loss_ce: 1.694213, loss_dice: 0.913062
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 5 6 7 8]
+iteration 10 : loss : 1.060000, loss_ce: 1.608526, loss_dice: 0.922868
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 11 : loss : 1.033010, loss_ce: 1.553770, loss_dice: 0.902820
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 12 : loss : 1.028989, loss_ce: 1.486103, loss_dice: 0.914710
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 13 : loss : 1.009254, loss_ce: 1.437093, loss_dice: 0.902294
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 14 : loss : 0.987467, loss_ce: 1.395697, loss_dice: 0.885409
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 15 : loss : 0.972317, loss_ce: 1.297469, loss_dice: 0.891028
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 16 : loss : 0.968361, loss_ce: 1.263606, loss_dice: 0.894549
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 17 : loss : 0.949460, loss_ce: 1.199777, loss_dice: 0.886881
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 18 : loss : 0.936660, loss_ce: 1.166793, loss_dice: 0.879126
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 19 : loss : 0.937567, loss_ce: 1.097937, loss_dice: 0.897475
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 20 : loss : 0.919335, loss_ce: 1.056406, loss_dice: 0.885067
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 21 : loss : 0.903742, loss_ce: 1.029597, loss_dice: 0.872278
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 22 : loss : 0.897503, loss_ce: 0.978022, loss_dice: 0.877373
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 23 : loss : 0.908012, loss_ce: 1.036648, loss_dice: 0.875853
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 24 : loss : 0.883644, loss_ce: 0.955993, loss_dice: 0.865557
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 25 : loss : 0.873827, loss_ce: 0.900734, loss_dice: 0.867101
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 26 : loss : 0.862530, loss_ce: 0.837734, loss_dice: 0.868729
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 27 : loss : 0.870647, loss_ce: 0.891613, loss_dice: 0.865405
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 28 : loss : 0.857679, loss_ce: 0.824841, loss_dice: 0.865889
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 29 : loss : 0.848915, loss_ce: 0.798246, loss_dice: 0.861582
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 30 : loss : 0.839182, loss_ce: 0.763616, loss_dice: 0.858074
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 31 : loss : 0.830010, loss_ce: 0.701004, loss_dice: 0.862262
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 32 : loss : 0.828284, loss_ce: 0.685042, loss_dice: 0.864095
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 33 : loss : 0.834905, loss_ce: 0.695861, loss_dice: 0.869666
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 34 : loss : 0.831252, loss_ce: 0.732199, loss_dice: 0.856015
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 35 : loss : 0.816943, loss_ce: 0.696216, loss_dice: 0.847125
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 36 : loss : 0.823112, loss_ce: 0.692233, loss_dice: 0.855832
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3 4 5 6 7 8]
+iteration 37 : loss : 0.813134, loss_ce: 0.646135, loss_dice: 0.854884
+label batch: 36 and image batch: 36

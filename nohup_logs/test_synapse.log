@@ -1,41 +1,0 @@
-nohup: ignoring input
-<class 'int'>
-<class 'int'>
-the checkpoint is ./synapse_output/synapse_240_pretrain_vit_b_epo250_bs12_lr0.005/epoch_79.pth
-Namespace(ckpt='./synapse_output/synapse_240_pretrain_vit_b_epo250_bs12_lr0.005/epoch_79.pth', config=None, dataset='synapse', deterministic=1, img_size=240, input_size=224, is_savenii=True, list_dir='./lists/lists_Synapse', module='sam_lora_image_encoder', num_classes=8, output_dir='./test_output_synapse', rank=4, seed=1234, vit_name='vit_b', volume_path='./testset_synapse')
-12 test iterations per epoch
-0it [00:00, ?it/s]sampled batch torch.Size([1, 148, 512, 512])
-idx 0 case case0008 mean_dice 0.327796 mean_hd95 76.862287
-1it [03:23, 203.63s/it]sampled batch torch.Size([1, 89, 512, 512])
-idx 1 case case0022 mean_dice 0.542656 mean_hd95 27.265190
-2it [04:47, 133.09s/it]sampled batch torch.Size([1, 100, 512, 512])
-idx 2 case case0038 mean_dice 0.508483 mean_hd95 70.119743
-3it [06:21, 115.52s/it]sampled batch torch.Size([1, 184, 512, 512])
-idx 3 case case0036 mean_dice 0.583444 mean_hd95 64.643292
-4it [09:25, 142.36s/it]sampled batch torch.Size([1, 144, 512, 512])
-idx 4 case case0032 mean_dice 0.538141 mean_hd95 42.862503
-5it [11:44, 141.04s/it]sampled batch torch.Size([1, 139, 512, 512])
-idx 5 case case0002 mean_dice 0.527896 mean_hd95 44.136091
-6it [13:56, 137.97s/it]sampled batch torch.Size([1, 100, 512, 512])
-idx 6 case case0029 mean_dice 0.461871 mean_hd95 47.238721
-7it [15:28, 123.18s/it]sampled batch torch.Size([1, 198, 512, 512])
-idx 7 case case0003 mean_dice 0.492889 mean_hd95 76.187419
-8it [18:45, 146.48s/it]sampled batch torch.Size([1, 147, 512, 512])
-idx 8 case case0001 mean_dice 0.496968 mean_hd95 66.609558
-9it [21:06, 144.86s/it]sampled batch torch.Size([1, 140, 512, 512])
-idx 9 case case0004 mean_dice 0.440081 mean_hd95 95.236286
-10it [23:24, 142.76s/it]sampled batch torch.Size([1, 85, 512, 512])
-idx 10 case case0025 mean_dice 0.490650 mean_hd95 39.956637
-11it [24:39, 122.13s/it]sampled batch torch.Size([1, 94, 512, 512])
-idx 11 case case0035 mean_dice 0.582079 mean_hd95 38.765849
-12it [25:55, 107.93s/it]12it [25:55, 129.63s/it]Mean class 1 name spleen mean_dice 0.626306 mean_hd95 48.734206
-Mean class 2 name right kidney mean_dice 0.461228 mean_hd95 121.465795
-Mean class 3 name left kidney mean_dice 0.562644 mean_hd95 72.859955
-Mean class 4 name gallbladder mean_dice 0.234004 mean_hd95 39.186597
-Mean class 5 name liver mean_dice 0.806033 mean_hd95 46.275351
-Mean class 6 name stomach mean_dice 0.552157 mean_hd95 36.894470
-Mean class 7 name aorta mean_dice 0.491808 mean_hd95 53.179966
-Mean class 8 name pancreas mean_dice 0.261122 mean_hd95 41.326044
-Testing performance in best val model: mean_dice : 0.499413 mean_hd95 : 57.490298
-Testing Finished!
-

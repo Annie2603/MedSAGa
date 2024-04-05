@@ -1,0 +1,34 @@
+nohup: ignoring input
+<class 'int'>
+<class 'int'>
+the checkpoint is ./results/BraTS_output/BraTS_240_pretrain_vit_b_epo250_bs12_lr0.005/epoch_39.pth
+Namespace(ckpt='./results/BraTS_output/BraTS_240_pretrain_vit_b_epo250_bs12_lr0.005/epoch_39.pth', config=None, dataset='BraTS', deterministic=1, img_size=240, input_size=224, is_savenii=True, list_dir='./lists/lists_brats', module='sam_lora_image_encoder', num_classes=1, output_dir='./inference/brats/test_output_BraTS20', rank=4, seed=1234, vit_name='vit_b', volume_path='../datasets/brats20/morepp-test')
+12 test iterations per epoch
+0it [00:00, ?it/s]sampled batch torch.Size([1, 155, 240, 240])
+idx 0 case BraTS20_Training_270 mean_dice 0.273944 mean_hd95 52.659282
+1it [00:11, 11.08s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 1 case BraTS20_Training_152 mean_dice 0.450536 mean_hd95 69.380833
+2it [00:21, 10.78s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 2 case BraTS20_Training_203 mean_dice 0.055496 mean_hd95 88.022724
+3it [00:31, 10.30s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 3 case BraTS20_Training_039 mean_dice 0.153911 mean_hd95 93.898882
+4it [00:42, 10.56s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 4 case BraTS20_Training_283 mean_dice 0.134742 mean_hd95 85.445889
+5it [00:52, 10.58s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 5 case BraTS20_Training_052 mean_dice 0.165969 mean_hd95 83.582295
+6it [01:03, 10.67s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 6 case BraTS20_Training_109 mean_dice 0.146445 mean_hd95 76.596345
+7it [01:14, 10.57s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 7 case BraTS20_Training_133 mean_dice 0.286931 mean_hd95 90.581455
+8it [01:24, 10.41s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 8 case BraTS20_Training_176 mean_dice 0.316608 mean_hd95 76.532019
+9it [01:34, 10.31s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 9 case BraTS20_Training_112 mean_dice 0.386365 mean_hd95 59.371710
+10it [01:44, 10.13s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 10 case BraTS20_Training_231 mean_dice 0.362752 mean_hd95 65.030762
+11it [01:54, 10.21s/it]sampled batch torch.Size([1, 155, 240, 240])
+idx 11 case BraTS20_Training_174 mean_dice 0.201971 mean_hd95 88.436418
+12it [02:05, 10.34s/it]12it [02:05, 10.43s/it]Mean class 1 name NCR/NET mean_dice 0.244639 mean_hd95 77.461551
+Testing performance in best val model: mean_dice : 0.244639 mean_hd95 : 77.461551
+Testing Finished!
+

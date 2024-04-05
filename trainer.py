@@ -17,7 +17,7 @@ from tqdm import tqdm
 from utils import DiceLoss, Focal_loss
 from torchvision import transforms
 from icecream import ic
-from segment_anything.modeling.image_encoder import get_encoder_attention_parameters, get_all_model_params, get_all_encoder_params
+from segment_anything.modeling.image_encoder import get_encoder_attention_parameters, get_all_model_params, get_all_encoder_params, get_all_attention_parameters
 from GaLore.galore_torch import GaLoreAdamW
 import wandb
 
@@ -60,6 +60,8 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
         galore_params=get_all_model_params(model)
     elif args.module_update=="image_encoder":
         galore_params=get_all_encoder_params(model)
+    elif args.module_update=="all-attn":
+        galore_params=get_all_attention_parameters(model)
 
     for name, param in galore_params:
         names_list.append(name)

@@ -423,3 +423,10 @@ def get_all_model_params(model):
     for name,param in model.named_parameters():
         params.append((name,param))
     return params
+
+def get_all_attention_parameters(model):
+    attention_parameters = []
+    for name, param in model.named_parameters():
+        if ('image_encoder' in name or 'prompt_encoder' in name or 'mask_decoder' in name) and 'blocks' in name and 'attn' in name:
+            attention_parameters.append((name, param))
+    return attention_parameters

@@ -1,0 +1,292 @@
+2024-04-01 05:38:48,908 INFO    StreamThr :171167 [internal.py:wandb_internal():86] W&B internal server running at pid: 171167, started at: 2024-04-01 05:38:48.905545
+2024-04-01 05:38:48,974 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status
+2024-04-01 05:38:48,990 INFO    WriterThread:171167 [datastore.py:open_for_write():87] open: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/run-mwid5l2q.wandb
+2024-04-01 05:38:48,992 DEBUG   SenderThread:171167 [sender.py:send():379] send: header
+2024-04-01 05:38:49,383 DEBUG   SenderThread:171167 [sender.py:send():379] send: run
+2024-04-01 05:38:50,131 INFO    SenderThread:171167 [dir_watcher.py:__init__():211] watching files in: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files
+2024-04-01 05:38:50,132 INFO    SenderThread:171167 [sender.py:_start_run_threads():1124] run started: mwid5l2q with start time 1711975128.902407
+2024-04-01 05:38:50,134 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: check_version
+2024-04-01 05:38:50,134 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: check_version
+2024-04-01 05:38:50,208 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: run_start
+2024-04-01 05:38:50,246 DEBUG   HandlerThread:171167 [system_info.py:__init__():26] System info init
+2024-04-01 05:38:50,246 DEBUG   HandlerThread:171167 [system_info.py:__init__():41] System info init done
+2024-04-01 05:38:50,247 INFO    HandlerThread:171167 [system_monitor.py:start():194] Starting system monitor
+2024-04-01 05:38:50,247 INFO    SystemMonitor:171167 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-01 05:38:50,250 INFO    HandlerThread:171167 [system_monitor.py:probe():214] Collecting system info
+2024-04-01 05:38:50,257 INFO    SystemMonitor:171167 [interfaces.py:start():190] Started cpu monitoring
+2024-04-01 05:38:50,261 INFO    SystemMonitor:171167 [interfaces.py:start():190] Started disk monitoring
+2024-04-01 05:38:50,265 INFO    SystemMonitor:171167 [interfaces.py:start():190] Started gpu monitoring
+2024-04-01 05:38:50,267 INFO    SystemMonitor:171167 [interfaces.py:start():190] Started memory monitoring
+2024-04-01 05:38:50,271 INFO    SystemMonitor:171167 [interfaces.py:start():190] Started network monitoring
+2024-04-01 05:38:50,322 DEBUG   HandlerThread:171167 [system_info.py:probe():150] Probing system
+2024-04-01 05:38:50,362 DEBUG   HandlerThread:171167 [system_info.py:_probe_git():135] Probing git
+2024-04-01 05:38:50,435 DEBUG   HandlerThread:171167 [system_info.py:_probe_git():143] Probing git done
+2024-04-01 05:38:50,436 DEBUG   HandlerThread:171167 [system_info.py:probe():198] Probing system done
+2024-04-01 05:38:50,436 DEBUG   HandlerThread:171167 [system_monitor.py:probe():223] {'os': 'Linux-5.7.0-050700-generic-x86_64-with-glibc2.29', 'python': '3.8.10', 'heartbeatAt': '2024-04-01T12:38:50.323021', 'startedAt': '2024-04-01T12:38:48.837438', 'docker': None, 'cuda': None, 'args': ('--root_path', './trainset_synapse', '--output', './synapse_output_2', '--dataset', 'synapse', '--list_dir', './lists/lists_Synapse', '--max_epochs', '300', '--stop_epoch', '250', '--img_size', '240', '--warmup', '--GaLoreAdamW', '--n_gpu', '3', '--module_update', 'image_encoder'), 'state': 'running', 'program': 'train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'git': {'remote': 'https://github.com/Annie2603/SAMed-GaLore.git', 'commit': '9240b4eb205fbc60841bd579aeb314adf0e91f88'}, 'email': 'navyanshmahla17@gmail.com', 'root': '/home/navyansh/Imp/galore-sam', 'host': 'server', 'username': 'navyansh', 'executable': '/home/navyansh/Imp/SAMed/sam/bin/python3', 'cpu_count': 48, 'cpu_count_logical': 96, 'cpu_freq': {'current': 3345.338218749999, 'min': 1500.0, 'max': 2800.0}, 'cpu_freq_per_core': [{'current': 3342.721, 'min': 1500.0, 'max': 2800.0}, {'current': 3342.5, 'min': 1500.0, 'max': 2800.0}, {'current': 3342.678, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.69, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.872, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.703, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.444, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.086, 'min': 1500.0, 'max': 2800.0}, {'current': 3345.385, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.298, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.371, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.294, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.709, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.901, 'min': 1500.0, 'max': 2800.0}, {'current': 3348.473, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.081, 'min': 1500.0, 'max': 2800.0}, {'current': 3345.855, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.159, 'min': 1500.0, 'max': 2800.0}, {'current': 3345.12, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.792, 'min': 1500.0, 'max': 2800.0}, {'current': 3345.257, 'min': 1500.0, 'max': 2800.0}, {'current': 3345.982, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.172, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.065, 'min': 1500.0, 'max': 2800.0}, {'current': 3345.725, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.253, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.082, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.296, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.991, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.891, 'min': 1500.0, 'max': 2800.0}, {'current': 3342.607, 'min': 1500.0, 'max': 2800.0}, {'current': 3342.644, 'min': 1500.0, 'max': 2800.0}, {'current': 3342.782, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.747, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.92, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.783, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.908, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.837, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.868, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.182, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.306, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.1, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.416, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.779, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.282, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.898, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.8, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.959, 'min': 1500.0, 'max': 2800.0}, {'current': 3342.657, 'min': 1500.0, 'max': 2800.0}, {'current': 3342.421, 'min': 1500.0, 'max': 2800.0}, {'current': 3342.602, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.71, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.884, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.646, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.22, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.079, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.194, 'min': 1500.0, 'max': 2800.0}, {'current': 3349.647, 'min': 1500.0, 'max': 2800.0}, {'current': 3349.747, 'min': 1500.0, 'max': 2800.0}, {'current': 3349.641, 'min': 1500.0, 'max': 2800.0}, {'current': 3348.734, 'min': 1500.0, 'max': 2800.0}, {'current': 3349.078, 'min': 1500.0, 'max': 2800.0}, {'current': 3349.586, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.557, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.404, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.619, 'min': 1500.0, 'max': 2800.0}, {'current': 3349.717, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.103, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.516, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.188, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.338, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.143, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.516, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.914, 'min': 1500.0, 'max': 2800.0}, {'current': 3344.671, 'min': 1500.0, 'max': 2800.0}, {'current': 3348.003, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.61, 'min': 1500.0, 'max': 2800.0}, {'current': 3347.585, 'min': 1500.0, 'max': 2800.0}, {'current': 3341.378, 'min': 1500.0, 'max': 2800.0}, {'current': 3341.403, 'min': 1500.0, 'max': 2800.0}, {'current': 3341.708, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.155, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.304, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.017, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.347, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.268, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.268, 'min': 1500.0, 'max': 2800.0}, {'current': 3349.423, 'min': 1500.0, 'max': 2800.0}, {'current': 3349.592, 'min': 1500.0, 'max': 2800.0}, {'current': 3349.444, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.587, 'min': 1500.0, 'max': 2800.0}, {'current': 3345.893, 'min': 1500.0, 'max': 2800.0}, {'current': 3346.508, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.421, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.281, 'min': 1500.0, 'max': 2800.0}, {'current': 3343.512, 'min': 1500.0, 'max': 2800.0}], 'disk': {'/': {'total': 856.764030456543, 'used': 62.059600830078125}}, 'gpu': 'NVIDIA RTX A6000', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}], 'memory': {'total': 251.82350540161133}}
+2024-04-01 05:38:50,436 INFO    HandlerThread:171167 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-01 05:38:50,436 INFO    HandlerThread:171167 [system_monitor.py:probe():227] Publishing system info
+2024-04-01 05:38:50,438 INFO    HandlerThread:171167 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-01 05:38:50,461 DEBUG   SenderThread:171167 [sender.py:send():379] send: files
+2024-04-01 05:38:50,462 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-01 05:38:50,561 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-01 05:38:50,562 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: python_packages
+2024-04-01 05:38:50,574 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-01 05:38:50,575 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: stop_status
+2024-04-01 05:38:50,598 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-01 05:38:50,951 DEBUG   SenderThread:171167 [sender.py:send():379] send: telemetry
+2024-04-01 05:38:50,952 DEBUG   SenderThread:171167 [sender.py:send():379] send: telemetry
+2024-04-01 05:38:50,952 DEBUG   SenderThread:171167 [sender.py:send():379] send: telemetry
+2024-04-01 05:38:51,136 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_created():271] file/dir created: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-metadata.json
+2024-04-01 05:38:51,138 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_created():271] file/dir created: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/requirements.txt
+2024-04-01 05:38:51,138 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_created():271] file/dir created: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:38:51,625 INFO    wandb-upload_0:171167 [upload_job.py:push():131] Uploaded file /tmp/tmplaeqq0gnwandb/34aquboj-wandb-metadata.json
+2024-04-01 05:38:53,135 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:38:54,754 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:38:55,146 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:38:59,757 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:04,759 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:05,576 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-01 05:39:05,578 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: stop_status
+2024-04-01 05:39:05,586 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-01 05:39:09,874 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:14,876 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:19,883 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:20,575 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-01 05:39:20,576 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: stop_status
+2024-04-01 05:39:20,581 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-01 05:39:21,182 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/config.yaml
+2024-04-01 05:39:25,879 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:30,298 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:30,306 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:30,307 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:30,311 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:31,197 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:31,199 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_created():271] file/dir created: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:31,292 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:31,292 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:31,295 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:31,296 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:31,297 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:32,131 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:32,134 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:32,135 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:32,136 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:32,197 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:33,021 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:33,025 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:33,027 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:33,040 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:33,199 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:33,200 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:34,677 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:34,682 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:34,685 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:34,688 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:35,201 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:35,203 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:35,577 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-01 05:39:35,579 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: stop_status
+2024-04-01 05:39:35,590 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:35,592 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-01 05:39:35,905 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:35,908 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:35,922 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:36,202 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:36,481 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:36,487 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:36,488 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:36,489 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:36,490 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:37,203 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:37,204 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:37,321 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:37,326 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:37,328 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:37,329 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:38,204 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:38,256 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:38,260 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:38,261 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:38,263 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:39,206 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:39,207 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:39,264 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:39,268 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:39,271 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:39,273 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:40,085 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:40,087 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:40,089 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:40,091 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:40,207 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:41,196 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:41,198 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:41,199 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:41,200 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:41,209 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:41,211 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:42,203 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:42,283 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:42,287 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:42,291 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:42,297 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:43,212 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:43,213 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:43,323 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:43,326 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:43,327 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:43,334 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:44,213 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:44,236 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:44,240 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:44,241 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:44,243 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:45,183 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:45,185 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:45,185 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:45,186 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:45,215 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:45,216 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:46,142 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:46,143 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:46,144 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:46,145 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:46,217 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:47,217 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:47,254 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:47,257 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:47,259 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:47,259 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:47,260 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:48,218 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:48,280 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:48,283 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:48,284 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:48,286 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:49,219 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:49,220 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:49,308 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:49,312 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:49,313 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:49,314 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:50,221 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:50,272 DEBUG   SystemMonitor:171167 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-01 05:39:50,280 DEBUG   SenderThread:171167 [sender.py:send():379] send: stats
+2024-04-01 05:39:50,344 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:50,351 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:50,352 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:50,354 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:50,577 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-01 05:39:50,578 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: stop_status
+2024-04-01 05:39:50,586 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-01 05:39:51,222 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:51,223 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:51,267 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:51,274 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:51,274 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:51,276 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:52,223 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:52,278 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:52,300 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:52,303 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:52,305 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:52,307 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:53,225 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:53,226 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:53,809 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:53,812 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:53,812 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:53,832 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:54,229 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:54,825 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:54,829 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:54,830 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:54,832 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:55,229 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:55,231 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:55,735 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:55,737 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:55,738 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:55,740 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:56,231 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:56,716 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:56,719 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:56,720 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:56,722 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:57,233 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:57,234 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:39:57,737 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:39:57,858 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:57,864 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:57,866 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:57,874 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:58,233 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:59,031 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:39:59,032 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:39:59,032 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:39:59,036 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:39:59,234 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:39:59,234 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:40:00,112 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:40:00,117 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:40:00,119 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:40:00,161 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:40:00,235 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:40:01,141 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:40:01,144 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:40:01,145 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:40:01,146 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:40:01,236 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:40:01,237 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:40:02,029 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:40:02,031 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:40:02,031 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:40:02,033 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:40:02,238 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:40:03,038 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:40:03,230 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:40:03,233 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:40:03,233 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:40:03,234 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:40:03,239 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:40:03,240 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:40:04,263 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:40:04,270 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:40:04,272 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:40:04,273 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:40:05,163 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:40:05,167 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:40:05,169 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:40:05,171 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:40:05,241 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:40:05,242 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:40:05,578 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-01 05:40:05,580 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: stop_status
+2024-04-01 05:40:05,587 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-01 05:40:06,266 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:40:06,271 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:40:06,273 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:40:06,275 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:40:07,244 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:40:07,245 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:40:07,258 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-01 05:40:07,262 DEBUG   SenderThread:171167 [sender.py:send():379] send: history
+2024-04-01 05:40:07,263 DEBUG   SenderThread:171167 [sender.py:send_request():406] send_request: summary_record
+2024-04-01 05:40:07,263 INFO    SenderThread:171167 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-01 05:40:08,246 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/wandb-summary.json
+2024-04-01 05:40:08,276 DEBUG   HandlerThread:171167 [handler.py:handle_request():146] handle_request: status_report
+2024-04-01 05:40:09,247 INFO    Thread-12 :171167 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/files/output.log
+2024-04-01 05:40:10,074 WARNING StreamThr :171167 [internal.py:is_dead():414] Internal process exiting, parent pid 170638 disappeared
+2024-04-01 05:40:10,075 ERROR   StreamThr :171167 [internal.py:wandb_internal():152] Internal process shutdown.
+2024-04-01 05:40:10,276 INFO    SenderThread:171167 [sender.py:finish():1546] shutting down sender
+2024-04-01 05:40:10,278 INFO    HandlerThread:171167 [handler.py:finish():866] shutting down handler
+2024-04-01 05:40:10,278 INFO    HandlerThread:171167 [system_monitor.py:finish():203] Stopping system monitor
+2024-04-01 05:40:10,278 DEBUG   SystemMonitor:171167 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-04-01 05:40:10,279 DEBUG   SystemMonitor:171167 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-04-01 05:40:10,286 INFO    HandlerThread:171167 [interfaces.py:finish():202] Joined cpu monitor
+2024-04-01 05:40:10,287 INFO    HandlerThread:171167 [interfaces.py:finish():202] Joined disk monitor
+2024-04-01 05:40:10,287 INFO    WriterThread:171167 [datastore.py:close():296] close: /home/navyansh/Imp/galore-sam/wandb/run-20240401_053848-mwid5l2q/run-mwid5l2q.wandb
+2024-04-01 05:40:10,291 INFO    HandlerThread:171167 [interfaces.py:finish():202] Joined gpu monitor
+2024-04-01 05:40:10,292 INFO    HandlerThread:171167 [interfaces.py:finish():202] Joined memory monitor
+2024-04-01 05:40:10,292 INFO    HandlerThread:171167 [interfaces.py:finish():202] Joined network monitor
+2024-04-01 05:40:11,263 INFO    MainThread:171167 [internal.py:handle_exit():76] Internal process exited

@@ -1,0 +1,15 @@
+2024-04-01 01:22:25,890 INFO    StreamThr :12659 [internal.py:wandb_internal():86] W&B internal server running at pid: 12659, started at: 2024-04-01 01:22:25.888868
+2024-04-01 01:22:25,895 DEBUG   HandlerThread:12659 [handler.py:handle_request():146] handle_request: status
+2024-04-01 01:22:25,898 INFO    WriterThread:12659 [datastore.py:open_for_write():87] open: /home/navyansh/Imp/galore-sam/wandb/run-20240401_012225-j7bkaf62/run-j7bkaf62.wandb
+2024-04-01 01:22:25,899 DEBUG   SenderThread:12659 [sender.py:send():379] send: header
+2024-04-01 01:22:26,030 DEBUG   SenderThread:12659 [sender.py:send():379] send: run
+2024-04-01 01:22:31,030 DEBUG   HandlerThread:12659 [handler.py:handle_request():146] handle_request: keepalive
+2024-04-01 01:22:36,031 DEBUG   HandlerThread:12659 [handler.py:handle_request():146] handle_request: keepalive
+2024-04-01 01:22:41,032 DEBUG   HandlerThread:12659 [handler.py:handle_request():146] handle_request: keepalive
+2024-04-01 01:22:46,033 DEBUG   HandlerThread:12659 [handler.py:handle_request():146] handle_request: keepalive
+2024-04-01 01:22:51,034 DEBUG   HandlerThread:12659 [handler.py:handle_request():146] handle_request: keepalive
+2024-04-01 01:22:57,902 INFO    MainThread:12659 [internal.py:handle_exit():76] Internal process exited
+2024-04-01 01:22:58,929 WARNING StreamThr :12659 [internal.py:is_dead():414] Internal process exiting, parent pid 12217 disappeared
+2024-04-01 01:22:58,929 ERROR   StreamThr :12659 [internal.py:wandb_internal():152] Internal process shutdown.
+2024-04-01 01:22:59,035 INFO    HandlerThread:12659 [handler.py:finish():866] shutting down handler
+2024-04-01 01:22:59,036 INFO    WriterThread:12659 [datastore.py:close():296] close: /home/navyansh/Imp/galore-sam/wandb/run-20240401_012225-j7bkaf62/run-j7bkaf62.wandb

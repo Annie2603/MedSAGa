@@ -1,0 +1,3247 @@
+/home/navyansh/Imp/galore-sam/GaLore/galore_torch/adamw.py:48: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+  0%|                                         | 0/150 [00:00<?, ?it/s]
+Namespace(AdamW=False, GaLoreAdamW=True, base_lr=0.005, batch_size=12, ckpt='checkpoints/sam_vit_b_01ec64.pth', dataset='BraTS', deterministic=1, dice_param=0.8, exp='BraTS_240', img_size=240, is_pretrain=True, list_dir='./lists/lists_brats', lora_ckpt=None, max_epochs=150, max_iterations=30000, module='sam_lora_image_encoder', module_update='image_encoder', n_gpu=3, num_classes=3, output='./results/BraTS_output', rank=4, root_path='../datasets/brats20/morepp-train', seed=1234, stop_epoch=250, vit_name='vit_b', warmup=True, warmup_period=250)
+The length of train set is: 723
+The params to be optimised are : ['image_encoder.blocks.0.norm1.weight', 'image_encoder.blocks.0.norm1.bias', 'image_encoder.blocks.0.attn.rel_pos_h', 'image_encoder.blocks.0.attn.rel_pos_w', 'image_encoder.blocks.0.attn.qkv.weight', 'image_encoder.blocks.0.attn.qkv.bias', 'image_encoder.blocks.0.attn.proj.weight', 'image_encoder.blocks.0.attn.proj.bias', 'image_encoder.blocks.0.norm2.weight', 'image_encoder.blocks.0.norm2.bias', 'image_encoder.blocks.0.mlp.lin1.weight', 'image_encoder.blocks.0.mlp.lin1.bias', 'image_encoder.blocks.0.mlp.lin2.weight', 'image_encoder.blocks.0.mlp.lin2.bias', 'image_encoder.blocks.1.norm1.weight', 'image_encoder.blocks.1.norm1.bias', 'image_encoder.blocks.1.attn.rel_pos_h', 'image_encoder.blocks.1.attn.rel_pos_w', 'image_encoder.blocks.1.attn.qkv.weight', 'image_encoder.blocks.1.attn.qkv.bias', 'image_encoder.blocks.1.attn.proj.weight', 'image_encoder.blocks.1.attn.proj.bias', 'image_encoder.blocks.1.norm2.weight', 'image_encoder.blocks.1.norm2.bias', 'image_encoder.blocks.1.mlp.lin1.weight', 'image_encoder.blocks.1.mlp.lin1.bias', 'image_encoder.blocks.1.mlp.lin2.weight', 'image_encoder.blocks.1.mlp.lin2.bias', 'image_encoder.blocks.2.norm1.weight', 'image_encoder.blocks.2.norm1.bias', 'image_encoder.blocks.2.attn.rel_pos_h', 'image_encoder.blocks.2.attn.rel_pos_w', 'image_encoder.blocks.2.attn.qkv.weight', 'image_encoder.blocks.2.attn.qkv.bias', 'image_encoder.blocks.2.attn.proj.weight', 'image_encoder.blocks.2.attn.proj.bias', 'image_encoder.blocks.2.norm2.weight', 'image_encoder.blocks.2.norm2.bias', 'image_encoder.blocks.2.mlp.lin1.weight', 'image_encoder.blocks.2.mlp.lin1.bias', 'image_encoder.blocks.2.mlp.lin2.weight', 'image_encoder.blocks.2.mlp.lin2.bias', 'image_encoder.blocks.3.norm1.weight', 'image_encoder.blocks.3.norm1.bias', 'image_encoder.blocks.3.attn.rel_pos_h', 'image_encoder.blocks.3.attn.rel_pos_w', 'image_encoder.blocks.3.attn.qkv.weight', 'image_encoder.blocks.3.attn.qkv.bias', 'image_encoder.blocks.3.attn.proj.weight', 'image_encoder.blocks.3.attn.proj.bias', 'image_encoder.blocks.3.norm2.weight', 'image_encoder.blocks.3.norm2.bias', 'image_encoder.blocks.3.mlp.lin1.weight', 'image_encoder.blocks.3.mlp.lin1.bias', 'image_encoder.blocks.3.mlp.lin2.weight', 'image_encoder.blocks.3.mlp.lin2.bias', 'image_encoder.blocks.4.norm1.weight', 'image_encoder.blocks.4.norm1.bias', 'image_encoder.blocks.4.attn.rel_pos_h', 'image_encoder.blocks.4.attn.rel_pos_w', 'image_encoder.blocks.4.attn.qkv.weight', 'image_encoder.blocks.4.attn.qkv.bias', 'image_encoder.blocks.4.attn.proj.weight', 'image_encoder.blocks.4.attn.proj.bias', 'image_encoder.blocks.4.norm2.weight', 'image_encoder.blocks.4.norm2.bias', 'image_encoder.blocks.4.mlp.lin1.weight', 'image_encoder.blocks.4.mlp.lin1.bias', 'image_encoder.blocks.4.mlp.lin2.weight', 'image_encoder.blocks.4.mlp.lin2.bias', 'image_encoder.blocks.5.norm1.weight', 'image_encoder.blocks.5.norm1.bias', 'image_encoder.blocks.5.attn.rel_pos_h', 'image_encoder.blocks.5.attn.rel_pos_w', 'image_encoder.blocks.5.attn.qkv.weight', 'image_encoder.blocks.5.attn.qkv.bias', 'image_encoder.blocks.5.attn.proj.weight', 'image_encoder.blocks.5.attn.proj.bias', 'image_encoder.blocks.5.norm2.weight', 'image_encoder.blocks.5.norm2.bias', 'image_encoder.blocks.5.mlp.lin1.weight', 'image_encoder.blocks.5.mlp.lin1.bias', 'image_encoder.blocks.5.mlp.lin2.weight', 'image_encoder.blocks.5.mlp.lin2.bias', 'image_encoder.blocks.6.norm1.weight', 'image_encoder.blocks.6.norm1.bias', 'image_encoder.blocks.6.attn.rel_pos_h', 'image_encoder.blocks.6.attn.rel_pos_w', 'image_encoder.blocks.6.attn.qkv.weight', 'image_encoder.blocks.6.attn.qkv.bias', 'image_encoder.blocks.6.attn.proj.weight', 'image_encoder.blocks.6.attn.proj.bias', 'image_encoder.blocks.6.norm2.weight', 'image_encoder.blocks.6.norm2.bias', 'image_encoder.blocks.6.mlp.lin1.weight', 'image_encoder.blocks.6.mlp.lin1.bias', 'image_encoder.blocks.6.mlp.lin2.weight', 'image_encoder.blocks.6.mlp.lin2.bias', 'image_encoder.blocks.7.norm1.weight', 'image_encoder.blocks.7.norm1.bias', 'image_encoder.blocks.7.attn.rel_pos_h', 'image_encoder.blocks.7.attn.rel_pos_w', 'image_encoder.blocks.7.attn.qkv.weight', 'image_encoder.blocks.7.attn.qkv.bias', 'image_encoder.blocks.7.attn.proj.weight', 'image_encoder.blocks.7.attn.proj.bias', 'image_encoder.blocks.7.norm2.weight', 'image_encoder.blocks.7.norm2.bias', 'image_encoder.blocks.7.mlp.lin1.weight', 'image_encoder.blocks.7.mlp.lin1.bias', 'image_encoder.blocks.7.mlp.lin2.weight', 'image_encoder.blocks.7.mlp.lin2.bias', 'image_encoder.blocks.8.norm1.weight', 'image_encoder.blocks.8.norm1.bias', 'image_encoder.blocks.8.attn.rel_pos_h', 'image_encoder.blocks.8.attn.rel_pos_w', 'image_encoder.blocks.8.attn.qkv.weight', 'image_encoder.blocks.8.attn.qkv.bias', 'image_encoder.blocks.8.attn.proj.weight', 'image_encoder.blocks.8.attn.proj.bias', 'image_encoder.blocks.8.norm2.weight', 'image_encoder.blocks.8.norm2.bias', 'image_encoder.blocks.8.mlp.lin1.weight', 'image_encoder.blocks.8.mlp.lin1.bias', 'image_encoder.blocks.8.mlp.lin2.weight', 'image_encoder.blocks.8.mlp.lin2.bias', 'image_encoder.blocks.9.norm1.weight', 'image_encoder.blocks.9.norm1.bias', 'image_encoder.blocks.9.attn.rel_pos_h', 'image_encoder.blocks.9.attn.rel_pos_w', 'image_encoder.blocks.9.attn.qkv.weight', 'image_encoder.blocks.9.attn.qkv.bias', 'image_encoder.blocks.9.attn.proj.weight', 'image_encoder.blocks.9.attn.proj.bias', 'image_encoder.blocks.9.norm2.weight', 'image_encoder.blocks.9.norm2.bias', 'image_encoder.blocks.9.mlp.lin1.weight', 'image_encoder.blocks.9.mlp.lin1.bias', 'image_encoder.blocks.9.mlp.lin2.weight', 'image_encoder.blocks.9.mlp.lin2.bias', 'image_encoder.blocks.10.norm1.weight', 'image_encoder.blocks.10.norm1.bias', 'image_encoder.blocks.10.attn.rel_pos_h', 'image_encoder.blocks.10.attn.rel_pos_w', 'image_encoder.blocks.10.attn.qkv.weight', 'image_encoder.blocks.10.attn.qkv.bias', 'image_encoder.blocks.10.attn.proj.weight', 'image_encoder.blocks.10.attn.proj.bias', 'image_encoder.blocks.10.norm2.weight', 'image_encoder.blocks.10.norm2.bias', 'image_encoder.blocks.10.mlp.lin1.weight', 'image_encoder.blocks.10.mlp.lin1.bias', 'image_encoder.blocks.10.mlp.lin2.weight', 'image_encoder.blocks.10.mlp.lin2.bias', 'image_encoder.blocks.11.norm1.weight', 'image_encoder.blocks.11.norm1.bias', 'image_encoder.blocks.11.attn.rel_pos_h', 'image_encoder.blocks.11.attn.rel_pos_w', 'image_encoder.blocks.11.attn.qkv.weight', 'image_encoder.blocks.11.attn.qkv.bias', 'image_encoder.blocks.11.attn.proj.weight', 'image_encoder.blocks.11.attn.proj.bias', 'image_encoder.blocks.11.norm2.weight', 'image_encoder.blocks.11.norm2.bias', 'image_encoder.blocks.11.mlp.lin1.weight', 'image_encoder.blocks.11.mlp.lin1.bias', 'image_encoder.blocks.11.mlp.lin2.weight', 'image_encoder.blocks.11.mlp.lin2.bias']
+21 iterations per epoch. 3150 max iterations
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1 : loss : 0.911256, loss_ce: 1.323184, loss_dice: 0.808274
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 2 : loss : 0.893937, loss_ce: 1.286763, loss_dice: 0.795730
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 3 : loss : 0.886296, loss_ce: 1.264751, loss_dice: 0.791682
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 4 : loss : 0.867876, loss_ce: 1.208395, loss_dice: 0.782746
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 5 : loss : 0.852628, loss_ce: 1.152386, loss_dice: 0.777688
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 6 : loss : 0.808019, loss_ce: 0.998425, loss_dice: 0.760417
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 7 : loss : 0.771001, loss_ce: 0.863978, loss_dice: 0.747756
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 8 : loss : 0.717923, loss_ce: 0.704520, loss_dice: 0.721274
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 9 : loss : 0.678669, loss_ce: 0.571522, loss_dice: 0.705456
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 10 : loss : 0.644532, loss_ce: 0.436750, loss_dice: 0.696477
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 11 : loss : 0.631479, loss_ce: 0.418647, loss_dice: 0.684687
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 12 : loss : 0.617635, loss_ce: 0.365591, loss_dice: 0.680646
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 13 : loss : 0.608516, loss_ce: 0.321120, loss_dice: 0.680365
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 14 : loss : 0.595192, loss_ce: 0.310328, loss_dice: 0.666408
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 15 : loss : 0.579795, loss_ce: 0.378025, loss_dice: 0.630238
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 16 : loss : 0.605658, loss_ce: 0.409281, loss_dice: 0.654752
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 17 : loss : 0.584745, loss_ce: 0.310347, loss_dice: 0.653344
+label batch: 36 and image batch: 36
+
+  1%|▏                                | 1/150 [00:21<52:21, 21.08s/it]
+iteration 18 : loss : 0.573990, loss_ce: 0.352389, loss_dice: 0.629390
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 19 : loss : 0.564415, loss_ce: 0.389366, loss_dice: 0.608177
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 20 : loss : 0.585205, loss_ce: 0.338219, loss_dice: 0.646952
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 21 : loss : 0.571880, loss_ce: 0.306894, loss_dice: 0.638127
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 22 : loss : 0.570539, loss_ce: 0.389312, loss_dice: 0.615846
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 23 : loss : 0.559133, loss_ce: 0.310765, loss_dice: 0.621225
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 24 : loss : 0.557031, loss_ce: 0.292013, loss_dice: 0.623285
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 25 : loss : 0.545756, loss_ce: 0.291026, loss_dice: 0.609439
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 26 : loss : 0.542632, loss_ce: 0.325559, loss_dice: 0.596901
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 27 : loss : 0.539011, loss_ce: 0.295106, loss_dice: 0.599988
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 28 : loss : 0.534920, loss_ce: 0.275463, loss_dice: 0.599784
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 29 : loss : 0.538834, loss_ce: 0.275362, loss_dice: 0.604702
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 30 : loss : 0.529025, loss_ce: 0.286247, loss_dice: 0.589719
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 31 : loss : 0.532244, loss_ce: 0.308343, loss_dice: 0.588220
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 32 : loss : 0.537474, loss_ce: 0.259331, loss_dice: 0.607009
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 33 : loss : 0.535669, loss_ce: 0.256282, loss_dice: 0.605516
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 34 : loss : 0.527540, loss_ce: 0.248668, loss_dice: 0.597258
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 35 : loss : 0.518982, loss_ce: 0.265468, loss_dice: 0.582360
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 36 : loss : 0.528090, loss_ce: 0.300894, loss_dice: 0.584889
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 37 : loss : 0.515371, loss_ce: 0.260928, loss_dice: 0.578982
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 38 : loss : 0.517893, loss_ce: 0.256534, loss_dice: 0.583233
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 39 : loss : 0.520759, loss_ce: 0.247300, loss_dice: 0.589124
+label batch: 36 and image batch: 36
+
+  1%|▍                                | 2/150 [00:30<35:31, 14.40s/it]
+iteration 40 : loss : 0.522441, loss_ce: 0.226942, loss_dice: 0.596315
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 41 : loss : 0.535018, loss_ce: 0.311059, loss_dice: 0.591008
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 42 : loss : 0.505788, loss_ce: 0.233304, loss_dice: 0.573909
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 43 : loss : 0.528138, loss_ce: 0.276474, loss_dice: 0.591054
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 44 : loss : 0.547444, loss_ce: 0.366384, loss_dice: 0.592708
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 45 : loss : 0.520866, loss_ce: 0.254281, loss_dice: 0.587512
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 46 : loss : 0.524380, loss_ce: 0.240194, loss_dice: 0.595426
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 47 : loss : 0.527177, loss_ce: 0.282564, loss_dice: 0.588330
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 48 : loss : 0.526784, loss_ce: 0.283886, loss_dice: 0.587508
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 49 : loss : 0.524725, loss_ce: 0.231011, loss_dice: 0.598153
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 50 : loss : 0.517522, loss_ce: 0.219649, loss_dice: 0.591991
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 51 : loss : 0.521774, loss_ce: 0.244337, loss_dice: 0.591133
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 52 : loss : 0.524122, loss_ce: 0.278316, loss_dice: 0.585573
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 53 : loss : 0.513141, loss_ce: 0.242003, loss_dice: 0.580926
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 54 : loss : 0.514445, loss_ce: 0.229454, loss_dice: 0.585693
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 55 : loss : 0.511348, loss_ce: 0.227153, loss_dice: 0.582397
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 56 : loss : 0.509825, loss_ce: 0.249376, loss_dice: 0.574938
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 57 : loss : 0.516726, loss_ce: 0.284447, loss_dice: 0.574795
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 58 : loss : 0.546684, loss_ce: 0.183857, loss_dice: 0.637390
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 59 : loss : 0.533652, loss_ce: 0.325156, loss_dice: 0.585776
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 60 : loss : 0.530065, loss_ce: 0.290160, loss_dice: 0.590041
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 61 : loss : 0.599465, loss_ce: 0.471454, loss_dice: 0.631468
+label batch: 36 and image batch: 36
+
+  2%|▋                                | 3/150 [00:40<29:54, 12.21s/it]
+iteration 62 : loss : 0.590295, loss_ce: 0.400866, loss_dice: 0.637652
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 63 : loss : 0.559305, loss_ce: 0.316343, loss_dice: 0.620046
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 64 : loss : 0.564860, loss_ce: 0.360892, loss_dice: 0.615852
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 65 : loss : 0.567956, loss_ce: 0.231603, loss_dice: 0.652045
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 66 : loss : 0.563095, loss_ce: 0.313100, loss_dice: 0.625594
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 67 : loss : 0.544634, loss_ce: 0.352560, loss_dice: 0.592652
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 68 : loss : 0.554224, loss_ce: 0.271069, loss_dice: 0.625013
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 69 : loss : 0.531710, loss_ce: 0.303504, loss_dice: 0.588762
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 70 : loss : 0.535967, loss_ce: 0.319137, loss_dice: 0.590175
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 71 : loss : 0.525582, loss_ce: 0.242751, loss_dice: 0.596290
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 72 : loss : 0.523574, loss_ce: 0.244263, loss_dice: 0.593402
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 73 : loss : 0.535135, loss_ce: 0.296023, loss_dice: 0.594913
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 74 : loss : 0.539590, loss_ce: 0.289385, loss_dice: 0.602141
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 75 : loss : 0.524218, loss_ce: 0.242802, loss_dice: 0.594571
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 76 : loss : 0.531415, loss_ce: 0.241476, loss_dice: 0.603900
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 77 : loss : 0.521892, loss_ce: 0.255230, loss_dice: 0.588557
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 78 : loss : 0.522124, loss_ce: 0.264472, loss_dice: 0.586538
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 79 : loss : 0.528019, loss_ce: 0.231955, loss_dice: 0.602034
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 80 : loss : 0.518841, loss_ce: 0.238059, loss_dice: 0.589037
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 81 : loss : 0.524164, loss_ce: 0.261195, loss_dice: 0.589907
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 82 : loss : 0.525112, loss_ce: 0.255318, loss_dice: 0.592561
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 83 : loss : 0.525211, loss_ce: 0.242528, loss_dice: 0.595882
+label batch: 3 and image batch: 3
+
+  3%|▉                                | 4/150 [00:49<27:07, 11.15s/it]
+iteration 84 : loss : 0.550963, loss_ce: 0.280787, loss_dice: 0.618507
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 85 : loss : 0.515792, loss_ce: 0.221168, loss_dice: 0.589448
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 86 : loss : 0.519354, loss_ce: 0.227322, loss_dice: 0.592361
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 87 : loss : 0.526462, loss_ce: 0.273333, loss_dice: 0.589744
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 88 : loss : 0.514351, loss_ce: 0.254058, loss_dice: 0.579424
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 89 : loss : 0.519495, loss_ce: 0.247011, loss_dice: 0.587616
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 90 : loss : 0.528998, loss_ce: 0.245568, loss_dice: 0.599856
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 91 : loss : 0.532203, loss_ce: 0.256060, loss_dice: 0.601239
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 92 : loss : 0.521807, loss_ce: 0.229627, loss_dice: 0.594852
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 93 : loss : 0.525844, loss_ce: 0.240813, loss_dice: 0.597101
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 94 : loss : 0.524613, loss_ce: 0.254625, loss_dice: 0.592111
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 95 : loss : 0.513465, loss_ce: 0.253513, loss_dice: 0.578453
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 96 : loss : 0.522848, loss_ce: 0.258013, loss_dice: 0.589057
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 97 : loss : 0.515765, loss_ce: 0.238934, loss_dice: 0.584972
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 98 : loss : 0.503275, loss_ce: 0.222418, loss_dice: 0.573489
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 99 : loss : 0.521350, loss_ce: 0.245358, loss_dice: 0.590348
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 100 : loss : 0.524065, loss_ce: 0.255521, loss_dice: 0.591201
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 101 : loss : 0.516590, loss_ce: 0.243224, loss_dice: 0.584932
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 102 : loss : 0.515491, loss_ce: 0.225630, loss_dice: 0.587956
+label batch: 36 and image batch: 36
+
+  3%|█                                | 5/150 [00:58<25:00, 10.35s/it]
+iteration 103 : loss : 0.514847, loss_ce: 0.224170, loss_dice: 0.587517
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 104 : loss : 0.515863, loss_ce: 0.239439, loss_dice: 0.584969
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 105 : loss : 0.519375, loss_ce: 0.244345, loss_dice: 0.588132
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 106 : loss : 0.521345, loss_ce: 0.256470, loss_dice: 0.587564
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 107 : loss : 0.522833, loss_ce: 0.248350, loss_dice: 0.591453
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 108 : loss : 0.520755, loss_ce: 0.245664, loss_dice: 0.589527
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 109 : loss : 0.515231, loss_ce: 0.239183, loss_dice: 0.584244
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 110 : loss : 0.516723, loss_ce: 0.232598, loss_dice: 0.587754
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 111 : loss : 0.507428, loss_ce: 0.233927, loss_dice: 0.575803
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 112 : loss : 0.513476, loss_ce: 0.236606, loss_dice: 0.582694
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 113 : loss : 0.514882, loss_ce: 0.245271, loss_dice: 0.582285
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 114 : loss : 0.511900, loss_ce: 0.255687, loss_dice: 0.575953
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 115 : loss : 0.514810, loss_ce: 0.253558, loss_dice: 0.580123
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 116 : loss : 0.518902, loss_ce: 0.241132, loss_dice: 0.588344
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 117 : loss : 0.512857, loss_ce: 0.223276, loss_dice: 0.585253
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 118 : loss : 0.507672, loss_ce: 0.222805, loss_dice: 0.578889
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 119 : loss : 0.511269, loss_ce: 0.216080, loss_dice: 0.585067
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 120 : loss : 0.514332, loss_ce: 0.222309, loss_dice: 0.587338
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 121 : loss : 0.520371, loss_ce: 0.247808, loss_dice: 0.588512
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 122 : loss : 0.512525, loss_ce: 0.214027, loss_dice: 0.587149
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 123 : loss : 0.521086, loss_ce: 0.242289, loss_dice: 0.590785
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 124 : loss : 0.527259, loss_ce: 0.260679, loss_dice: 0.593904
+label batch: 36 and image batch: 36
+
+  4%|█▎                               | 6/150 [01:08<24:08, 10.06s/it]
+iteration 125 : loss : 0.516565, loss_ce: 0.215725, loss_dice: 0.591775
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 126 : loss : 0.493266, loss_ce: 0.186682, loss_dice: 0.569912
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 127 : loss : 0.531419, loss_ce: 0.203880, loss_dice: 0.613304
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 128 : loss : 0.531114, loss_ce: 0.264637, loss_dice: 0.597733
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 129 : loss : 0.549516, loss_ce: 0.350966, loss_dice: 0.599154
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 130 : loss : 0.531913, loss_ce: 0.320600, loss_dice: 0.584741
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 131 : loss : 0.523206, loss_ce: 0.228145, loss_dice: 0.596972
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 132 : loss : 0.531411, loss_ce: 0.247586, loss_dice: 0.602367
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 133 : loss : 0.532063, loss_ce: 0.268142, loss_dice: 0.598043
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 134 : loss : 0.534427, loss_ce: 0.297813, loss_dice: 0.593581
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 135 : loss : 0.516314, loss_ce: 0.235672, loss_dice: 0.586475
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 136 : loss : 0.520529, loss_ce: 0.237298, loss_dice: 0.591337
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 137 : loss : 0.515293, loss_ce: 0.265509, loss_dice: 0.577739
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 138 : loss : 0.530110, loss_ce: 0.258196, loss_dice: 0.598089
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 139 : loss : 0.522336, loss_ce: 0.240293, loss_dice: 0.592847
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 140 : loss : 0.519515, loss_ce: 0.222542, loss_dice: 0.593758
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 141 : loss : 0.524342, loss_ce: 0.240493, loss_dice: 0.595305
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 142 : loss : 0.535565, loss_ce: 0.252737, loss_dice: 0.606272
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 143 : loss : 0.521014, loss_ce: 0.235105, loss_dice: 0.592491
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 144 : loss : 0.521380, loss_ce: 0.242055, loss_dice: 0.591211
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 145 : loss : 0.514775, loss_ce: 0.255111, loss_dice: 0.579691
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 146 : loss : 0.514427, loss_ce: 0.255957, loss_dice: 0.579045
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+  5%|█▌                               | 7/150 [01:17<23:34,  9.89s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 148 : loss : 0.518431, loss_ce: 0.223342, loss_dice: 0.592204
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 149 : loss : 0.510697, loss_ce: 0.237641, loss_dice: 0.578961
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 150 : loss : 0.531228, loss_ce: 0.260017, loss_dice: 0.599031
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 151 : loss : 0.509893, loss_ce: 0.230319, loss_dice: 0.579786
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 152 : loss : 0.523389, loss_ce: 0.240510, loss_dice: 0.594108
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 153 : loss : 0.521110, loss_ce: 0.254708, loss_dice: 0.587710
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 154 : loss : 0.512151, loss_ce: 0.236223, loss_dice: 0.581133
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 155 : loss : 0.531056, loss_ce: 0.227571, loss_dice: 0.606927
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 156 : loss : 0.517095, loss_ce: 0.236667, loss_dice: 0.587202
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 157 : loss : 0.516537, loss_ce: 0.269651, loss_dice: 0.578259
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 158 : loss : 0.522423, loss_ce: 0.279113, loss_dice: 0.583250
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 159 : loss : 0.520715, loss_ce: 0.246359, loss_dice: 0.589304
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 160 : loss : 0.503563, loss_ce: 0.212102, loss_dice: 0.576428
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 161 : loss : 0.520578, loss_ce: 0.208427, loss_dice: 0.598616
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 162 : loss : 0.514117, loss_ce: 0.226162, loss_dice: 0.586106
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 163 : loss : 0.510265, loss_ce: 0.256065, loss_dice: 0.573814
+label batch: 36 and image batch: 36
+
+  5%|█▊                               | 8/150 [01:27<23:10,  9.79s/it]
+iteration 164 : loss : 0.510359, loss_ce: 0.250414, loss_dice: 0.575346
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 165 : loss : 0.513027, loss_ce: 0.233574, loss_dice: 0.582890
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 166 : loss : 0.515563, loss_ce: 0.235445, loss_dice: 0.585593
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 167 : loss : 0.524746, loss_ce: 0.242564, loss_dice: 0.595291
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 168 : loss : 0.512932, loss_ce: 0.217709, loss_dice: 0.586738
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 169 : loss : 0.526228, loss_ce: 0.192813, loss_dice: 0.609582
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 170 : loss : 0.521935, loss_ce: 0.218751, loss_dice: 0.597730
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 171 : loss : 0.524361, loss_ce: 0.269778, loss_dice: 0.588006
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 172 : loss : 0.522530, loss_ce: 0.300242, loss_dice: 0.578102
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 173 : loss : 0.518365, loss_ce: 0.277695, loss_dice: 0.578533
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 174 : loss : 0.509042, loss_ce: 0.244232, loss_dice: 0.575245
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 175 : loss : 0.513552, loss_ce: 0.222013, loss_dice: 0.586437
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 176 : loss : 0.513414, loss_ce: 0.215805, loss_dice: 0.587816
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 177 : loss : 0.510331, loss_ce: 0.208442, loss_dice: 0.585803
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 178 : loss : 0.511374, loss_ce: 0.213463, loss_dice: 0.585852
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 179 : loss : 0.527531, loss_ce: 0.238581, loss_dice: 0.599769
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 180 : loss : 0.510516, loss_ce: 0.249509, loss_dice: 0.575768
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 181 : loss : 0.509277, loss_ce: 0.247415, loss_dice: 0.574743
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 182 : loss : 0.519034, loss_ce: 0.241376, loss_dice: 0.588448
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 183 : loss : 0.517790, loss_ce: 0.239419, loss_dice: 0.587383
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 184 : loss : 0.520158, loss_ce: 0.248547, loss_dice: 0.588061
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 185 : loss : 0.514633, loss_ce: 0.240804, loss_dice: 0.583090
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 186 : loss : 0.517175, loss_ce: 0.227922, loss_dice: 0.589488
+label batch: 36 and image batch: 36
+
+  6%|█▉                               | 9/150 [01:36<22:43,  9.67s/it]
+iteration 187 : loss : 0.520459, loss_ce: 0.225872, loss_dice: 0.594106
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 188 : loss : 0.519169, loss_ce: 0.224803, loss_dice: 0.592760
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 189 : loss : 0.496433, loss_ce: 0.232441, loss_dice: 0.562431
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 190 : loss : 0.528181, loss_ce: 0.252314, loss_dice: 0.597147
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 191 : loss : 0.520931, loss_ce: 0.259138, loss_dice: 0.586379
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 192 : loss : 0.514598, loss_ce: 0.248936, loss_dice: 0.581013
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 193 : loss : 0.511895, loss_ce: 0.235696, loss_dice: 0.580945
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 194 : loss : 0.517982, loss_ce: 0.236049, loss_dice: 0.588465
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 195 : loss : 0.524686, loss_ce: 0.238906, loss_dice: 0.596132
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 196 : loss : 0.521398, loss_ce: 0.248233, loss_dice: 0.589690
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 197 : loss : 0.510375, loss_ce: 0.235180, loss_dice: 0.579173
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 198 : loss : 0.515695, loss_ce: 0.230069, loss_dice: 0.587101
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 199 : loss : 0.516392, loss_ce: 0.229952, loss_dice: 0.588002
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 200 : loss : 0.514844, loss_ce: 0.229993, loss_dice: 0.586057
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 201 : loss : 0.514964, loss_ce: 0.232556, loss_dice: 0.585566
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 202 : loss : 0.502439, loss_ce: 0.224949, loss_dice: 0.571812
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 203 : loss : 0.511318, loss_ce: 0.223411, loss_dice: 0.583294
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 204 : loss : 0.512557, loss_ce: 0.231083, loss_dice: 0.582925
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 205 : loss : 0.498273, loss_ce: 0.221614, loss_dice: 0.567437
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 206 : loss : 0.518274, loss_ce: 0.240909, loss_dice: 0.587615
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 207 : loss : 0.508376, loss_ce: 0.245603, loss_dice: 0.574069
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 208 : loss : 0.525321, loss_ce: 0.242680, loss_dice: 0.595982
+label batch: 36 and image batch: 36
+
+  7%|██▏                             | 10/150 [01:46<22:29,  9.64s/it]
+iteration 209 : loss : 0.510452, loss_ce: 0.228720, loss_dice: 0.580885
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 210 : loss : 0.502959, loss_ce: 0.251690, loss_dice: 0.565776
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 211 : loss : 0.560530, loss_ce: 0.395421, loss_dice: 0.601808
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 212 : loss : 0.547250, loss_ce: 0.308086, loss_dice: 0.607041
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 213 : loss : 0.579216, loss_ce: 0.224140, loss_dice: 0.667985
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 214 : loss : 0.598183, loss_ce: 0.473632, loss_dice: 0.629321
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 215 : loss : 0.559617, loss_ce: 0.374279, loss_dice: 0.605952
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 216 : loss : 0.577690, loss_ce: 0.352479, loss_dice: 0.633993
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 217 : loss : 0.589199, loss_ce: 0.365605, loss_dice: 0.645098
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 218 : loss : 0.557459, loss_ce: 0.283181, loss_dice: 0.626029
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 219 : loss : 0.545540, loss_ce: 0.307425, loss_dice: 0.605069
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 220 : loss : 0.545728, loss_ce: 0.348050, loss_dice: 0.595147
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 221 : loss : 0.543611, loss_ce: 0.354983, loss_dice: 0.590768
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 222 : loss : 0.537940, loss_ce: 0.312919, loss_dice: 0.594196
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 223 : loss : 0.535877, loss_ce: 0.296358, loss_dice: 0.595757
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 224 : loss : 0.531787, loss_ce: 0.278297, loss_dice: 0.595160
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 225 : loss : 0.533406, loss_ce: 0.262060, loss_dice: 0.601243
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 226 : loss : 0.531701, loss_ce: 0.261573, loss_dice: 0.599233
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 227 : loss : 0.532808, loss_ce: 0.256080, loss_dice: 0.601990
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 228 : loss : 0.529952, loss_ce: 0.250269, loss_dice: 0.599872
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 229 : loss : 0.528172, loss_ce: 0.243035, loss_dice: 0.599457
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 230 : loss : 0.522895, loss_ce: 0.255119, loss_dice: 0.589839
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+  7%|██▎                             | 11/150 [01:55<22:07,  9.55s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 232 : loss : 0.521073, loss_ce: 0.249051, loss_dice: 0.589078
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 233 : loss : 0.520676, loss_ce: 0.243788, loss_dice: 0.589898
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 234 : loss : 0.521099, loss_ce: 0.252113, loss_dice: 0.588345
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 235 : loss : 0.515385, loss_ce: 0.264251, loss_dice: 0.578169
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 236 : loss : 0.522726, loss_ce: 0.269718, loss_dice: 0.585979
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 237 : loss : 0.527189, loss_ce: 0.249733, loss_dice: 0.596552
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 238 : loss : 0.522679, loss_ce: 0.241473, loss_dice: 0.592981
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 239 : loss : 0.521132, loss_ce: 0.240048, loss_dice: 0.591403
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 240 : loss : 0.521157, loss_ce: 0.232773, loss_dice: 0.593253
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 241 : loss : 0.512024, loss_ce: 0.237442, loss_dice: 0.580670
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 242 : loss : 0.521566, loss_ce: 0.252780, loss_dice: 0.588763
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 243 : loss : 0.524542, loss_ce: 0.258574, loss_dice: 0.591034
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 244 : loss : 0.517259, loss_ce: 0.237007, loss_dice: 0.587321
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 245 : loss : 0.524573, loss_ce: 0.249957, loss_dice: 0.593227
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 246 : loss : 0.517142, loss_ce: 0.242150, loss_dice: 0.585891
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 247 : loss : 0.516972, loss_ce: 0.241264, loss_dice: 0.585899
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 248 : loss : 0.516530, loss_ce: 0.247834, loss_dice: 0.583704
+label batch: 36 and image batch: 36
+
+  8%|██▌                             | 12/150 [02:05<22:02,  9.58s/it]
+iteration 249 : loss : 0.528051, loss_ce: 0.243241, loss_dice: 0.599254
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 250 : loss : 0.511086, loss_ce: 0.225028, loss_dice: 0.582601
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 251 : loss : 0.516301, loss_ce: 0.238342, loss_dice: 0.585791
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 252 : loss : 0.510790, loss_ce: 0.266410, loss_dice: 0.571886
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 253 : loss : 0.514860, loss_ce: 0.283226, loss_dice: 0.572769
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 254 : loss : 0.520155, loss_ce: 0.268743, loss_dice: 0.583008
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 255 : loss : 0.513354, loss_ce: 0.249840, loss_dice: 0.579233
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 256 : loss : 0.519844, loss_ce: 0.231269, loss_dice: 0.591988
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 257 : loss : 0.528764, loss_ce: 0.222679, loss_dice: 0.605286
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 258 : loss : 0.522792, loss_ce: 0.219930, loss_dice: 0.598508
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 259 : loss : 0.528424, loss_ce: 0.236142, loss_dice: 0.601494
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 260 : loss : 0.519787, loss_ce: 0.249002, loss_dice: 0.587483
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 261 : loss : 0.517909, loss_ce: 0.250403, loss_dice: 0.584785
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 262 : loss : 0.527790, loss_ce: 0.260823, loss_dice: 0.594532
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 263 : loss : 0.507859, loss_ce: 0.247695, loss_dice: 0.572900
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 264 : loss : 0.510987, loss_ce: 0.234156, loss_dice: 0.580194
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 265 : loss : 0.512910, loss_ce: 0.230857, loss_dice: 0.583423
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 266 : loss : 0.508687, loss_ce: 0.236251, loss_dice: 0.576796
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 267 : loss : 0.509835, loss_ce: 0.244273, loss_dice: 0.576226
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 268 : loss : 0.512774, loss_ce: 0.239119, loss_dice: 0.581187
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 269 : loss : 0.508966, loss_ce: 0.223606, loss_dice: 0.580306
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 270 : loss : 0.516230, loss_ce: 0.221851, loss_dice: 0.589824
+label batch: 36 and image batch: 36
+
+  9%|██▊                             | 13/150 [02:14<21:48,  9.55s/it]
+iteration 271 : loss : 0.518078, loss_ce: 0.235839, loss_dice: 0.588638
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 272 : loss : 0.516914, loss_ce: 0.254972, loss_dice: 0.582400
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 273 : loss : 0.521244, loss_ce: 0.276806, loss_dice: 0.582354
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 274 : loss : 0.512699, loss_ce: 0.223426, loss_dice: 0.585017
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 275 : loss : 0.530616, loss_ce: 0.221462, loss_dice: 0.607905
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 276 : loss : 0.513375, loss_ce: 0.224587, loss_dice: 0.585571
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 277 : loss : 0.519406, loss_ce: 0.263527, loss_dice: 0.583376
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 278 : loss : 0.525067, loss_ce: 0.278129, loss_dice: 0.586802
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 279 : loss : 0.513016, loss_ce: 0.251840, loss_dice: 0.578310
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 280 : loss : 0.514276, loss_ce: 0.227447, loss_dice: 0.585983
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 281 : loss : 0.510147, loss_ce: 0.216249, loss_dice: 0.583622
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 282 : loss : 0.518542, loss_ce: 0.221927, loss_dice: 0.592696
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 283 : loss : 0.513991, loss_ce: 0.234754, loss_dice: 0.583801
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 284 : loss : 0.518687, loss_ce: 0.243579, loss_dice: 0.587464
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 285 : loss : 0.506412, loss_ce: 0.247646, loss_dice: 0.571103
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 286 : loss : 0.509669, loss_ce: 0.249224, loss_dice: 0.574780
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 287 : loss : 0.513367, loss_ce: 0.244263, loss_dice: 0.580643
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 288 : loss : 0.510758, loss_ce: 0.235049, loss_dice: 0.579685
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 289 : loss : 0.517799, loss_ce: 0.238553, loss_dice: 0.587611
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 290 : loss : 0.510444, loss_ce: 0.231804, loss_dice: 0.580105
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 291 : loss : 0.501438, loss_ce: 0.227613, loss_dice: 0.569894
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 292 : loss : 0.503434, loss_ce: 0.232552, loss_dice: 0.571154
+label batch: 36 and image batch: 36
+
+  9%|██▉                             | 14/150 [02:24<21:40,  9.56s/it]
+iteration 293 : loss : 0.515141, loss_ce: 0.237779, loss_dice: 0.584482
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 294 : loss : 0.505073, loss_ce: 0.243503, loss_dice: 0.570466
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 295 : loss : 0.513773, loss_ce: 0.235610, loss_dice: 0.583314
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 296 : loss : 0.520732, loss_ce: 0.245595, loss_dice: 0.589516
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 297 : loss : 0.529470, loss_ce: 0.238019, loss_dice: 0.602333
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 298 : loss : 0.514791, loss_ce: 0.240915, loss_dice: 0.583260
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 299 : loss : 0.518908, loss_ce: 0.247805, loss_dice: 0.586684
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 300 : loss : 0.522562, loss_ce: 0.251842, loss_dice: 0.590242
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 301 : loss : 0.513980, loss_ce: 0.252679, loss_dice: 0.579305
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 302 : loss : 0.517773, loss_ce: 0.243288, loss_dice: 0.586394
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 303 : loss : 0.520336, loss_ce: 0.238342, loss_dice: 0.590834
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 304 : loss : 0.507819, loss_ce: 0.237905, loss_dice: 0.575297
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 305 : loss : 0.507382, loss_ce: 0.237305, loss_dice: 0.574902
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 306 : loss : 0.507479, loss_ce: 0.235278, loss_dice: 0.575529
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 307 : loss : 0.524501, loss_ce: 0.224497, loss_dice: 0.599502
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 308 : loss : 0.532505, loss_ce: 0.218393, loss_dice: 0.611033
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 309 : loss : 0.523016, loss_ce: 0.227903, loss_dice: 0.596794
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 310 : loss : 0.512747, loss_ce: 0.237809, loss_dice: 0.581481
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 311 : loss : 0.510936, loss_ce: 0.270147, loss_dice: 0.571133
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 312 : loss : 0.518562, loss_ce: 0.274316, loss_dice: 0.579624
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 313 : loss : 0.513123, loss_ce: 0.251429, loss_dice: 0.578546
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 314 : loss : 0.512394, loss_ce: 0.224164, loss_dice: 0.584452
+label batch: 3 and image batch: 3
+
+ 10%|███▏                            | 15/150 [02:34<21:38,  9.62s/it]
+iteration 315 : loss : 0.504931, loss_ce: 0.221191, loss_dice: 0.575866
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 316 : loss : 0.512107, loss_ce: 0.210410, loss_dice: 0.587531
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 317 : loss : 0.514222, loss_ce: 0.214421, loss_dice: 0.589172
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 318 : loss : 0.517669, loss_ce: 0.237822, loss_dice: 0.587631
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 319 : loss : 0.507824, loss_ce: 0.249136, loss_dice: 0.572496
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 320 : loss : 0.516535, loss_ce: 0.257850, loss_dice: 0.581206
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 321 : loss : 0.512099, loss_ce: 0.253444, loss_dice: 0.576763
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 322 : loss : 0.516904, loss_ce: 0.245853, loss_dice: 0.584667
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 323 : loss : 0.516428, loss_ce: 0.227612, loss_dice: 0.588632
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 324 : loss : 0.512077, loss_ce: 0.219337, loss_dice: 0.585262
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 325 : loss : 0.516171, loss_ce: 0.220102, loss_dice: 0.590188
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 326 : loss : 0.513602, loss_ce: 0.227529, loss_dice: 0.585120
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 327 : loss : 0.508348, loss_ce: 0.239516, loss_dice: 0.575555
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 328 : loss : 0.512364, loss_ce: 0.236835, loss_dice: 0.581247
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 329 : loss : 0.510051, loss_ce: 0.238008, loss_dice: 0.578062
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 330 : loss : 0.502059, loss_ce: 0.230056, loss_dice: 0.570060
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 331 : loss : 0.513996, loss_ce: 0.236333, loss_dice: 0.583412
+label batch: 36 and image batch: 36
+
+ 11%|███▍                            | 16/150 [02:43<21:21,  9.56s/it]
+iteration 332 : loss : 0.508627, loss_ce: 0.239263, loss_dice: 0.575968
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 333 : loss : 0.502099, loss_ce: 0.242433, loss_dice: 0.567015
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 334 : loss : 0.513545, loss_ce: 0.241824, loss_dice: 0.581475
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 335 : loss : 0.511772, loss_ce: 0.229122, loss_dice: 0.582435
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 336 : loss : 0.517671, loss_ce: 0.230423, loss_dice: 0.589484
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 337 : loss : 0.511724, loss_ce: 0.222550, loss_dice: 0.584017
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 338 : loss : 0.520895, loss_ce: 0.238737, loss_dice: 0.591434
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 339 : loss : 0.518974, loss_ce: 0.243059, loss_dice: 0.587953
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 340 : loss : 0.507230, loss_ce: 0.236201, loss_dice: 0.574988
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 341 : loss : 0.516073, loss_ce: 0.234503, loss_dice: 0.586465
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 342 : loss : 0.508661, loss_ce: 0.235077, loss_dice: 0.577057
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 343 : loss : 0.509650, loss_ce: 0.241679, loss_dice: 0.576643
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 344 : loss : 0.508815, loss_ce: 0.227701, loss_dice: 0.579094
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 345 : loss : 0.512783, loss_ce: 0.214155, loss_dice: 0.587440
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 346 : loss : 0.523035, loss_ce: 0.226645, loss_dice: 0.597132
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 347 : loss : 0.507340, loss_ce: 0.236380, loss_dice: 0.575080
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 348 : loss : 0.504389, loss_ce: 0.246186, loss_dice: 0.568940
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 349 : loss : 0.512270, loss_ce: 0.246055, loss_dice: 0.578824
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 350 : loss : 0.514118, loss_ce: 0.232482, loss_dice: 0.584527
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 351 : loss : 0.513948, loss_ce: 0.213794, loss_dice: 0.588987
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 352 : loss : 0.513776, loss_ce: 0.224140, loss_dice: 0.586185
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 353 : loss : 0.509980, loss_ce: 0.226233, loss_dice: 0.580917
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 354 : loss : 0.506993, loss_ce: 0.242682, loss_dice: 0.573071
+label batch: 36 and image batch: 36
+
+ 11%|███▋                            | 17/150 [02:53<21:05,  9.51s/it]
+iteration 355 : loss : 0.511072, loss_ce: 0.245776, loss_dice: 0.577396
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 356 : loss : 0.503483, loss_ce: 0.238364, loss_dice: 0.569763
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 357 : loss : 0.494792, loss_ce: 0.224696, loss_dice: 0.562315
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 358 : loss : 0.500786, loss_ce: 0.216635, loss_dice: 0.571823
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 359 : loss : 0.514506, loss_ce: 0.224420, loss_dice: 0.587028
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 360 : loss : 0.518518, loss_ce: 0.225806, loss_dice: 0.591696
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 361 : loss : 0.508326, loss_ce: 0.234236, loss_dice: 0.576849
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 362 : loss : 0.514783, loss_ce: 0.257000, loss_dice: 0.579229
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 363 : loss : 0.526855, loss_ce: 0.260203, loss_dice: 0.593518
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 364 : loss : 0.510490, loss_ce: 0.240262, loss_dice: 0.578047
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 365 : loss : 0.503331, loss_ce: 0.222673, loss_dice: 0.573496
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 366 : loss : 0.515722, loss_ce: 0.209823, loss_dice: 0.592197
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 367 : loss : 0.507797, loss_ce: 0.219124, loss_dice: 0.579965
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 368 : loss : 0.502342, loss_ce: 0.231533, loss_dice: 0.570044
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 369 : loss : 0.498109, loss_ce: 0.247221, loss_dice: 0.560830
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 370 : loss : 0.513275, loss_ce: 0.254212, loss_dice: 0.578040
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 371 : loss : 0.520619, loss_ce: 0.235719, loss_dice: 0.591844
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 372 : loss : 0.507686, loss_ce: 0.212883, loss_dice: 0.581387
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 373 : loss : 0.516800, loss_ce: 0.217581, loss_dice: 0.591605
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 374 : loss : 0.493831, loss_ce: 0.229230, loss_dice: 0.559981
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 375 : loss : 0.507031, loss_ce: 0.252895, loss_dice: 0.570564
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 376 : loss : 0.525686, loss_ce: 0.258084, loss_dice: 0.592587
+label batch: 36 and image batch: 36
+
+ 12%|███▊                            | 18/150 [03:02<21:03,  9.58s/it]
+iteration 377 : loss : 0.502846, loss_ce: 0.226000, loss_dice: 0.572057
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 378 : loss : 0.480443, loss_ce: 0.219223, loss_dice: 0.545748
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 379 : loss : 0.508672, loss_ce: 0.216691, loss_dice: 0.581667
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 380 : loss : 0.515648, loss_ce: 0.243945, loss_dice: 0.583574
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 381 : loss : 0.526723, loss_ce: 0.259257, loss_dice: 0.593589
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 382 : loss : 0.504043, loss_ce: 0.242591, loss_dice: 0.569406
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 383 : loss : 0.508583, loss_ce: 0.236791, loss_dice: 0.576531
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 384 : loss : 0.515123, loss_ce: 0.233852, loss_dice: 0.585441
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 385 : loss : 0.512463, loss_ce: 0.233918, loss_dice: 0.582100
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 386 : loss : 0.503578, loss_ce: 0.225979, loss_dice: 0.572978
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 387 : loss : 0.501929, loss_ce: 0.221692, loss_dice: 0.571988
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 388 : loss : 0.509607, loss_ce: 0.224315, loss_dice: 0.580930
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 389 : loss : 0.498583, loss_ce: 0.223824, loss_dice: 0.567273
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 390 : loss : 0.498927, loss_ce: 0.225101, loss_dice: 0.567384
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 391 : loss : 0.509869, loss_ce: 0.221080, loss_dice: 0.582067
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 392 : loss : 0.499242, loss_ce: 0.204541, loss_dice: 0.572918
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 393 : loss : 0.500004, loss_ce: 0.223433, loss_dice: 0.569146
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 394 : loss : 0.512660, loss_ce: 0.237364, loss_dice: 0.581483
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 395 : loss : 0.513504, loss_ce: 0.241663, loss_dice: 0.581464
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 396 : loss : 0.490012, loss_ce: 0.212257, loss_dice: 0.559451
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 397 : loss : 0.515055, loss_ce: 0.233334, loss_dice: 0.585485
+label batch: 36 and image batch: 36
+
+ 13%|████                            | 19/150 [03:12<21:04,  9.65s/it]
+iteration 398 : loss : 0.501134, loss_ce: 0.233429, loss_dice: 0.568061
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 399 : loss : 0.518873, loss_ce: 0.263654, loss_dice: 0.582678
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 400 : loss : 0.506894, loss_ce: 0.233991, loss_dice: 0.575119
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 401 : loss : 0.515248, loss_ce: 0.234748, loss_dice: 0.585373
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 402 : loss : 0.512032, loss_ce: 0.209581, loss_dice: 0.587645
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 403 : loss : 0.512906, loss_ce: 0.232532, loss_dice: 0.582999
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 404 : loss : 0.519072, loss_ce: 0.248230, loss_dice: 0.586783
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 405 : loss : 0.519303, loss_ce: 0.252254, loss_dice: 0.586066
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 406 : loss : 0.523448, loss_ce: 0.236526, loss_dice: 0.595178
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 407 : loss : 0.501131, loss_ce: 0.224543, loss_dice: 0.570277
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 408 : loss : 0.505435, loss_ce: 0.223408, loss_dice: 0.575942
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 409 : loss : 0.508338, loss_ce: 0.224515, loss_dice: 0.579294
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 410 : loss : 0.499669, loss_ce: 0.215365, loss_dice: 0.570745
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 411 : loss : 0.514624, loss_ce: 0.222313, loss_dice: 0.587702
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 412 : loss : 0.506081, loss_ce: 0.240105, loss_dice: 0.572574
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 413 : loss : 0.505324, loss_ce: 0.247386, loss_dice: 0.569809
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 414 : loss : 0.509005, loss_ce: 0.247203, loss_dice: 0.574456
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 415 : loss : 0.505217, loss_ce: 0.205889, loss_dice: 0.580049
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 416 : loss : 0.492551, loss_ce: 0.203799, loss_dice: 0.564739
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 417 : loss : 0.513102, loss_ce: 0.250602, loss_dice: 0.578727
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 418 : loss : 0.506948, loss_ce: 0.272059, loss_dice: 0.565670
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 419 : loss : 0.528903, loss_ce: 0.269479, loss_dice: 0.593758
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 13%|████▎                           | 20/150 [03:29<25:28, 11.76s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 421 : loss : 0.499659, loss_ce: 0.217369, loss_dice: 0.570232
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 422 : loss : 0.508943, loss_ce: 0.218436, loss_dice: 0.581570
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 423 : loss : 0.513336, loss_ce: 0.215741, loss_dice: 0.587734
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 424 : loss : 0.508007, loss_ce: 0.216308, loss_dice: 0.580932
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 425 : loss : 0.508042, loss_ce: 0.230872, loss_dice: 0.577334
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 426 : loss : 0.512852, loss_ce: 0.224849, loss_dice: 0.584852
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 427 : loss : 0.515148, loss_ce: 0.222677, loss_dice: 0.588266
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 428 : loss : 0.513958, loss_ce: 0.218414, loss_dice: 0.587844
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 429 : loss : 0.515779, loss_ce: 0.225194, loss_dice: 0.588426
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 430 : loss : 0.500467, loss_ce: 0.227059, loss_dice: 0.568819
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 431 : loss : 0.486007, loss_ce: 0.228368, loss_dice: 0.550417
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 432 : loss : 0.495355, loss_ce: 0.218998, loss_dice: 0.564444
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 433 : loss : 0.493212, loss_ce: 0.231427, loss_dice: 0.558659
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 434 : loss : 0.486960, loss_ce: 0.238917, loss_dice: 0.548970
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 435 : loss : 0.492126, loss_ce: 0.229575, loss_dice: 0.557764
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 436 : loss : 0.508223, loss_ce: 0.228017, loss_dice: 0.578274
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 437 : loss : 0.499373, loss_ce: 0.207699, loss_dice: 0.572291
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 438 : loss : 0.518904, loss_ce: 0.220561, loss_dice: 0.593490
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 439 : loss : 0.512855, loss_ce: 0.228929, loss_dice: 0.583836
+label batch: 36 and image batch: 36
+
+ 14%|████▍                           | 21/150 [03:38<23:50, 11.09s/it]
+iteration 440 : loss : 0.516879, loss_ce: 0.226762, loss_dice: 0.589408
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 441 : loss : 0.514714, loss_ce: 0.231563, loss_dice: 0.585501
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 442 : loss : 0.498646, loss_ce: 0.224986, loss_dice: 0.567061
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 443 : loss : 0.496655, loss_ce: 0.227967, loss_dice: 0.563827
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 444 : loss : 0.514893, loss_ce: 0.233896, loss_dice: 0.585143
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 445 : loss : 0.501276, loss_ce: 0.212566, loss_dice: 0.573453
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 446 : loss : 0.507212, loss_ce: 0.212227, loss_dice: 0.580958
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 447 : loss : 0.510380, loss_ce: 0.214029, loss_dice: 0.584468
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 448 : loss : 0.505128, loss_ce: 0.228467, loss_dice: 0.574293
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 449 : loss : 0.501318, loss_ce: 0.251963, loss_dice: 0.563657
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 450 : loss : 0.505975, loss_ce: 0.243534, loss_dice: 0.571585
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 451 : loss : 0.505763, loss_ce: 0.227923, loss_dice: 0.575222
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 452 : loss : 0.501170, loss_ce: 0.228913, loss_dice: 0.569234
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 453 : loss : 0.513724, loss_ce: 0.216111, loss_dice: 0.588127
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 454 : loss : 0.513544, loss_ce: 0.216469, loss_dice: 0.587813
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 455 : loss : 0.494126, loss_ce: 0.220871, loss_dice: 0.562440
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 456 : loss : 0.509444, loss_ce: 0.240045, loss_dice: 0.576793
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 457 : loss : 0.512504, loss_ce: 0.244958, loss_dice: 0.579390
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 458 : loss : 0.496974, loss_ce: 0.232685, loss_dice: 0.563046
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 459 : loss : 0.504170, loss_ce: 0.219085, loss_dice: 0.575442
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 460 : loss : 0.492101, loss_ce: 0.206330, loss_dice: 0.563543
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 461 : loss : 0.510099, loss_ce: 0.231380, loss_dice: 0.579779
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 15%|████▋                           | 22/150 [03:48<22:36, 10.60s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 463 : loss : 0.490299, loss_ce: 0.209792, loss_dice: 0.560426
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 464 : loss : 0.525830, loss_ce: 0.229616, loss_dice: 0.599884
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 465 : loss : 0.520460, loss_ce: 0.230745, loss_dice: 0.592888
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 466 : loss : 0.494316, loss_ce: 0.232238, loss_dice: 0.559836
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 467 : loss : 0.496769, loss_ce: 0.230020, loss_dice: 0.563456
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 468 : loss : 0.498184, loss_ce: 0.235715, loss_dice: 0.563801
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 469 : loss : 0.493062, loss_ce: 0.224683, loss_dice: 0.560157
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 470 : loss : 0.495062, loss_ce: 0.232988, loss_dice: 0.560581
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 471 : loss : 0.506728, loss_ce: 0.224927, loss_dice: 0.577179
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 472 : loss : 0.502363, loss_ce: 0.209023, loss_dice: 0.575698
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 473 : loss : 0.507452, loss_ce: 0.196712, loss_dice: 0.585137
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 474 : loss : 0.507793, loss_ce: 0.225460, loss_dice: 0.578376
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 475 : loss : 0.509439, loss_ce: 0.237151, loss_dice: 0.577511
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 476 : loss : 0.500013, loss_ce: 0.251325, loss_dice: 0.562185
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 477 : loss : 0.526046, loss_ce: 0.234888, loss_dice: 0.598835
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 478 : loss : 0.506052, loss_ce: 0.228089, loss_dice: 0.575543
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 479 : loss : 0.502826, loss_ce: 0.243919, loss_dice: 0.567553
+label batch: 36 and image batch: 36
+
+ 15%|████▉                           | 23/150 [03:57<21:38, 10.22s/it]
+iteration 480 : loss : 0.487676, loss_ce: 0.239298, loss_dice: 0.549770
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 481 : loss : 0.505551, loss_ce: 0.236684, loss_dice: 0.572767
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 482 : loss : 0.516616, loss_ce: 0.217868, loss_dice: 0.591304
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 483 : loss : 0.522991, loss_ce: 0.250538, loss_dice: 0.591104
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 484 : loss : 0.519414, loss_ce: 0.260066, loss_dice: 0.584251
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 485 : loss : 0.521229, loss_ce: 0.281341, loss_dice: 0.581201
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 486 : loss : 0.506061, loss_ce: 0.258532, loss_dice: 0.567943
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 487 : loss : 0.499731, loss_ce: 0.228975, loss_dice: 0.567420
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 488 : loss : 0.517806, loss_ce: 0.209122, loss_dice: 0.594977
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 489 : loss : 0.507188, loss_ce: 0.211100, loss_dice: 0.581210
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 490 : loss : 0.506036, loss_ce: 0.210792, loss_dice: 0.579847
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 491 : loss : 0.505987, loss_ce: 0.235653, loss_dice: 0.573571
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 492 : loss : 0.508281, loss_ce: 0.243608, loss_dice: 0.574450
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 493 : loss : 0.506477, loss_ce: 0.237075, loss_dice: 0.573828
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 494 : loss : 0.511349, loss_ce: 0.230256, loss_dice: 0.581622
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 495 : loss : 0.496729, loss_ce: 0.202176, loss_dice: 0.570367
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 496 : loss : 0.508522, loss_ce: 0.211328, loss_dice: 0.582821
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 497 : loss : 0.490159, loss_ce: 0.191617, loss_dice: 0.564794
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 498 : loss : 0.536601, loss_ce: 0.264917, loss_dice: 0.604522
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 499 : loss : 0.512305, loss_ce: 0.256763, loss_dice: 0.576191
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 500 : loss : 0.494339, loss_ce: 0.236860, loss_dice: 0.558708
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 501 : loss : 0.495592, loss_ce: 0.218052, loss_dice: 0.564977
+label batch: 36 and image batch: 36
+
+ 16%|█████                           | 24/150 [04:07<21:05, 10.04s/it]
+iteration 502 : loss : 0.508778, loss_ce: 0.220108, loss_dice: 0.580946
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 503 : loss : 0.508863, loss_ce: 0.215721, loss_dice: 0.582148
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 504 : loss : 0.507021, loss_ce: 0.183827, loss_dice: 0.587819
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 505 : loss : 0.505492, loss_ce: 0.196246, loss_dice: 0.582803
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 506 : loss : 0.515627, loss_ce: 0.197698, loss_dice: 0.595109
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 507 : loss : 0.508559, loss_ce: 0.215736, loss_dice: 0.581765
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 508 : loss : 0.515106, loss_ce: 0.245772, loss_dice: 0.582440
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 509 : loss : 0.501505, loss_ce: 0.259620, loss_dice: 0.561976
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 510 : loss : 0.506570, loss_ce: 0.250381, loss_dice: 0.570618
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 511 : loss : 0.512677, loss_ce: 0.240283, loss_dice: 0.580775
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 512 : loss : 0.510572, loss_ce: 0.234204, loss_dice: 0.579664
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 513 : loss : 0.509040, loss_ce: 0.220965, loss_dice: 0.581059
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 514 : loss : 0.502649, loss_ce: 0.202886, loss_dice: 0.577590
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 515 : loss : 0.501666, loss_ce: 0.209810, loss_dice: 0.574629
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 516 : loss : 0.516953, loss_ce: 0.211618, loss_dice: 0.593287
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 517 : loss : 0.498680, loss_ce: 0.218814, loss_dice: 0.568646
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 518 : loss : 0.514994, loss_ce: 0.228785, loss_dice: 0.586546
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 519 : loss : 0.496913, loss_ce: 0.229959, loss_dice: 0.563651
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 520 : loss : 0.509263, loss_ce: 0.235107, loss_dice: 0.577802
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 521 : loss : 0.490845, loss_ce: 0.220951, loss_dice: 0.558319
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 522 : loss : 0.494904, loss_ce: 0.221403, loss_dice: 0.563280
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 523 : loss : 0.499509, loss_ce: 0.218963, loss_dice: 0.569646
+label batch: 36 and image batch: 36
+
+ 17%|█████▎                          | 25/150 [04:17<20:46,  9.97s/it]
+iteration 524 : loss : 0.507876, loss_ce: 0.231083, loss_dice: 0.577074
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 525 : loss : 0.487170, loss_ce: 0.217260, loss_dice: 0.554647
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 526 : loss : 0.494236, loss_ce: 0.212133, loss_dice: 0.564761
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 527 : loss : 0.509640, loss_ce: 0.223859, loss_dice: 0.581085
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 528 : loss : 0.499582, loss_ce: 0.227743, loss_dice: 0.567541
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 529 : loss : 0.504782, loss_ce: 0.230919, loss_dice: 0.573248
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 530 : loss : 0.502821, loss_ce: 0.234621, loss_dice: 0.569871
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 531 : loss : 0.505827, loss_ce: 0.222192, loss_dice: 0.576736
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 532 : loss : 0.493563, loss_ce: 0.212426, loss_dice: 0.563848
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 533 : loss : 0.511177, loss_ce: 0.208753, loss_dice: 0.586783
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 534 : loss : 0.502883, loss_ce: 0.212078, loss_dice: 0.575585
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 535 : loss : 0.512226, loss_ce: 0.223287, loss_dice: 0.584461
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 536 : loss : 0.497023, loss_ce: 0.224482, loss_dice: 0.565158
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 537 : loss : 0.495999, loss_ce: 0.219294, loss_dice: 0.565175
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 538 : loss : 0.501054, loss_ce: 0.216231, loss_dice: 0.572260
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 539 : loss : 0.509939, loss_ce: 0.203943, loss_dice: 0.586438
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 540 : loss : 0.488089, loss_ce: 0.212543, loss_dice: 0.556975
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 541 : loss : 0.512745, loss_ce: 0.238650, loss_dice: 0.581269
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 542 : loss : 0.506021, loss_ce: 0.245297, loss_dice: 0.571202
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 543 : loss : 0.486944, loss_ce: 0.226859, loss_dice: 0.551966
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 544 : loss : 0.485118, loss_ce: 0.194448, loss_dice: 0.557786
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 545 : loss : 0.507422, loss_ce: 0.201080, loss_dice: 0.584008
+label batch: 3 and image batch: 3
+
+ 17%|█████▌                          | 26/150 [04:26<20:24,  9.87s/it]
+iteration 546 : loss : 0.532623, loss_ce: 0.232706, loss_dice: 0.607602
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 547 : loss : 0.501145, loss_ce: 0.229019, loss_dice: 0.569176
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 548 : loss : 0.512475, loss_ce: 0.280084, loss_dice: 0.570573
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 549 : loss : 0.515715, loss_ce: 0.291205, loss_dice: 0.571842
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 550 : loss : 0.502622, loss_ce: 0.261076, loss_dice: 0.563009
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 551 : loss : 0.496791, loss_ce: 0.232891, loss_dice: 0.562766
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 552 : loss : 0.494095, loss_ce: 0.204958, loss_dice: 0.566380
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 553 : loss : 0.495987, loss_ce: 0.191742, loss_dice: 0.572048
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 554 : loss : 0.508063, loss_ce: 0.191643, loss_dice: 0.587168
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 555 : loss : 0.494899, loss_ce: 0.203775, loss_dice: 0.567679
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 556 : loss : 0.504731, loss_ce: 0.231977, loss_dice: 0.572919
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 557 : loss : 0.500103, loss_ce: 0.239336, loss_dice: 0.565295
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 558 : loss : 0.496220, loss_ce: 0.226653, loss_dice: 0.563611
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 559 : loss : 0.495280, loss_ce: 0.211438, loss_dice: 0.566240
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 560 : loss : 0.503330, loss_ce: 0.220706, loss_dice: 0.573986
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 561 : loss : 0.498853, loss_ce: 0.223014, loss_dice: 0.567813
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 562 : loss : 0.503657, loss_ce: 0.227656, loss_dice: 0.572658
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 563 : loss : 0.512260, loss_ce: 0.237455, loss_dice: 0.580961
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 564 : loss : 0.491656, loss_ce: 0.213495, loss_dice: 0.561197
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 565 : loss : 0.479135, loss_ce: 0.215721, loss_dice: 0.544989
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 566 : loss : 0.517118, loss_ce: 0.223229, loss_dice: 0.590590
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 18%|█████▊                          | 27/150 [04:36<20:03,  9.78s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 568 : loss : 0.496557, loss_ce: 0.203018, loss_dice: 0.569941
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 569 : loss : 0.508862, loss_ce: 0.225758, loss_dice: 0.579638
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 570 : loss : 0.512260, loss_ce: 0.245833, loss_dice: 0.578867
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 571 : loss : 0.500891, loss_ce: 0.240556, loss_dice: 0.565975
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 572 : loss : 0.489740, loss_ce: 0.231233, loss_dice: 0.554366
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 573 : loss : 0.506970, loss_ce: 0.218591, loss_dice: 0.579065
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 574 : loss : 0.493573, loss_ce: 0.203994, loss_dice: 0.565968
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 575 : loss : 0.505312, loss_ce: 0.194969, loss_dice: 0.582898
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 576 : loss : 0.497861, loss_ce: 0.208582, loss_dice: 0.570181
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 577 : loss : 0.499522, loss_ce: 0.239284, loss_dice: 0.564581
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 578 : loss : 0.493756, loss_ce: 0.257726, loss_dice: 0.552763
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 579 : loss : 0.501846, loss_ce: 0.246269, loss_dice: 0.565741
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 580 : loss : 0.486574, loss_ce: 0.213391, loss_dice: 0.554870
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 581 : loss : 0.497506, loss_ce: 0.209584, loss_dice: 0.569487
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 582 : loss : 0.502474, loss_ce: 0.204119, loss_dice: 0.577063
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 583 : loss : 0.491605, loss_ce: 0.190423, loss_dice: 0.566901
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 584 : loss : 0.500022, loss_ce: 0.221220, loss_dice: 0.569722
+label batch: 36 and image batch: 36
+
+ 19%|█████▉                          | 28/150 [04:45<19:36,  9.64s/it]
+iteration 585 : loss : 0.489845, loss_ce: 0.235482, loss_dice: 0.553436
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 586 : loss : 0.494136, loss_ce: 0.232007, loss_dice: 0.559668
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 587 : loss : 0.513692, loss_ce: 0.233801, loss_dice: 0.583665
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 588 : loss : 0.491712, loss_ce: 0.217364, loss_dice: 0.560299
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 589 : loss : 0.488005, loss_ce: 0.205181, loss_dice: 0.558712
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 590 : loss : 0.507118, loss_ce: 0.218321, loss_dice: 0.579318
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 591 : loss : 0.500486, loss_ce: 0.222365, loss_dice: 0.570016
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 592 : loss : 0.495177, loss_ce: 0.237404, loss_dice: 0.559621
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 593 : loss : 0.507353, loss_ce: 0.250241, loss_dice: 0.571631
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 594 : loss : 0.499410, loss_ce: 0.249884, loss_dice: 0.561791
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 595 : loss : 0.520106, loss_ce: 0.251180, loss_dice: 0.587337
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 596 : loss : 0.507992, loss_ce: 0.242492, loss_dice: 0.574367
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 597 : loss : 0.506127, loss_ce: 0.223030, loss_dice: 0.576901
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 598 : loss : 0.515468, loss_ce: 0.217083, loss_dice: 0.590065
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 599 : loss : 0.505374, loss_ce: 0.211732, loss_dice: 0.578784
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 600 : loss : 0.482320, loss_ce: 0.209520, loss_dice: 0.550520
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 601 : loss : 0.514510, loss_ce: 0.225641, loss_dice: 0.586727
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 602 : loss : 0.505566, loss_ce: 0.216323, loss_dice: 0.577877
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 603 : loss : 0.506273, loss_ce: 0.220574, loss_dice: 0.577697
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 604 : loss : 0.507965, loss_ce: 0.227742, loss_dice: 0.578021
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 605 : loss : 0.503090, loss_ce: 0.219543, loss_dice: 0.573977
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 606 : loss : 0.487520, loss_ce: 0.220239, loss_dice: 0.554340
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 607 : loss : 0.488194, loss_ce: 0.214104, loss_dice: 0.556717
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 608 : loss : 0.498960, loss_ce: 0.213270, loss_dice: 0.570383
+label batch: 3 and image batch: 3
+
+ 19%|██████▏                         | 29/150 [04:54<19:04,  9.46s/it]
+iteration 609 : loss : 0.485561, loss_ce: 0.157297, loss_dice: 0.567627
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 610 : loss : 0.501480, loss_ce: 0.188447, loss_dice: 0.579738
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 611 : loss : 0.512397, loss_ce: 0.203413, loss_dice: 0.589643
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 612 : loss : 0.524145, loss_ce: 0.262696, loss_dice: 0.589508
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 613 : loss : 0.504308, loss_ce: 0.259340, loss_dice: 0.565550
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 614 : loss : 0.503189, loss_ce: 0.250114, loss_dice: 0.566457
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 615 : loss : 0.502589, loss_ce: 0.235545, loss_dice: 0.569349
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 616 : loss : 0.503379, loss_ce: 0.223272, loss_dice: 0.573405
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 617 : loss : 0.501983, loss_ce: 0.225050, loss_dice: 0.571217
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 618 : loss : 0.495386, loss_ce: 0.216887, loss_dice: 0.565010
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 619 : loss : 0.504862, loss_ce: 0.223625, loss_dice: 0.575171
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 620 : loss : 0.490171, loss_ce: 0.212244, loss_dice: 0.559652
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 621 : loss : 0.491389, loss_ce: 0.212582, loss_dice: 0.561091
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 622 : loss : 0.507409, loss_ce: 0.219284, loss_dice: 0.579441
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 623 : loss : 0.497841, loss_ce: 0.229593, loss_dice: 0.564903
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 624 : loss : 0.516421, loss_ce: 0.237295, loss_dice: 0.586203
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 625 : loss : 0.499745, loss_ce: 0.226788, loss_dice: 0.567984
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 626 : loss : 0.498162, loss_ce: 0.226061, loss_dice: 0.566187
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 627 : loss : 0.494853, loss_ce: 0.230974, loss_dice: 0.560823
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 628 : loss : 0.491470, loss_ce: 0.213699, loss_dice: 0.560913
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 629 : loss : 0.497050, loss_ce: 0.229671, loss_dice: 0.563895
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 20%|██████▍                         | 30/150 [05:04<19:03,  9.53s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 631 : loss : 0.480102, loss_ce: 0.211921, loss_dice: 0.547147
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 632 : loss : 0.499468, loss_ce: 0.210274, loss_dice: 0.571766
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 633 : loss : 0.506065, loss_ce: 0.200745, loss_dice: 0.582395
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 634 : loss : 0.492618, loss_ce: 0.196898, loss_dice: 0.566549
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 635 : loss : 0.503550, loss_ce: 0.232900, loss_dice: 0.571212
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 636 : loss : 0.503489, loss_ce: 0.252602, loss_dice: 0.566211
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 637 : loss : 0.502458, loss_ce: 0.247934, loss_dice: 0.566090
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 638 : loss : 0.484618, loss_ce: 0.223005, loss_dice: 0.550021
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 639 : loss : 0.493564, loss_ce: 0.216172, loss_dice: 0.562912
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 640 : loss : 0.488591, loss_ce: 0.195133, loss_dice: 0.561955
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 641 : loss : 0.498341, loss_ce: 0.193518, loss_dice: 0.574547
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 642 : loss : 0.498145, loss_ce: 0.195471, loss_dice: 0.573813
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 643 : loss : 0.498227, loss_ce: 0.220435, loss_dice: 0.567676
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 644 : loss : 0.500407, loss_ce: 0.229219, loss_dice: 0.568204
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 645 : loss : 0.504598, loss_ce: 0.243205, loss_dice: 0.569947
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 646 : loss : 0.481829, loss_ce: 0.232297, loss_dice: 0.544213
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 647 : loss : 0.495484, loss_ce: 0.225714, loss_dice: 0.562926
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 648 : loss : 0.500390, loss_ce: 0.212665, loss_dice: 0.572322
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 649 : loss : 0.504085, loss_ce: 0.220415, loss_dice: 0.575002
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 650 : loss : 0.512956, loss_ce: 0.220797, loss_dice: 0.585996
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 21%|██████▌                         | 31/150 [05:14<18:59,  9.57s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 652 : loss : 0.483012, loss_ce: 0.194867, loss_dice: 0.555049
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 653 : loss : 0.519462, loss_ce: 0.184189, loss_dice: 0.603281
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 654 : loss : 0.505584, loss_ce: 0.190156, loss_dice: 0.584441
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 655 : loss : 0.496538, loss_ce: 0.214651, loss_dice: 0.567010
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 656 : loss : 0.504696, loss_ce: 0.240905, loss_dice: 0.570644
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 657 : loss : 0.503560, loss_ce: 0.272873, loss_dice: 0.561231
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 658 : loss : 0.513569, loss_ce: 0.268743, loss_dice: 0.574775
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 659 : loss : 0.478517, loss_ce: 0.238500, loss_dice: 0.538522
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 660 : loss : 0.493545, loss_ce: 0.217566, loss_dice: 0.562539
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 661 : loss : 0.491548, loss_ce: 0.191290, loss_dice: 0.566613
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 662 : loss : 0.503567, loss_ce: 0.184487, loss_dice: 0.583338
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 663 : loss : 0.485750, loss_ce: 0.193618, loss_dice: 0.558783
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 664 : loss : 0.488159, loss_ce: 0.210486, loss_dice: 0.557577
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 665 : loss : 0.489639, loss_ce: 0.232669, loss_dice: 0.553882
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 666 : loss : 0.494982, loss_ce: 0.249717, loss_dice: 0.556298
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 667 : loss : 0.500022, loss_ce: 0.241860, loss_dice: 0.564562
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 668 : loss : 0.495009, loss_ce: 0.222970, loss_dice: 0.563018
+label batch: 36 and image batch: 36
+
+ 21%|██████▊                         | 32/150 [05:23<18:59,  9.65s/it]
+iteration 669 : loss : 0.490249, loss_ce: 0.213738, loss_dice: 0.559377
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 670 : loss : 0.481441, loss_ce: 0.210086, loss_dice: 0.549280
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 671 : loss : 0.491718, loss_ce: 0.216695, loss_dice: 0.560473
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 672 : loss : 0.572857, loss_ce: 0.255782, loss_dice: 0.652126
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 673 : loss : 0.487085, loss_ce: 0.206099, loss_dice: 0.557331
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 674 : loss : 0.502470, loss_ce: 0.225178, loss_dice: 0.571794
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 675 : loss : 0.492199, loss_ce: 0.225566, loss_dice: 0.558857
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 676 : loss : 0.489849, loss_ce: 0.208703, loss_dice: 0.560135
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 677 : loss : 0.496838, loss_ce: 0.209550, loss_dice: 0.568660
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 678 : loss : 0.477421, loss_ce: 0.216440, loss_dice: 0.542666
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 679 : loss : 0.495247, loss_ce: 0.214935, loss_dice: 0.565324
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 680 : loss : 0.498850, loss_ce: 0.220831, loss_dice: 0.568354
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 681 : loss : 0.471928, loss_ce: 0.206141, loss_dice: 0.538374
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 682 : loss : 0.490530, loss_ce: 0.227919, loss_dice: 0.556183
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 683 : loss : 0.486150, loss_ce: 0.214563, loss_dice: 0.554047
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 684 : loss : 0.493963, loss_ce: 0.224958, loss_dice: 0.561214
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 685 : loss : 0.495981, loss_ce: 0.215792, loss_dice: 0.566028
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 686 : loss : 0.485166, loss_ce: 0.200611, loss_dice: 0.556305
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 687 : loss : 0.487009, loss_ce: 0.209011, loss_dice: 0.556509
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 688 : loss : 0.496930, loss_ce: 0.210172, loss_dice: 0.568619
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 689 : loss : 0.502079, loss_ce: 0.212214, loss_dice: 0.574545
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 690 : loss : 0.466177, loss_ce: 0.201921, loss_dice: 0.532241
+label batch: 36 and image batch: 36
+
+ 22%|███████                         | 33/150 [05:33<18:55,  9.70s/it]
+iteration 691 : loss : 0.482699, loss_ce: 0.207987, loss_dice: 0.551377
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 692 : loss : 0.510613, loss_ce: 0.214751, loss_dice: 0.584578
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 693 : loss : 0.511306, loss_ce: 0.227931, loss_dice: 0.582149
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 694 : loss : 0.480043, loss_ce: 0.229196, loss_dice: 0.542755
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 695 : loss : 0.487268, loss_ce: 0.250934, loss_dice: 0.546351
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 696 : loss : 0.502248, loss_ce: 0.244659, loss_dice: 0.566645
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 697 : loss : 0.500012, loss_ce: 0.219361, loss_dice: 0.570175
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 698 : loss : 0.498021, loss_ce: 0.209730, loss_dice: 0.570094
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 699 : loss : 0.495337, loss_ce: 0.208141, loss_dice: 0.567136
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 700 : loss : 0.498494, loss_ce: 0.214958, loss_dice: 0.569378
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 701 : loss : 0.500585, loss_ce: 0.228257, loss_dice: 0.568667
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 702 : loss : 0.496583, loss_ce: 0.237896, loss_dice: 0.561255
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 703 : loss : 0.492180, loss_ce: 0.236953, loss_dice: 0.555987
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 704 : loss : 0.485706, loss_ce: 0.218903, loss_dice: 0.552407
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 705 : loss : 0.486269, loss_ce: 0.207351, loss_dice: 0.555998
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 706 : loss : 0.494037, loss_ce: 0.204729, loss_dice: 0.566364
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 707 : loss : 0.483640, loss_ce: 0.206815, loss_dice: 0.552846
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 708 : loss : 0.505754, loss_ce: 0.212570, loss_dice: 0.579050
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 709 : loss : 0.495036, loss_ce: 0.214116, loss_dice: 0.565266
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 710 : loss : 0.506216, loss_ce: 0.229970, loss_dice: 0.575277
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 711 : loss : 0.498026, loss_ce: 0.232984, loss_dice: 0.564286
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 712 : loss : 0.495696, loss_ce: 0.226402, loss_dice: 0.563019
+label batch: 36 and image batch: 36
+
+ 23%|███████▎                        | 34/150 [05:43<18:45,  9.70s/it]
+iteration 713 : loss : 0.507503, loss_ce: 0.213038, loss_dice: 0.581120
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 714 : loss : 0.470821, loss_ce: 0.212989, loss_dice: 0.535279
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 715 : loss : 0.477985, loss_ce: 0.213886, loss_dice: 0.544010
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 716 : loss : 0.485966, loss_ce: 0.211015, loss_dice: 0.554703
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 717 : loss : 0.499945, loss_ce: 0.217778, loss_dice: 0.570486
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 718 : loss : 0.496620, loss_ce: 0.199917, loss_dice: 0.570796
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 719 : loss : 0.489886, loss_ce: 0.202636, loss_dice: 0.561699
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 720 : loss : 0.494220, loss_ce: 0.197960, loss_dice: 0.568285
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 721 : loss : 0.493217, loss_ce: 0.209874, loss_dice: 0.564052
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 722 : loss : 0.481916, loss_ce: 0.203954, loss_dice: 0.551407
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 723 : loss : 0.458257, loss_ce: 0.196651, loss_dice: 0.523658
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 724 : loss : 0.488137, loss_ce: 0.217973, loss_dice: 0.555679
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 725 : loss : 0.492546, loss_ce: 0.214715, loss_dice: 0.562004
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 726 : loss : 0.494783, loss_ce: 0.209016, loss_dice: 0.566224
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 727 : loss : 0.483593, loss_ce: 0.206196, loss_dice: 0.552943
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 728 : loss : 0.475209, loss_ce: 0.218749, loss_dice: 0.539324
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 729 : loss : 0.479351, loss_ce: 0.208370, loss_dice: 0.547096
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 730 : loss : 0.500230, loss_ce: 0.223095, loss_dice: 0.569513
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 731 : loss : 0.500396, loss_ce: 0.218238, loss_dice: 0.570936
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 732 : loss : 0.496014, loss_ce: 0.210300, loss_dice: 0.567442
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 733 : loss : 0.491820, loss_ce: 0.215707, loss_dice: 0.560849
+label batch: 36 and image batch: 36
+
+ 23%|███████▍                        | 35/150 [05:53<18:38,  9.73s/it]
+iteration 734 : loss : 0.503548, loss_ce: 0.239900, loss_dice: 0.569460
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 735 : loss : 0.469229, loss_ce: 0.220647, loss_dice: 0.531374
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 736 : loss : 0.495354, loss_ce: 0.227328, loss_dice: 0.562361
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 737 : loss : 0.512182, loss_ce: 0.229424, loss_dice: 0.582872
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 738 : loss : 0.501764, loss_ce: 0.210553, loss_dice: 0.574567
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 739 : loss : 0.491603, loss_ce: 0.208867, loss_dice: 0.562288
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 740 : loss : 0.475254, loss_ce: 0.217471, loss_dice: 0.539699
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 741 : loss : 0.482989, loss_ce: 0.234274, loss_dice: 0.545168
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 742 : loss : 0.507351, loss_ce: 0.227192, loss_dice: 0.577391
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 743 : loss : 0.486045, loss_ce: 0.203530, loss_dice: 0.556674
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 744 : loss : 0.488750, loss_ce: 0.210371, loss_dice: 0.558345
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 745 : loss : 0.505407, loss_ce: 0.204002, loss_dice: 0.580758
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 746 : loss : 0.472734, loss_ce: 0.211117, loss_dice: 0.538138
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 747 : loss : 0.468361, loss_ce: 0.211846, loss_dice: 0.532490
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 748 : loss : 0.486540, loss_ce: 0.214145, loss_dice: 0.554639
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 749 : loss : 0.480546, loss_ce: 0.201051, loss_dice: 0.550420
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 750 : loss : 0.491459, loss_ce: 0.200283, loss_dice: 0.564253
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 751 : loss : 0.479056, loss_ce: 0.204815, loss_dice: 0.547616
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 752 : loss : 0.478418, loss_ce: 0.210328, loss_dice: 0.545440
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 753 : loss : 0.489398, loss_ce: 0.201897, loss_dice: 0.561273
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 754 : loss : 0.464588, loss_ce: 0.202459, loss_dice: 0.530120
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 755 : loss : 0.488870, loss_ce: 0.233211, loss_dice: 0.552784
+label batch: 3 and image batch: 3
+
+ 24%|███████▋                        | 36/150 [06:02<18:25,  9.70s/it]
+iteration 756 : loss : 0.578030, loss_ce: 0.228480, loss_dice: 0.665418
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 757 : loss : 0.451029, loss_ce: 0.190523, loss_dice: 0.516155
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 758 : loss : 0.488684, loss_ce: 0.182412, loss_dice: 0.565252
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 759 : loss : 0.481589, loss_ce: 0.190754, loss_dice: 0.554297
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 760 : loss : 0.467137, loss_ce: 0.225436, loss_dice: 0.527563
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 761 : loss : 0.493934, loss_ce: 0.237744, loss_dice: 0.557981
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 762 : loss : 0.474252, loss_ce: 0.217511, loss_dice: 0.538437
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 763 : loss : 0.455237, loss_ce: 0.192960, loss_dice: 0.520806
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 764 : loss : 0.485981, loss_ce: 0.194062, loss_dice: 0.558961
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 765 : loss : 0.474368, loss_ce: 0.208841, loss_dice: 0.540750
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 766 : loss : 0.491279, loss_ce: 0.234498, loss_dice: 0.555474
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 767 : loss : 0.457985, loss_ce: 0.213643, loss_dice: 0.519070
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 768 : loss : 0.463644, loss_ce: 0.190904, loss_dice: 0.531828
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 769 : loss : 0.479262, loss_ce: 0.189084, loss_dice: 0.551807
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 770 : loss : 0.483348, loss_ce: 0.175272, loss_dice: 0.560367
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 771 : loss : 0.480960, loss_ce: 0.211181, loss_dice: 0.548405
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 772 : loss : 0.494073, loss_ce: 0.241962, loss_dice: 0.557100
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 773 : loss : 0.483877, loss_ce: 0.212875, loss_dice: 0.551627
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 774 : loss : 0.489479, loss_ce: 0.200879, loss_dice: 0.561629
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 775 : loss : 0.470963, loss_ce: 0.184892, loss_dice: 0.542481
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 776 : loss : 0.488088, loss_ce: 0.218185, loss_dice: 0.555564
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 25%|███████▉                        | 37/150 [06:12<18:12,  9.67s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 778 : loss : 0.522773, loss_ce: 0.216029, loss_dice: 0.599459
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 779 : loss : 0.490768, loss_ce: 0.200190, loss_dice: 0.563412
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 780 : loss : 0.493270, loss_ce: 0.233320, loss_dice: 0.558258
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 781 : loss : 0.483171, loss_ce: 0.248125, loss_dice: 0.541932
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 782 : loss : 0.491492, loss_ce: 0.237746, loss_dice: 0.554928
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 783 : loss : 0.498503, loss_ce: 0.200673, loss_dice: 0.572961
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 784 : loss : 0.505754, loss_ce: 0.180842, loss_dice: 0.586982
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 785 : loss : 0.474834, loss_ce: 0.182854, loss_dice: 0.547829
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 786 : loss : 0.495231, loss_ce: 0.209643, loss_dice: 0.566629
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 787 : loss : 0.484689, loss_ce: 0.236468, loss_dice: 0.546744
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 788 : loss : 0.484464, loss_ce: 0.236311, loss_dice: 0.546502
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 789 : loss : 0.479521, loss_ce: 0.212532, loss_dice: 0.546269
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 790 : loss : 0.477452, loss_ce: 0.205698, loss_dice: 0.545391
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 791 : loss : 0.497339, loss_ce: 0.201141, loss_dice: 0.571389
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 792 : loss : 0.481701, loss_ce: 0.212321, loss_dice: 0.549046
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 793 : loss : 0.511581, loss_ce: 0.246898, loss_dice: 0.577752
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 794 : loss : 0.470235, loss_ce: 0.220434, loss_dice: 0.532685
+label batch: 36 and image batch: 36
+
+ 25%|████████                        | 38/150 [06:21<17:59,  9.64s/it]
+iteration 795 : loss : 0.482699, loss_ce: 0.219280, loss_dice: 0.548554
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 796 : loss : 0.491336, loss_ce: 0.207644, loss_dice: 0.562259
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 797 : loss : 0.471941, loss_ce: 0.198605, loss_dice: 0.540275
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 798 : loss : 0.503466, loss_ce: 0.202121, loss_dice: 0.578802
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 799 : loss : 0.487998, loss_ce: 0.198456, loss_dice: 0.560384
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 800 : loss : 0.501945, loss_ce: 0.218370, loss_dice: 0.572839
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 801 : loss : 0.545553, loss_ce: 0.251811, loss_dice: 0.618988
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 802 : loss : 0.486225, loss_ce: 0.248034, loss_dice: 0.545773
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 803 : loss : 0.502658, loss_ce: 0.243287, loss_dice: 0.567501
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 804 : loss : 0.478942, loss_ce: 0.206027, loss_dice: 0.547171
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 805 : loss : 0.488244, loss_ce: 0.205197, loss_dice: 0.559006
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 806 : loss : 0.499263, loss_ce: 0.192030, loss_dice: 0.576072
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 807 : loss : 0.487118, loss_ce: 0.196588, loss_dice: 0.559750
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 808 : loss : 0.489986, loss_ce: 0.213110, loss_dice: 0.559205
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 809 : loss : 0.490273, loss_ce: 0.206042, loss_dice: 0.561331
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 810 : loss : 0.492554, loss_ce: 0.219683, loss_dice: 0.560772
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 811 : loss : 0.536410, loss_ce: 0.247249, loss_dice: 0.608700
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 812 : loss : 0.489194, loss_ce: 0.226918, loss_dice: 0.554763
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 813 : loss : 0.493465, loss_ce: 0.216748, loss_dice: 0.562644
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 814 : loss : 0.488096, loss_ce: 0.209543, loss_dice: 0.557735
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 815 : loss : 0.486185, loss_ce: 0.213669, loss_dice: 0.554314
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 816 : loss : 0.472929, loss_ce: 0.219625, loss_dice: 0.536255
+label batch: 36 and image batch: 36
+
+ 26%|████████▎                       | 39/150 [06:31<17:56,  9.70s/it]
+iteration 817 : loss : 0.476844, loss_ce: 0.213692, loss_dice: 0.542632
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 818 : loss : 0.489253, loss_ce: 0.221730, loss_dice: 0.556133
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 819 : loss : 0.422521, loss_ce: 0.171337, loss_dice: 0.485317
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 820 : loss : 0.472821, loss_ce: 0.206158, loss_dice: 0.539486
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 821 : loss : 0.496951, loss_ce: 0.212283, loss_dice: 0.568118
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 822 : loss : 0.504665, loss_ce: 0.217425, loss_dice: 0.576476
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 823 : loss : 0.494063, loss_ce: 0.221730, loss_dice: 0.562146
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 824 : loss : 0.502738, loss_ce: 0.236466, loss_dice: 0.569305
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 825 : loss : 0.491857, loss_ce: 0.235748, loss_dice: 0.555884
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 826 : loss : 0.484530, loss_ce: 0.230315, loss_dice: 0.548084
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 827 : loss : 0.478162, loss_ce: 0.198622, loss_dice: 0.548047
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 828 : loss : 0.474460, loss_ce: 0.189303, loss_dice: 0.545749
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 829 : loss : 0.483656, loss_ce: 0.210734, loss_dice: 0.551887
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 830 : loss : 0.470511, loss_ce: 0.191937, loss_dice: 0.540155
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 831 : loss : 0.465141, loss_ce: 0.209783, loss_dice: 0.528980
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 832 : loss : 0.478747, loss_ce: 0.218742, loss_dice: 0.543748
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 833 : loss : 0.469554, loss_ce: 0.206071, loss_dice: 0.535425
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 834 : loss : 0.482522, loss_ce: 0.199578, loss_dice: 0.553258
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 835 : loss : 0.480390, loss_ce: 0.207546, loss_dice: 0.548601
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 836 : loss : 0.474386, loss_ce: 0.206730, loss_dice: 0.541300
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 837 : loss : 0.491200, loss_ce: 0.219065, loss_dice: 0.559234
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 838 : loss : 0.486304, loss_ce: 0.209899, loss_dice: 0.555405
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 839 : loss : 0.467082, loss_ce: 0.201692, loss_dice: 0.533429
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 27%|████████▌                       | 40/150 [06:48<21:29, 11.72s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 841 : loss : 0.466585, loss_ce: 0.184471, loss_dice: 0.537113
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 842 : loss : 0.497850, loss_ce: 0.209948, loss_dice: 0.569825
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 843 : loss : 0.489154, loss_ce: 0.202722, loss_dice: 0.560762
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 844 : loss : 0.474169, loss_ce: 0.211071, loss_dice: 0.539943
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 845 : loss : 0.470474, loss_ce: 0.186203, loss_dice: 0.541542
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 846 : loss : 0.465020, loss_ce: 0.182656, loss_dice: 0.535611
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 847 : loss : 0.504220, loss_ce: 0.207668, loss_dice: 0.578359
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 848 : loss : 0.464267, loss_ce: 0.216131, loss_dice: 0.526301
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 849 : loss : 0.471520, loss_ce: 0.225101, loss_dice: 0.533125
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 850 : loss : 0.459303, loss_ce: 0.188859, loss_dice: 0.526915
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 851 : loss : 0.467214, loss_ce: 0.204983, loss_dice: 0.532771
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 852 : loss : 0.487150, loss_ce: 0.238654, loss_dice: 0.549274
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 853 : loss : 0.470711, loss_ce: 0.204117, loss_dice: 0.537360
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 854 : loss : 0.460905, loss_ce: 0.209191, loss_dice: 0.523833
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 855 : loss : 0.476865, loss_ce: 0.223276, loss_dice: 0.540262
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 856 : loss : 0.472640, loss_ce: 0.198646, loss_dice: 0.541138
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 857 : loss : 0.499040, loss_ce: 0.211725, loss_dice: 0.570868
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 858 : loss : 0.454401, loss_ce: 0.192639, loss_dice: 0.519842
+label batch: 36 and image batch: 36
+
+ 27%|████████▋                       | 41/150 [06:57<20:09, 11.09s/it]
+iteration 859 : loss : 0.473813, loss_ce: 0.200520, loss_dice: 0.542136
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 860 : loss : 0.457925, loss_ce: 0.195668, loss_dice: 0.523489
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 861 : loss : 0.450705, loss_ce: 0.146459, loss_dice: 0.526767
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 862 : loss : 0.476566, loss_ce: 0.203155, loss_dice: 0.544918
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 863 : loss : 0.485648, loss_ce: 0.258651, loss_dice: 0.542397
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 864 : loss : 0.502721, loss_ce: 0.297758, loss_dice: 0.553961
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 865 : loss : 0.487380, loss_ce: 0.259702, loss_dice: 0.544299
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 866 : loss : 0.513455, loss_ce: 0.210234, loss_dice: 0.589261
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 867 : loss : 0.528360, loss_ce: 0.195788, loss_dice: 0.611503
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 868 : loss : 0.510645, loss_ce: 0.245808, loss_dice: 0.576855
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 869 : loss : 0.514168, loss_ce: 0.291408, loss_dice: 0.569857
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 870 : loss : 0.525298, loss_ce: 0.251969, loss_dice: 0.593630
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 871 : loss : 0.504319, loss_ce: 0.235007, loss_dice: 0.571647
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 872 : loss : 0.515200, loss_ce: 0.238090, loss_dice: 0.584477
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 873 : loss : 0.492572, loss_ce: 0.236088, loss_dice: 0.556693
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 874 : loss : 0.501078, loss_ce: 0.228521, loss_dice: 0.569217
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 875 : loss : 0.492273, loss_ce: 0.219457, loss_dice: 0.560478
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 876 : loss : 0.525602, loss_ce: 0.224627, loss_dice: 0.600846
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 877 : loss : 0.511296, loss_ce: 0.224350, loss_dice: 0.583033
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 878 : loss : 0.492600, loss_ce: 0.210242, loss_dice: 0.563190
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 879 : loss : 0.499339, loss_ce: 0.238140, loss_dice: 0.564639
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 880 : loss : 0.488218, loss_ce: 0.211514, loss_dice: 0.557394
+label batch: 36 and image batch: 36
+
+ 28%|████████▉                       | 42/150 [07:07<19:12, 10.67s/it]
+iteration 881 : loss : 0.514272, loss_ce: 0.218542, loss_dice: 0.588205
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 882 : loss : 0.496892, loss_ce: 0.196201, loss_dice: 0.572065
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 883 : loss : 0.493253, loss_ce: 0.204080, loss_dice: 0.565547
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 884 : loss : 0.521586, loss_ce: 0.227727, loss_dice: 0.595051
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 885 : loss : 0.503567, loss_ce: 0.236655, loss_dice: 0.570295
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 886 : loss : 0.499181, loss_ce: 0.251432, loss_dice: 0.561118
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 887 : loss : 0.501337, loss_ce: 0.239104, loss_dice: 0.566895
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 888 : loss : 0.513919, loss_ce: 0.234665, loss_dice: 0.583733
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 889 : loss : 0.490464, loss_ce: 0.209217, loss_dice: 0.560775
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 890 : loss : 0.481467, loss_ce: 0.201183, loss_dice: 0.551538
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 891 : loss : 0.482153, loss_ce: 0.198318, loss_dice: 0.553111
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 892 : loss : 0.481375, loss_ce: 0.212065, loss_dice: 0.548702
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 893 : loss : 0.485655, loss_ce: 0.212413, loss_dice: 0.553966
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 894 : loss : 0.497075, loss_ce: 0.214638, loss_dice: 0.567684
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 895 : loss : 0.487587, loss_ce: 0.216745, loss_dice: 0.555297
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 896 : loss : 0.487059, loss_ce: 0.227869, loss_dice: 0.551857
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 897 : loss : 0.493464, loss_ce: 0.217724, loss_dice: 0.562399
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 898 : loss : 0.473602, loss_ce: 0.188324, loss_dice: 0.544921
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 899 : loss : 0.492006, loss_ce: 0.187828, loss_dice: 0.568051
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 900 : loss : 0.472496, loss_ce: 0.203646, loss_dice: 0.539709
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 901 : loss : 0.465008, loss_ce: 0.196685, loss_dice: 0.532088
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 902 : loss : 0.504940, loss_ce: 0.231891, loss_dice: 0.573202
+label batch: 3 and image batch: 3
+
+ 29%|█████████▏                      | 43/150 [07:17<18:25, 10.33s/it]
+iteration 903 : loss : 0.480090, loss_ce: 0.263067, loss_dice: 0.534346
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 904 : loss : 0.470859, loss_ce: 0.238121, loss_dice: 0.529043
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 905 : loss : 0.492162, loss_ce: 0.241945, loss_dice: 0.554716
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 906 : loss : 0.471345, loss_ce: 0.217239, loss_dice: 0.534871
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 907 : loss : 0.491048, loss_ce: 0.209117, loss_dice: 0.561531
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 908 : loss : 0.469923, loss_ce: 0.199007, loss_dice: 0.537653
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 909 : loss : 0.476790, loss_ce: 0.203334, loss_dice: 0.545154
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 910 : loss : 0.486584, loss_ce: 0.203057, loss_dice: 0.557465
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 911 : loss : 0.472170, loss_ce: 0.194625, loss_dice: 0.541556
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 912 : loss : 0.471439, loss_ce: 0.186697, loss_dice: 0.542625
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 913 : loss : 0.516162, loss_ce: 0.209634, loss_dice: 0.592794
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 914 : loss : 0.504973, loss_ce: 0.209253, loss_dice: 0.578903
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 915 : loss : 0.491844, loss_ce: 0.223832, loss_dice: 0.558847
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 916 : loss : 0.479741, loss_ce: 0.232349, loss_dice: 0.541589
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 917 : loss : 0.454051, loss_ce: 0.204396, loss_dice: 0.516464
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 918 : loss : 0.499865, loss_ce: 0.237090, loss_dice: 0.565558
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 919 : loss : 0.474601, loss_ce: 0.213642, loss_dice: 0.539840
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 920 : loss : 0.463453, loss_ce: 0.215614, loss_dice: 0.525413
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 921 : loss : 0.488941, loss_ce: 0.209569, loss_dice: 0.558784
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 922 : loss : 0.477336, loss_ce: 0.203305, loss_dice: 0.545844
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 923 : loss : 0.488586, loss_ce: 0.208130, loss_dice: 0.558699
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 29%|█████████▍                      | 44/150 [07:26<17:50, 10.09s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 925 : loss : 0.472887, loss_ce: 0.180635, loss_dice: 0.545949
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 926 : loss : 0.486661, loss_ce: 0.187174, loss_dice: 0.561533
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 927 : loss : 0.477970, loss_ce: 0.187470, loss_dice: 0.550595
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 928 : loss : 0.475094, loss_ce: 0.198782, loss_dice: 0.544172
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 929 : loss : 0.480762, loss_ce: 0.204415, loss_dice: 0.549848
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 930 : loss : 0.469821, loss_ce: 0.207053, loss_dice: 0.535513
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 931 : loss : 0.480300, loss_ce: 0.215146, loss_dice: 0.546588
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 932 : loss : 0.495172, loss_ce: 0.229286, loss_dice: 0.561644
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 933 : loss : 0.490750, loss_ce: 0.265656, loss_dice: 0.547023
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 934 : loss : 0.496682, loss_ce: 0.230723, loss_dice: 0.563172
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 935 : loss : 0.472782, loss_ce: 0.212511, loss_dice: 0.537849
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 936 : loss : 0.463583, loss_ce: 0.181269, loss_dice: 0.534162
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 937 : loss : 0.475931, loss_ce: 0.188730, loss_dice: 0.547731
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 938 : loss : 0.450510, loss_ce: 0.191444, loss_dice: 0.515276
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 939 : loss : 0.497739, loss_ce: 0.233130, loss_dice: 0.563891
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 940 : loss : 0.499988, loss_ce: 0.240184, loss_dice: 0.564939
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 941 : loss : 0.472275, loss_ce: 0.209003, loss_dice: 0.538092
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 942 : loss : 0.471776, loss_ce: 0.176360, loss_dice: 0.545630
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 943 : loss : 0.479946, loss_ce: 0.180326, loss_dice: 0.554851
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 944 : loss : 0.480967, loss_ce: 0.226457, loss_dice: 0.544595
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 30%|█████████▌                      | 45/150 [07:36<17:22,  9.93s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 946 : loss : 0.473057, loss_ce: 0.210113, loss_dice: 0.538793
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 947 : loss : 0.488053, loss_ce: 0.206469, loss_dice: 0.558450
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 948 : loss : 0.492245, loss_ce: 0.223872, loss_dice: 0.559338
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 949 : loss : 0.498979, loss_ce: 0.298316, loss_dice: 0.549144
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 950 : loss : 0.499819, loss_ce: 0.212474, loss_dice: 0.571656
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 951 : loss : 0.537761, loss_ce: 0.214325, loss_dice: 0.618620
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 952 : loss : 0.572489, loss_ce: 0.404882, loss_dice: 0.614390
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 953 : loss : 0.615204, loss_ce: 0.531258, loss_dice: 0.636191
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 954 : loss : 0.574334, loss_ce: 0.384717, loss_dice: 0.621738
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 955 : loss : 0.556185, loss_ce: 0.268333, loss_dice: 0.628148
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 956 : loss : 0.541089, loss_ce: 0.237770, loss_dice: 0.616918
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 957 : loss : 0.542917, loss_ce: 0.247350, loss_dice: 0.616809
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 958 : loss : 0.536312, loss_ce: 0.274042, loss_dice: 0.601879
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 959 : loss : 0.533878, loss_ce: 0.325750, loss_dice: 0.585910
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 960 : loss : 0.527104, loss_ce: 0.290320, loss_dice: 0.586300
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 961 : loss : 0.522964, loss_ce: 0.248970, loss_dice: 0.591463
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 962 : loss : 0.516379, loss_ce: 0.241923, loss_dice: 0.584993
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 963 : loss : 0.527476, loss_ce: 0.239819, loss_dice: 0.599390
+label batch: 36 and image batch: 36
+
+ 31%|█████████▊                      | 46/150 [07:45<17:06,  9.87s/it]
+iteration 964 : loss : 0.508611, loss_ce: 0.254638, loss_dice: 0.572104
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 965 : loss : 0.516655, loss_ce: 0.263018, loss_dice: 0.580064
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 966 : loss : 0.520622, loss_ce: 0.288110, loss_dice: 0.578750
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 967 : loss : 0.557526, loss_ce: 0.268729, loss_dice: 0.629725
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 968 : loss : 0.595695, loss_ce: 0.301084, loss_dice: 0.669347
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 969 : loss : 0.594802, loss_ce: 0.314326, loss_dice: 0.664921
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 970 : loss : 0.558316, loss_ce: 0.314135, loss_dice: 0.619361
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 971 : loss : 0.542338, loss_ce: 0.261047, loss_dice: 0.612661
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 972 : loss : 0.546678, loss_ce: 0.304164, loss_dice: 0.607307
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 973 : loss : 0.565951, loss_ce: 0.324876, loss_dice: 0.626220
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 974 : loss : 0.547634, loss_ce: 0.285084, loss_dice: 0.613272
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 975 : loss : 0.542738, loss_ce: 0.251928, loss_dice: 0.615440
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 976 : loss : 0.548790, loss_ce: 0.247589, loss_dice: 0.624089
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 977 : loss : 0.532670, loss_ce: 0.256972, loss_dice: 0.601594
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 978 : loss : 0.539814, loss_ce: 0.289006, loss_dice: 0.602516
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 979 : loss : 0.529697, loss_ce: 0.304497, loss_dice: 0.585997
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 980 : loss : 0.540162, loss_ce: 0.293978, loss_dice: 0.601708
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 981 : loss : 0.518374, loss_ce: 0.250677, loss_dice: 0.585298
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 982 : loss : 0.524938, loss_ce: 0.233269, loss_dice: 0.597855
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 983 : loss : 0.523765, loss_ce: 0.225550, loss_dice: 0.598319
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 984 : loss : 0.527057, loss_ce: 0.237364, loss_dice: 0.599481
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 985 : loss : 0.516529, loss_ce: 0.265097, loss_dice: 0.579387
+label batch: 36 and image batch: 36
+
+ 31%|██████████                      | 47/150 [07:57<18:04, 10.53s/it]
+iteration 986 : loss : 0.534521, loss_ce: 0.283006, loss_dice: 0.597400
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+iteration 987 : loss : 0.540432, loss_ce: 0.227858, loss_dice: 0.618575
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 988 : loss : 0.516192, loss_ce: 0.235078, loss_dice: 0.586471
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 989 : loss : 0.527444, loss_ce: 0.223171, loss_dice: 0.603512
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 990 : loss : 0.525380, loss_ce: 0.233780, loss_dice: 0.598280
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 991 : loss : 0.538536, loss_ce: 0.248171, loss_dice: 0.611128
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 992 : loss : 0.515130, loss_ce: 0.248643, loss_dice: 0.581752
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 993 : loss : 0.524630, loss_ce: 0.250377, loss_dice: 0.593194
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 994 : loss : 0.522326, loss_ce: 0.241686, loss_dice: 0.592486
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 995 : loss : 0.523584, loss_ce: 0.230125, loss_dice: 0.596949
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 996 : loss : 0.521756, loss_ce: 0.211696, loss_dice: 0.599271
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 997 : loss : 0.518555, loss_ce: 0.216870, loss_dice: 0.593976
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 998 : loss : 0.515471, loss_ce: 0.224655, loss_dice: 0.588175
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 999 : loss : 0.512792, loss_ce: 0.242947, loss_dice: 0.580253
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1000 : loss : 0.522046, loss_ce: 0.270508, loss_dice: 0.584931
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1001 : loss : 0.521697, loss_ce: 0.284783, loss_dice: 0.580926
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1002 : loss : 0.525109, loss_ce: 0.275330, loss_dice: 0.587554
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1003 : loss : 0.523674, loss_ce: 0.261473, loss_dice: 0.589224
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1004 : loss : 0.520010, loss_ce: 0.233503, loss_dice: 0.591636
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1005 : loss : 0.516158, loss_ce: 0.211245, loss_dice: 0.592386
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1006 : loss : 0.512881, loss_ce: 0.221923, loss_dice: 0.585620
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1007 : loss : 0.520200, loss_ce: 0.224568, loss_dice: 0.594108
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 32%|██████████▏                     | 48/150 [08:12<20:00, 11.77s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1009 : loss : 0.515724, loss_ce: 0.239299, loss_dice: 0.584830
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1010 : loss : 0.519662, loss_ce: 0.245537, loss_dice: 0.588194
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1011 : loss : 0.514318, loss_ce: 0.248996, loss_dice: 0.580648
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1012 : loss : 0.513040, loss_ce: 0.256738, loss_dice: 0.577116
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1013 : loss : 0.516075, loss_ce: 0.248277, loss_dice: 0.583024
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1014 : loss : 0.504803, loss_ce: 0.234409, loss_dice: 0.572401
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1015 : loss : 0.510216, loss_ce: 0.241635, loss_dice: 0.577361
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1016 : loss : 0.508091, loss_ce: 0.230740, loss_dice: 0.577429
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1017 : loss : 0.514016, loss_ce: 0.234068, loss_dice: 0.584003
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1018 : loss : 0.518475, loss_ce: 0.233989, loss_dice: 0.589597
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1019 : loss : 0.517948, loss_ce: 0.241425, loss_dice: 0.587078
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1020 : loss : 0.513800, loss_ce: 0.244976, loss_dice: 0.581007
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1021 : loss : 0.517543, loss_ce: 0.244563, loss_dice: 0.585788
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1022 : loss : 0.517212, loss_ce: 0.230402, loss_dice: 0.588915
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1023 : loss : 0.521917, loss_ce: 0.211310, loss_dice: 0.599569
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1024 : loss : 0.511365, loss_ce: 0.197553, loss_dice: 0.589818
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1025 : loss : 0.511800, loss_ce: 0.201046, loss_dice: 0.589489
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1026 : loss : 0.511356, loss_ce: 0.208298, loss_dice: 0.587120
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1027 : loss : 0.523369, loss_ce: 0.232688, loss_dice: 0.596039
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1028 : loss : 0.520259, loss_ce: 0.260044, loss_dice: 0.585313
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 33%|██████████▍                     | 49/150 [08:26<21:02, 12.50s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1030 : loss : 0.516852, loss_ce: 0.241699, loss_dice: 0.585641
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1031 : loss : 0.504885, loss_ce: 0.219819, loss_dice: 0.576152
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1032 : loss : 0.519107, loss_ce: 0.209475, loss_dice: 0.596514
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1033 : loss : 0.517644, loss_ce: 0.207928, loss_dice: 0.595073
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1034 : loss : 0.514542, loss_ce: 0.222287, loss_dice: 0.587605
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1035 : loss : 0.522495, loss_ce: 0.228998, loss_dice: 0.595870
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1036 : loss : 0.510177, loss_ce: 0.247113, loss_dice: 0.575943
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1037 : loss : 0.508773, loss_ce: 0.261837, loss_dice: 0.570508
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1038 : loss : 0.514277, loss_ce: 0.265787, loss_dice: 0.576400
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1039 : loss : 0.515949, loss_ce: 0.253191, loss_dice: 0.581638
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1040 : loss : 0.511361, loss_ce: 0.234936, loss_dice: 0.580467
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1041 : loss : 0.512828, loss_ce: 0.222083, loss_dice: 0.585514
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1042 : loss : 0.515301, loss_ce: 0.220183, loss_dice: 0.589081
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1043 : loss : 0.513534, loss_ce: 0.219003, loss_dice: 0.587166
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1044 : loss : 0.505585, loss_ce: 0.213295, loss_dice: 0.578658
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1045 : loss : 0.512006, loss_ce: 0.229481, loss_dice: 0.582638
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1046 : loss : 0.509129, loss_ce: 0.241575, loss_dice: 0.576017
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1047 : loss : 0.514715, loss_ce: 0.243930, loss_dice: 0.582411
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1048 : loss : 0.510432, loss_ce: 0.235118, loss_dice: 0.579261
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1049 : loss : 0.519080, loss_ce: 0.231798, loss_dice: 0.590901
+label batch: 3 and image batch: 3
+Unique values: [0 1 2 3]
+
+ 33%|██████████▋                     | 50/150 [08:41<21:40, 13.01s/it]
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1051 : loss : 0.513466, loss_ce: 0.220219, loss_dice: 0.586778
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1052 : loss : 0.511989, loss_ce: 0.211839, loss_dice: 0.587027
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1053 : loss : 0.512898, loss_ce: 0.214178, loss_dice: 0.587577
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1054 : loss : 0.521063, loss_ce: 0.218139, loss_dice: 0.596794
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1055 : loss : 0.510393, loss_ce: 0.216043, loss_dice: 0.583981
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1056 : loss : 0.514700, loss_ce: 0.233600, loss_dice: 0.584975
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1057 : loss : 0.521654, loss_ce: 0.239718, loss_dice: 0.592138
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1058 : loss : 0.512358, loss_ce: 0.234662, loss_dice: 0.581782
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1059 : loss : 0.514323, loss_ce: 0.238295, loss_dice: 0.583330
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1060 : loss : 0.516117, loss_ce: 0.245506, loss_dice: 0.583770
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1061 : loss : 0.506702, loss_ce: 0.240037, loss_dice: 0.573368
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1062 : loss : 0.505990, loss_ce: 0.242044, loss_dice: 0.571977
+label batch: 36 and image batch: 36
+Unique values: [0 1 2 3]
+iteration 1063 : loss : 0.505147, loss_ce: 0.229888, loss_dice: 0.573962
+label batch: 36 and image batch: 36

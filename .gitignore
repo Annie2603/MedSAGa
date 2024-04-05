@@ -29,3 +29,7 @@ synapse_test/
 test_folder/
 test_output/
 testset_brats/
+results/
+checkpoints/
+inference/
+

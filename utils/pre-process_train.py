@@ -10,8 +10,10 @@ def load_nifti_data(file_path):
     return nib.load(file_path).get_fdata()
 
 def normalize_data(data):
-    data = np.clip(data, -125, 275)
-    return (data - (-125)) / (275 - (-125))
+    a = -1506#-15 #-125
+    b = 1727#375 #275
+    data = np.clip(data, a, b)
+    return (data - (a)) / (b - (a))
 
 def transpose_data(data):
     """
@@ -24,7 +26,7 @@ def process_subfolder(sub_folder, output_folder):
     """
     Accordingly change this function to handle pre-processing for your raw dataset
     """
-    t1_file = os.path.join(sub_folder, f'{os.path.basename(sub_folder)}_t1.nii')
+    t1_file = os.path.join(sub_folder, f'{os.path.basename(sub_folder)}_flair.nii')
     seg_file = os.path.join(sub_folder, f'{os.path.basename(sub_folder)}_seg.nii')
 
     if os.path.exists(t1_file) and os.path.exists(seg_file):

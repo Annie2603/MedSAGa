@@ -1,7 +1,7 @@
 import torch
 
 class GaLoreProjector:
-    def __init__(self, rank, verbose=False, update_proj_gap=200, scale=1.0, proj_type='std'):
+    def __init__(self, rank, verbose=False, update_proj_gap=1, scale=1.0, proj_type='std'):
         self.rank = rank
         self.verbose = verbose
         self.update_proj_gap = update_proj_gap
